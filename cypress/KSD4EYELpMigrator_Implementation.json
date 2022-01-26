@@ -1,0 +1,501 @@
+{
+  "address": "0x17871169C52541bca33BaCD7F4830173CB7aa691",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "kspLpToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minMintAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "MigrateFromKSP",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "N_ALL_COINS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_i4iKSDDeposit",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_ksd4EyeLpStakingPool",
+          "type": "address"
+        }
+      ],
+      "name": "__KSD4EYELpMigrator_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "kspLpToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "calcMigrateFromKSP",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "i4iKSDDeposit",
+      "outputs": [
+        {
+          "internalType": "contract IMetaPoolDeposit",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ksd4EyeLpStakingPool",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "kspLpToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minMintAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "migrateFromKSP",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x0f118ad87e2598c24bd310c0bd98fdbe75c760bd2e6a33650c868941efeaed10",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0x17871169C52541bca33BaCD7F4830173CB7aa691",
+    "transactionIndex": 0,
+    "gasUsed": "1595136",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x07fe3f9e6dd0b254c25bfdc02377ed0ab402a856569b2401b53f58f4194e0cfb",
+    "transactionHash": "0x0f118ad87e2598c24bd310c0bd98fdbe75c760bd2e6a33650c868941efeaed10",
+    "logs": [],
+    "blockNumber": 80584513,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "de4f5741dec2c2b2fd1b551e118f3df0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"kspLpToken\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minMintAmount\",\"type\":\"uint256\"}],\"name\":\"MigrateFromKSP\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"N_ALL_COINS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_i4iKSDDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ksd4EyeLpStakingPool\",\"type\":\"address\"}],\"name\":\"__KSD4EYELpMigrator_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"kspLpToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"calcMigrateFromKSP\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"i4iKSDDeposit\",\"outputs\":[{\"internalType\":\"contract IMetaPoolDeposit\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ksd4EyeLpStakingPool\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"kspLpToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minMintAmount\",\"type\":\"uint256\"}],\"name\":\"migrateFromKSP\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/utils/KSD4EYELpMigrator.sol\":\"KSD4EYELpMigrator\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interface/IKSPLpMigrator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IKSPLpMigrator {\\n    event MigrateFromKSP(address kspLpToken, address from, address to, uint256 amount, uint256 minMintAmount);\\n\\n    function calcMigrateFromKSP(address kspLpToken, uint256 amount) external view returns (uint256);\\n\\n    function migrateFromKSP(\\n        address kspLpToken,\\n        address to,\\n        uint256 amount,\\n        uint256 minNewLpAmount\\n    ) external;\\n}\\n\",\"keccak256\":\"0x758d0ab5086684f0d5b2e5f1f07b36ff2deece2762984949c77ac04726f2e4b6\",\"license\":\"MIT\"},\"contracts/interface/IRewardPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IRewardPool {\\n    function balanceOf(address usr) external view returns (uint256 balance);\\n\\n    function totalSupply() external view returns (uint256 amount);\\n}\\n\",\"keccak256\":\"0xeee82cf1d159c402ad5a1994821948516e692dcb5c20ae6235e5686ffea8b47d\",\"license\":\"MIT\"},\"contracts/interface/IStakingPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./IRewardPool.sol\\\";\\nimport \\\"./kip/IKIP7.sol\\\";\\n\\n/// @title A token staking pool.\\n/// @dev KokoaRewardManager gives reward user who stakes token to this pool.\\ninterface IStakingPool is IRewardPool {\\n    event Stake(address indexed from, address indexed to, uint256 amount);\\n    event Unstake(address indexed from, address indexed to, uint256 amount);\\n\\n    function token() external view returns (IKIP7);\\n\\n    /// @notice stake token\\n    function stake(address to, uint256 amount) external;\\n\\n    /// @notice unstake token\\n    function unstake(address to, uint256 amount) external;\\n}\\n\",\"keccak256\":\"0xad13533bf43060acf2c6341c1a4ea798ebd008aa6a40dbe1b729edd683eb9ee0\",\"license\":\"MIT\"},\"contracts/interface/i4i/IMetaPoolDeposit.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IMetaPoolDeposit {\\n    function token() external view returns (address);\\n\\n    function coinIndex(address coin) external view returns (uint256);\\n\\n    function calcTokenAmount(uint256[] calldata amounts, bool isDeposit) external view returns (uint256);\\n\\n    function addLiquidity(uint256[] calldata amounts, uint256 minMintAmount) external returns (uint256);\\n}\\n\",\"keccak256\":\"0xd3a5665c1fe6ad47a85bdab7c4bf39ab488b2e398552de1cb1b21f5ac2620d02\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP13.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\ninterface IKIP13 {\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x651958b745058d476a41ab467d508d2fe6c131d83cdbe9dfe28b3893d32c48fd\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP13.sol\\\";\\n\\ninterface IKIP7 is IKIP13 {\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function safeTransfer(\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransfer(address recipient, uint256 amount) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external;\\n}\\n\",\"keccak256\":\"0x6fb8afaff38611db93f55c13447c08ea47e5392b895a75bf43999808176528e0\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7Detailed.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP7.sol\\\";\\n\\ninterface IKIP7Detailed is IKIP7 {\\n    function name() external view returns (string memory);\\n\\n    function symbol() external view returns (string memory);\\n\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0xb19fcc63818f59c23defe41b45aa9235cd43a373d97fe222fc939ad3f0f697c9\",\"license\":\"MIT\"},\"contracts/interface/klayswap/IKlaytnExchangeImpl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../kip/IKIP7Detailed.sol\\\";\\n\\ninterface IKlaytnExchange is IKIP7Detailed {\\n    function fee() external view returns (uint256);\\n\\n    function getCurrentPool() external view returns (uint256, uint256);\\n\\n    function addKctLiquidity(uint256 amountA, uint256 amountB) external;\\n\\n    function estimatePos(address token, uint256 amount) external view returns (uint256);\\n\\n    function estimateNeg(address token, uint256 amount) external view returns (uint256);\\n\\n    function addKlayLiquidity(uint256 amount) external payable;\\n\\n    function tokenA() external view returns (address);\\n\\n    function tokenB() external view returns (address);\\n\\n    function removeLiquidity(uint256 amount) external;\\n\\n    function claimReward() external;\\n\\n    function updateMiningIndex() external;\\n\\n    function changeMiningRate(uint256 _mining) external;\\n}\\n\",\"keccak256\":\"0xf73ef854715fe5c95229cb544fb23bb98483976769eace23a24a9b841c4cbe44\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"},\"contracts/utils/KSD4EYELpMigrator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../interface/IStakingPool.sol\\\";\\nimport \\\"../interface/kip/IKIP7.sol\\\";\\nimport \\\"../interface/klayswap/IKlaytnExchangeImpl.sol\\\";\\nimport \\\"../interface/IKSPLpMigrator.sol\\\";\\nimport \\\"../interface/i4i/IMetaPoolDeposit.sol\\\";\\nimport \\\"../library/AccessControl.sol\\\";\\n\\ncontract KSD4EYELpMigrator is IKSPLpMigrator, AccessControl {\\n    uint256 public constant N_ALL_COINS = 4;\\n    IMetaPoolDeposit public i4iKSDDeposit;\\n    address public ksd4EyeLpStakingPool;\\n\\n    function __KSD4EYELpMigrator_init(address _i4iKSDDeposit, address _ksd4EyeLpStakingPool) external initializer {\\n        i4iKSDDeposit = IMetaPoolDeposit(_i4iKSDDeposit);\\n        ksd4EyeLpStakingPool = _ksd4EyeLpStakingPool;\\n    }\\n\\n    function config(bytes32 what, address data) external onlyAdmin {\\n        if (what == \\\"i4iKSDDeposit\\\") {\\n            i4iKSDDeposit = IMetaPoolDeposit(data);\\n        } else if (what == \\\"ksd4EyeLpStakingPool\\\") {\\n            ksd4EyeLpStakingPool = data;\\n        } else revert(\\\"KSD4EYELpMigrator::config: unrecognized-param\\\");\\n    }\\n\\n    function calcMigrateFromKSP(address kspLpToken, uint256 amount) external view override returns (uint256) {\\n        if (amount == 0) {\\n            return 0;\\n        }\\n        address tokenA = IKlaytnExchange(kspLpToken).tokenA();\\n        address tokenB = IKlaytnExchange(kspLpToken).tokenB();\\n\\n        (uint256 poolA, uint256 poolB) = IKlaytnExchange(kspLpToken).getCurrentPool();\\n        uint256 totalSupply = IKlaytnExchange(kspLpToken).totalSupply();\\n\\n        require(amount <= totalSupply, \\\"KSD4EYELpMigrator:: calcMigrateFromKSP: invalid amount\\\");\\n        uint256 amountA = (poolA * amount) / totalSupply;\\n        uint256 amountB = (poolB * amount) / totalSupply;\\n\\n        uint256[] memory amounts = new uint256[](N_ALL_COINS);\\n        amounts[i4iKSDDeposit.coinIndex(tokenA)] = amountA;\\n        amounts[i4iKSDDeposit.coinIndex(tokenB)] = amountB;\\n\\n        return i4iKSDDeposit.calcTokenAmount(amounts, true);\\n    }\\n\\n    function migrateFromKSP(\\n        address kspLpToken,\\n        address to,\\n        uint256 amount,\\n        uint256 minMintAmount\\n    ) external override {\\n        if (amount == 0) {\\n            return;\\n        }\\n        IKIP7(kspLpToken).transferFrom(msg.sender, address(this), amount);\\n        address tokenA = IKlaytnExchange(kspLpToken).tokenA();\\n        address tokenB = IKlaytnExchange(kspLpToken).tokenB();\\n\\n        uint256 beforeBalanceA = IKIP7(tokenA).balanceOf(address(this));\\n        uint256 beforeBalanceB = IKIP7(tokenB).balanceOf(address(this));\\n        IKlaytnExchange(kspLpToken).removeLiquidity(amount);\\n        uint256 amountA = IKIP7(tokenA).balanceOf(address(this)) - beforeBalanceA;\\n        uint256 amountB = IKIP7(tokenB).balanceOf(address(this)) - beforeBalanceB;\\n        IKIP7(tokenA).approve(address(i4iKSDDeposit), amountA);\\n        IKIP7(tokenB).approve(address(i4iKSDDeposit), amountB);\\n\\n        uint256[] memory amounts = new uint256[](N_ALL_COINS);\\n        amounts[i4iKSDDeposit.coinIndex(tokenA)] = amountA;\\n        amounts[i4iKSDDeposit.coinIndex(tokenB)] = amountB;\\n        uint256 lpAmount = i4iKSDDeposit.addLiquidity(amounts, minMintAmount);\\n\\n        IKIP7(i4iKSDDeposit.token()).approve(ksd4EyeLpStakingPool, lpAmount);\\n        IStakingPool(ksd4EyeLpStakingPool).stake(to, lpAmount);\\n\\n        emit MigrateFromKSP(kspLpToken, msg.sender, to, amount, minMintAmount);\\n    }\\n}\\n\",\"keccak256\":\"0x4cdade4813633c21d3bc7bfb6445c1ba749929aca4dac5bb904f2802e4b72895\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50611696806100206000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063b25b8dd21161008c578063daf4f2a211610066578063daf4f2a2146101e5578063f0f6aeba146101f8578063f1cdcac41461020b578063f2fde38b1461021e576100ea565b8063b25b8dd2146101ac578063d366f3b9146101bf578063d547741f146101d2576100ea565b806336568abe116100c857806336568abe146101435780638b2f62891461015657806391d1485414610181578063a217fddf146101a4576100ea565b8063248a9ca3146100ef57806328cc61d5146101265780632f2ff15d1461012e575b600080fd5b6101136100fd3660046114e8565b6000908152600160208190526040909120015490565b6040519081526020015b60405180910390f35b610113600481565b61014161013c366004611500565b610231565b005b610141610151366004611500565b61025d565b600254610169906001600160a01b031681565b6040516001600160a01b03909116815260200161011d565b61019461018f366004611500565b6102e0565b604051901515815260200161011d565b610113600081565b6101136101ba36600461149d565b61030d565b6101416101cd366004611500565b61079c565b6101416101e0366004611500565b610883565b6101416101f3366004611458565b6108aa565b610141610206366004611420565b611184565b600354610169906001600160a01b031681565b61014161022c3660046113e1565b611272565b6000828152600160208190526040909120015461024e81336112ab565b610258838361130f565b505050565b6001600160a01b03811633146102d25760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b6102dc828261137a565b5050565b60008281526001602090815260408083206001600160a01b038516845290915290205460ff165b92915050565b60008161031c57506000610307565b6000836001600160a01b0316630fc63d106040518163ffffffff1660e01b815260040160206040518083038186803b15801561035757600080fd5b505afa15801561036b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061038f9190611404565b90506000846001600160a01b0316635f64b55b6040518163ffffffff1660e01b815260040160206040518083038186803b1580156103cc57600080fd5b505afa1580156103e0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104049190611404565b9050600080866001600160a01b0316631a595f656040518163ffffffff1660e01b8152600401604080518083038186803b15801561044157600080fd5b505afa158015610455573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610479919061153c565b915091506000876001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b1580156104b857600080fd5b505afa1580156104cc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104f09190611524565b9050808711156105615760405162461bcd60e51b815260206004820152603660248201527f4b5344344559454c704d69677261746f723a3a2063616c634d696772617465466044820152751c9bdb52d4d40e881a5b9d985b1a5908185b5bdd5b9d60521b60648201526084016102c9565b60008161056e89866115ff565b61057891906115df565b90506000826105878a866115ff565b61059191906115df565b60408051600480825260a0820190925291925060009190602082016080803683370190505060025460405163b54c45a960e01b81526001600160a01b038b8116600483015292935085928492169063b54c45a99060240160206040518083038186803b15801561060057600080fd5b505afa158015610614573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106389190611524565b8151811061065657634e487b7160e01b600052603260045260246000fd5b602090810291909101015260025460405163b54c45a960e01b81526001600160a01b0389811660048301528492849291169063b54c45a99060240160206040518083038186803b1580156106a957600080fd5b505afa1580156106bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e19190611524565b815181106106ff57634e487b7160e01b600052603260045260246000fd5b6020908102919091010152600254604051635bf2741f60e01b81526001600160a01b0390911690635bf2741f9061073d908490600190600401611599565b60206040518083038186803b15801561075557600080fd5b505afa158015610769573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061078d9190611524565b9b9a5050505050505050505050565b6107ae6430b236b4b760d91b336112ab565b816c1a4d1a52d4d111195c1bdcda5d609a1b14156107e657600280546001600160a01b0319166001600160a01b0383161790556102dc565b81731adcd90d115e59531c14dd185ada5b99d41bdbdb60621b141561082557600380546001600160a01b0319166001600160a01b0383161790556102dc565b60405162461bcd60e51b815260206004820152602d60248201527f4b5344344559454c704d69677261746f723a3a636f6e6669673a20756e72656360448201526c6f676e697a65642d706172616d60981b60648201526084016102c9565b600082815260016020819052604090912001546108a081336112ab565b610258838361137a565b816108b45761117e565b6040516323b872dd60e01b8152336004820152306024820152604481018390526001600160a01b038516906323b872dd90606401602060405180830381600087803b15801561090257600080fd5b505af1158015610916573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061093a91906114c8565b506000846001600160a01b0316630fc63d106040518163ffffffff1660e01b815260040160206040518083038186803b15801561097657600080fd5b505afa15801561098a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109ae9190611404565b90506000856001600160a01b0316635f64b55b6040518163ffffffff1660e01b815260040160206040518083038186803b1580156109eb57600080fd5b505afa1580156109ff573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a239190611404565b6040516370a0823160e01b81523060048201529091506000906001600160a01b038416906370a082319060240160206040518083038186803b158015610a6857600080fd5b505afa158015610a7c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610aa09190611524565b6040516370a0823160e01b81523060048201529091506000906001600160a01b038416906370a082319060240160206040518083038186803b158015610ae557600080fd5b505afa158015610af9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b1d9190611524565b604051639c8f9f2360e01b8152600481018890529091506001600160a01b03891690639c8f9f2390602401600060405180830381600087803b158015610b6257600080fd5b505af1158015610b76573d6000803e3d6000fd5b50506040516370a0823160e01b8152306004820152600092508491506001600160a01b038716906370a082319060240160206040518083038186803b158015610bbe57600080fd5b505afa158015610bd2573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610bf69190611524565b610c00919061161e565b6040516370a0823160e01b815230600482015290915060009083906001600160a01b038716906370a082319060240160206040518083038186803b158015610c4757600080fd5b505afa158015610c5b573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c7f9190611524565b610c89919061161e565b60025460405163095ea7b360e01b81526001600160a01b0391821660048201526024810185905291925087169063095ea7b390604401602060405180830381600087803b158015610cd957600080fd5b505af1158015610ced573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d1191906114c8565b5060025460405163095ea7b360e01b81526001600160a01b039182166004820152602481018390529086169063095ea7b390604401602060405180830381600087803b158015610d6057600080fd5b505af1158015610d74573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d9891906114c8565b5060408051600480825260a08201909252600091602082016080803683370190505060025460405163b54c45a960e01b81526001600160a01b038a8116600483015292935085928492169063b54c45a99060240160206040518083038186803b158015610e0457600080fd5b505afa158015610e18573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e3c9190611524565b81518110610e5a57634e487b7160e01b600052603260045260246000fd5b602090810291909101015260025460405163b54c45a960e01b81526001600160a01b0388811660048301528492849291169063b54c45a99060240160206040518083038186803b158015610ead57600080fd5b505afa158015610ec1573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ee59190611524565b81518110610f0357634e487b7160e01b600052603260045260246000fd5b60209081029190910101526002546040516318b7662d60e31b81526000916001600160a01b03169063c5bb316890610f419085908d906004016115bd565b602060405180830381600087803b158015610f5b57600080fd5b505af1158015610f6f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f939190611524565b9050600260009054906101000a90046001600160a01b03166001600160a01b031663fc0c546a6040518163ffffffff1660e01b815260040160206040518083038186803b158015610fe357600080fd5b505afa158015610ff7573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061101b9190611404565b60035460405163095ea7b360e01b81526001600160a01b0391821660048201526024810184905291169063095ea7b390604401602060405180830381600087803b15801561106857600080fd5b505af115801561107c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110a091906114c8565b506003546040516356e4bb9760e11b81526001600160a01b038d81166004830152602482018490529091169063adc9772e90604401600060405180830381600087803b1580156110ef57600080fd5b505af1158015611103573d6000803e3d6000fd5b505050507f904dca18cf1e74d3140ddcf4eeda4ddb2a295ad51459dfa7e2f2848d49ca0a718c338d8d8d60405161116d9594939291906001600160a01b03958616815293851660208501529190931660408301526060820192909252608081019190915260a00190565b60405180910390a150505050505050505b50505050565b600054610100900460ff16806111995750303b155b806111a7575060005460ff16155b61120a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084016102c9565b600054610100900460ff1615801561122c576000805461ffff19166101011790555b600280546001600160a01b038086166001600160a01b03199283161790925560038054928516929091169190911790558015610258576000805461ff0019169055505050565b6112846437bbb732b960d91b336112ab565b6112966437bbb732b960d91b8261130f565b6112a86437bbb732b960d91b3361137a565b50565b6112b582826102e0565b6102dc5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b60648201526084016102c9565b61131982826102e0565b6102dc5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61138482826102e0565b156102dc5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b6000602082840312156113f2578081fd5b81356113fd8161164b565b9392505050565b600060208284031215611415578081fd5b81516113fd8161164b565b60008060408385031215611432578081fd5b823561143d8161164b565b9150602083013561144d8161164b565b809150509250929050565b6000806000806080858703121561146d578182fd5b84356114788161164b565b935060208501356114888161164b565b93969395505050506040820135916060013590565b600080604083850312156114af578182fd5b82356114ba8161164b565b946020939093013593505050565b6000602082840312156114d9578081fd5b815180151581146113fd578182fd5b6000602082840312156114f9578081fd5b5035919050565b60008060408385031215611512578182fd5b82359150602083013561144d8161164b565b600060208284031215611535578081fd5b5051919050565b6000806040838503121561154e578182fd5b505080516020909101519092909150565b6000815180845260208085019450808401835b8381101561158e57815187529582019590820190600101611572565b509495945050505050565b6000604082526115ac604083018561155f565b905082151560208301529392505050565b6000604082526115d0604083018561155f565b90508260208301529392505050565b6000826115fa57634e487b7160e01b81526012600452602481fd5b500490565b600081600019048311821515161561161957611619611635565b500290565b60008282101561163057611630611635565b500390565b634e487b7160e01b600052601160045260246000fd5b6001600160a01b03811681146112a857600080fdfea264697066735822122064ce4e4dea924d5c17918d23e11495abb88ab42787140786e4ea4daee77d3ddb64736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063b25b8dd21161008c578063daf4f2a211610066578063daf4f2a2146101e5578063f0f6aeba146101f8578063f1cdcac41461020b578063f2fde38b1461021e576100ea565b8063b25b8dd2146101ac578063d366f3b9146101bf578063d547741f146101d2576100ea565b806336568abe116100c857806336568abe146101435780638b2f62891461015657806391d1485414610181578063a217fddf146101a4576100ea565b8063248a9ca3146100ef57806328cc61d5146101265780632f2ff15d1461012e575b600080fd5b6101136100fd3660046114e8565b6000908152600160208190526040909120015490565b6040519081526020015b60405180910390f35b610113600481565b61014161013c366004611500565b610231565b005b610141610151366004611500565b61025d565b600254610169906001600160a01b031681565b6040516001600160a01b03909116815260200161011d565b61019461018f366004611500565b6102e0565b604051901515815260200161011d565b610113600081565b6101136101ba36600461149d565b61030d565b6101416101cd366004611500565b61079c565b6101416101e0366004611500565b610883565b6101416101f3366004611458565b6108aa565b610141610206366004611420565b611184565b600354610169906001600160a01b031681565b61014161022c3660046113e1565b611272565b6000828152600160208190526040909120015461024e81336112ab565b610258838361130f565b505050565b6001600160a01b03811633146102d25760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b6102dc828261137a565b5050565b60008281526001602090815260408083206001600160a01b038516845290915290205460ff165b92915050565b60008161031c57506000610307565b6000836001600160a01b0316630fc63d106040518163ffffffff1660e01b815260040160206040518083038186803b15801561035757600080fd5b505afa15801561036b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061038f9190611404565b90506000846001600160a01b0316635f64b55b6040518163ffffffff1660e01b815260040160206040518083038186803b1580156103cc57600080fd5b505afa1580156103e0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104049190611404565b9050600080866001600160a01b0316631a595f656040518163ffffffff1660e01b8152600401604080518083038186803b15801561044157600080fd5b505afa158015610455573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610479919061153c565b915091506000876001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b1580156104b857600080fd5b505afa1580156104cc573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104f09190611524565b9050808711156105615760405162461bcd60e51b815260206004820152603660248201527f4b5344344559454c704d69677261746f723a3a2063616c634d696772617465466044820152751c9bdb52d4d40e881a5b9d985b1a5908185b5bdd5b9d60521b60648201526084016102c9565b60008161056e89866115ff565b61057891906115df565b90506000826105878a866115ff565b61059191906115df565b60408051600480825260a0820190925291925060009190602082016080803683370190505060025460405163b54c45a960e01b81526001600160a01b038b8116600483015292935085928492169063b54c45a99060240160206040518083038186803b15801561060057600080fd5b505afa158015610614573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106389190611524565b8151811061065657634e487b7160e01b600052603260045260246000fd5b602090810291909101015260025460405163b54c45a960e01b81526001600160a01b0389811660048301528492849291169063b54c45a99060240160206040518083038186803b1580156106a957600080fd5b505afa1580156106bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e19190611524565b815181106106ff57634e487b7160e01b600052603260045260246000fd5b6020908102919091010152600254604051635bf2741f60e01b81526001600160a01b0390911690635bf2741f9061073d908490600190600401611599565b60206040518083038186803b15801561075557600080fd5b505afa158015610769573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061078d9190611524565b9b9a5050505050505050505050565b6107ae6430b236b4b760d91b336112ab565b816c1a4d1a52d4d111195c1bdcda5d609a1b14156107e657600280546001600160a01b0319166001600160a01b0383161790556102dc565b81731adcd90d115e59531c14dd185ada5b99d41bdbdb60621b141561082557600380546001600160a01b0319166001600160a01b0383161790556102dc565b60405162461bcd60e51b815260206004820152602d60248201527f4b5344344559454c704d69677261746f723a3a636f6e6669673a20756e72656360448201526c6f676e697a65642d706172616d60981b60648201526084016102c9565b600082815260016020819052604090912001546108a081336112ab565b610258838361137a565b816108b45761117e565b6040516323b872dd60e01b8152336004820152306024820152604481018390526001600160a01b038516906323b872dd90606401602060405180830381600087803b15801561090257600080fd5b505af1158015610916573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061093a91906114c8565b506000846001600160a01b0316630fc63d106040518163ffffffff1660e01b815260040160206040518083038186803b15801561097657600080fd5b505afa15801561098a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109ae9190611404565b90506000856001600160a01b0316635f64b55b6040518163ffffffff1660e01b815260040160206040518083038186803b1580156109eb57600080fd5b505afa1580156109ff573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a239190611404565b6040516370a0823160e01b81523060048201529091506000906001600160a01b038416906370a082319060240160206040518083038186803b158015610a6857600080fd5b505afa158015610a7c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610aa09190611524565b6040516370a0823160e01b81523060048201529091506000906001600160a01b038416906370a082319060240160206040518083038186803b158015610ae557600080fd5b505afa158015610af9573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b1d9190611524565b604051639c8f9f2360e01b8152600481018890529091506001600160a01b03891690639c8f9f2390602401600060405180830381600087803b158015610b6257600080fd5b505af1158015610b76573d6000803e3d6000fd5b50506040516370a0823160e01b8152306004820152600092508491506001600160a01b038716906370a082319060240160206040518083038186803b158015610bbe57600080fd5b505afa158015610bd2573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610bf69190611524565b610c00919061161e565b6040516370a0823160e01b815230600482015290915060009083906001600160a01b038716906370a082319060240160206040518083038186803b158015610c4757600080fd5b505afa158015610c5b573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c7f9190611524565b610c89919061161e565b60025460405163095ea7b360e01b81526001600160a01b0391821660048201526024810185905291925087169063095ea7b390604401602060405180830381600087803b158015610cd957600080fd5b505af1158015610ced573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d1191906114c8565b5060025460405163095ea7b360e01b81526001600160a01b039182166004820152602481018390529086169063095ea7b390604401602060405180830381600087803b158015610d6057600080fd5b505af1158015610d74573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d9891906114c8565b5060408051600480825260a08201909252600091602082016080803683370190505060025460405163b54c45a960e01b81526001600160a01b038a8116600483015292935085928492169063b54c45a99060240160206040518083038186803b158015610e0457600080fd5b505afa158015610e18573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e3c9190611524565b81518110610e5a57634e487b7160e01b600052603260045260246000fd5b602090810291909101015260025460405163b54c45a960e01b81526001600160a01b0388811660048301528492849291169063b54c45a99060240160206040518083038186803b158015610ead57600080fd5b505afa158015610ec1573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ee59190611524565b81518110610f0357634e487b7160e01b600052603260045260246000fd5b60209081029190910101526002546040516318b7662d60e31b81526000916001600160a01b03169063c5bb316890610f419085908d906004016115bd565b602060405180830381600087803b158015610f5b57600080fd5b505af1158015610f6f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f939190611524565b9050600260009054906101000a90046001600160a01b03166001600160a01b031663fc0c546a6040518163ffffffff1660e01b815260040160206040518083038186803b158015610fe357600080fd5b505afa158015610ff7573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061101b9190611404565b60035460405163095ea7b360e01b81526001600160a01b0391821660048201526024810184905291169063095ea7b390604401602060405180830381600087803b15801561106857600080fd5b505af115801561107c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110a091906114c8565b506003546040516356e4bb9760e11b81526001600160a01b038d81166004830152602482018490529091169063adc9772e90604401600060405180830381600087803b1580156110ef57600080fd5b505af1158015611103573d6000803e3d6000fd5b505050507f904dca18cf1e74d3140ddcf4eeda4ddb2a295ad51459dfa7e2f2848d49ca0a718c338d8d8d60405161116d9594939291906001600160a01b03958616815293851660208501529190931660408301526060820192909252608081019190915260a00190565b60405180910390a150505050505050505b50505050565b600054610100900460ff16806111995750303b155b806111a7575060005460ff16155b61120a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084016102c9565b600054610100900460ff1615801561122c576000805461ffff19166101011790555b600280546001600160a01b038086166001600160a01b03199283161790925560038054928516929091169190911790558015610258576000805461ff0019169055505050565b6112846437bbb732b960d91b336112ab565b6112966437bbb732b960d91b8261130f565b6112a86437bbb732b960d91b3361137a565b50565b6112b582826102e0565b6102dc5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b60648201526084016102c9565b61131982826102e0565b6102dc5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61138482826102e0565b156102dc5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b6000602082840312156113f2578081fd5b81356113fd8161164b565b9392505050565b600060208284031215611415578081fd5b81516113fd8161164b565b60008060408385031215611432578081fd5b823561143d8161164b565b9150602083013561144d8161164b565b809150509250929050565b6000806000806080858703121561146d578182fd5b84356114788161164b565b935060208501356114888161164b565b93969395505050506040820135916060013590565b600080604083850312156114af578182fd5b82356114ba8161164b565b946020939093013593505050565b6000602082840312156114d9578081fd5b815180151581146113fd578182fd5b6000602082840312156114f9578081fd5b5035919050565b60008060408385031215611512578182fd5b82359150602083013561144d8161164b565b600060208284031215611535578081fd5b5051919050565b6000806040838503121561154e578182fd5b505080516020909101519092909150565b6000815180845260208085019450808401835b8381101561158e57815187529582019590820190600101611572565b509495945050505050565b6000604082526115ac604083018561155f565b905082151560208301529392505050565b6000604082526115d0604083018561155f565b90508260208301529392505050565b6000826115fa57634e487b7160e01b81526012600452602481fd5b500490565b600081600019048311821515161561161957611619611635565b500290565b60008282101561163057611630611635565b500390565b634e487b7160e01b600052601160045260246000fd5b6001600160a01b03811681146112a857600080fdfea264697066735822122064ce4e4dea924d5c17918d23e11495abb88ab42787140786e4ea4daee77d3ddb64736f6c63430008030033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 24885,
+        "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 24888,
+        "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 21831,
+        "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)21826_storage)"
+      },
+      {
+        "astId": 38012,
+        "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+        "label": "i4iKSDDeposit",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_contract(IMetaPoolDeposit)9817"
+      },
+      {
+        "astId": 38014,
+        "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+        "label": "ksd4EyeLpStakingPool",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IMetaPoolDeposit)9817": {
+        "encoding": "inplace",
+        "label": "contract IMetaPoolDeposit",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)21826_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)21826_storage"
+      },
+      "t_struct(RoleData)21826_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 21823,
+            "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 21825,
+            "contract": "contracts/utils/KSD4EYELpMigrator.sol:KSD4EYELpMigrator",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      }
+    }
+  }
+}

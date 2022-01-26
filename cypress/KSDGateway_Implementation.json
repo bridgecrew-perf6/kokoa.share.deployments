@@ -1,0 +1,583 @@
+{
+  "address": "0xB4A234Ebe159f6848C1486Bd4A3AA7b3F4187598",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "__KSDGateway_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wad",
+          "type": "uint256"
+        }
+      ],
+      "name": "exit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ksdOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wad",
+          "type": "uint256"
+        }
+      ],
+      "name": "exitFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wad",
+          "type": "uint256"
+        }
+      ],
+      "name": "join",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ksdOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wad",
+          "type": "uint256"
+        }
+      ],
+      "name": "joinFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ksd",
+      "outputs": [
+        {
+          "internalType": "contract IKIP7Extended",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ledger",
+      "outputs": [
+        {
+          "internalType": "contract ILedger",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc72740772fa4980a97af3ffc340766fc2143c7f6020682f1fd31a4d857a1fb3b",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0xB4A234Ebe159f6848C1486Bd4A3AA7b3F4187598",
+    "transactionIndex": 7,
+    "gasUsed": "1126870",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xffeb4a58f24c4fc60090dd9a7eb60901f9100a449da85e4b1b46ab99d5ff1d7b",
+    "transactionHash": "0xc72740772fa4980a97af3ffc340766fc2143c7f6020682f1fd31a4d857a1fb3b",
+    "logs": [],
+    "blockNumber": 79128505,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "daac9cba34dfabe5953ff704314717f0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"__KSDGateway_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"wad\",\"type\":\"uint256\"}],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ksdOwner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"wad\",\"type\":\"uint256\"}],\"name\":\"exitFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"wad\",\"type\":\"uint256\"}],\"name\":\"join\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ksdOwner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"wad\",\"type\":\"uint256\"}],\"name\":\"joinFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ksd\",\"outputs\":[{\"internalType\":\"contract IKIP7Extended\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ledger\",\"outputs\":[{\"internalType\":\"contract ILedger\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"exit(address,uint256)\":{\"params\":{\"usr\":\"Who issues ksd.\",\"wad\":\"Amount of ksd token.\"}},\"exitFrom(address,address,uint256)\":{\"details\":\"Acting on behalf (Transaction through ksd owner)\",\"params\":{\"ksdOwner\":\"Someone who will provide ksd from ledger to issue ksd.\",\"usr\":\"Who issues ksd.\",\"wad\":\"Amount of ksd token.\"}},\"join(address,uint256)\":{\"params\":{\"usr\":\"Target receiving ksd from ledger.\",\"wad\":\"Amount of ksd token.\"}},\"joinFrom(address,address,uint256)\":{\"details\":\"Acting on behalf.\",\"params\":{\"ksdOwner\":\"The owner of the ksd to burn.\",\"usr\":\"Target receiving ksd from ledger.\",\"wad\":\"Amount of ksd token.\"}}},\"title\":\"KSD input/output contract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"config(bytes32,address)\":{\"notice\":\"Initialize interface variable.\"},\"exit(address,uint256)\":{\"notice\":\"Ksd mint & borrow ksd (loan)\"},\"exitFrom(address,address,uint256)\":{\"notice\":\"Ksd mint & borrow ksd (loan)\"},\"join(address,uint256)\":{\"notice\":\"Ksd redemption & ksd burn\"},\"joinFrom(address,address,uint256)\":{\"notice\":\"Ksd redemption & ksd burn.\"}},\"notice\":\"A collection of functions related to KSD move\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lending/KSDGatway.sol\":\"KSDGateway\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interface/IKSDGateway.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\n/// @title KSD input/output contract\\n/// @notice A collection of functions related to KSD move\\ninterface IKSDGateway {\\n    /// @notice ksd redemption & ksd burn\\n    function join(address usr, uint256 wad) external;\\n\\n    /// @notice ksd mint & borrow ksd (loan)\\n    function exit(address usr, uint256 wad) external;\\n\\n    /// @notice Ksd redemption & ksd burn.\\n    /// @dev Acting on behalf.\\n    function joinFrom(\\n        address ksdOwner,\\n        address usr,\\n        uint256 wad\\n    ) external;\\n\\n    /// @notice Ksd mint & borrow ksd (loan)\\n    /// @dev Acting on behalf (Transaction through ksd owner)\\n    function exitFrom(\\n        address ksdOwner,\\n        address usr,\\n        uint256 wad\\n    ) external;\\n}\\n\",\"keccak256\":\"0xb68a88a40ccb45d304b0fd683f9e4e46407dea0d236115e145c935ebf1cf0d30\",\"license\":\"MIT\"},\"contracts/interface/ILedger.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface ILedger {\\n    // --- Events ---\\n    event CollateralChanged(bytes32 collateralType, address usr, int256 amount);\\n    event KSDChanged(address usr, int256 amount);\\n    event LoanChanged(bytes32 collateralType, address debtor, address collateralVault, address ksdVault, int256 collateralAmount, int256 loanAmount);\\n    event AccountChanged(bytes32 collateralType, address vault, uint256 lockedCollateral, uint256 loan);\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\uc900\\ub2e4.\\n    /// @notice authorize usr to manipulate msg.sender's vault\\n    function allow(address usr) external;\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\ubec7\\ub294.\\n    /// @notice Deauthorize usr from manipulating msg.sender's vault\\n    function disallow(address usr) external;\\n\\n    // --- Data view ---\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785.\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. totalLockedCollateral (\\uc804\\uccb4 locked\\ub41c \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. totalLoan (\\ubc1c\\ud589\\ub41c(\\ube4c\\ub9b0) KSD\\uc591)\\n    /// 3. rate (\\uc2dc\\uac04\\uc5d0 \\ub530\\ub77c \\uc810\\ucc28 \\uc99d\\uac00\\ud558\\uace0, accountInfo.loan \\uc5d0 \\uacf1\\ud574\\uc838\\uc11c \\uc0ac\\uc6a9\\uc790\\uac00 \\ube4c\\ub9b0 ksd\\uc758 \\uc591\\uc744 \\ub298\\ub9ac\\ub294 \\uc6a9\\ub3c4\\ub85c \\uc0ac\\uc6a9\\ub428. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (\\ub2f4\\ubcf4 \\ud0c0\\uc785\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd1d KSD)\\n    /// 6. dust (\\ud558\\ub098\\uc758 vault\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd5c\\uc800\\uc758 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Collateral Iinfo\\n    /// @param collateralType Type of collateral - initially, there's only one (Klay)\\n    /// @dev the value that it returns are\\n    /// 1. totalLockedCollateral\\n    /// 2. totalLoan\\n    /// 3. rate (It gradually increases over time and is multiplied by accountInfo.loan to increase the amount of ksd borrowed by the user.. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (Maximum KSD that can be minted from given collateral type)\\n    /// 6. dust (Minimum KSD that should be borrowed from a CDP)\\n    function collateralInfo(bytes32 collateralType)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256\\n        );\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\ub4e4 \\uc870\\ud68c\\n    /// @param collateralTypes \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785 list\\n    /// @dev collateralInfo \\uc758 \\uac12\\ub4e4\\uc744 array \\ub85c return\\n    function collateralInfos(bytes32[] calldata collateralTypes)\\n        external\\n        view\\n        returns (\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory\\n        );\\n\\n    /// @notice usr\\uc758 vault \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4 \\uc885\\ub958\\n    /// @param usr \\uc720\\uc800\\uc758 address\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. lockedCollateral (vault\\uc5d0 \\uc7a0\\uae34 \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. loan (vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Information of a user's vault\\n    /// @param collateralType type of collateral\\n    /// @param usr Address of the user\\n    /// @dev returns\\n    /// 1. lockedCollateral (amount of collateral locked in the user's vault)\\n    /// 2. loan (normalized amount of KSD minted from that vault)\\n    function accountInfo(bytes32 collateralType, address usr) external view returns (uint256, uint256);\\n\\n    /// @notice This function returns the index of a user of given collateral type\\n    ///         The index\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @dev \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785\\ub9c8\\ub2e4 cdp \\uc5f0 \\uc720\\uc800\\ub97c tracking \\ud558\\uae30 \\uc704\\ud55c \\uac83\\uc73c\\ub85c, \\uac01 \\uc720\\uc800\\uac00 \\uba87 \\ubc88\\uc9f8\\ub85c cdp\\ub97c \\uc5f4\\uc5c8\\ub294\\uc9c0\\ub97c \\uae30\\ub85d.\\n    /// @dev This function is designed to track the list of users who have opened a CDP (for each collateral type)\\n    ///       Since CDPs are never deleted once created, this index should not be update at any circumstances\\n    function accountIndex(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice access address of an account by index\\n    /// @param collateralType type of collateral\\n    /// @param index index of user\\n    /// @dev index \\ubc88\\uc9f8\\ub85c \\ub4e4\\uc5b4\\uc628 \\uc720\\uc800\\uc758 \\uc8fc\\uc18c\\ub97c \\ub9ac\\ud134\\n    /// @dev returns the address of {index}-th CDP opener\\n    function accountByIndex(bytes32 collateralType, uint256 index) external view returns (address);\\n\\n    /// @notice Total number of user who have opened a CDP (given collateral type) - always increasing\\n    /// @param collateralType type of collateral\\n    /// @dev \\uc9c0\\uae08\\uae4c\\uc9c0 cdp\\ub97c \\uc5f0 \\uc720\\uc800\\uc758 \\uc218\\n    function accountLength(bytes32 collateralType) external view returns (uint256);\\n\\n    /// @notice locked \\ub418\\uc9c0 \\uc54a\\uc740 \\ub2f4\\ubcf4\\ubb3c\\uc758 \\uc591. \\ub2e8, \\uc2e4\\uc81c \\ub2f4\\ubcf4\\ubb3c\\uc740 gateway \\ucee8\\ud2b8\\ub809\\ud2b8\\uac00 \\uad00\\ub9ac\\ud558\\uace0 \\uc788\\uc74c.\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @notice The amount of collateral that are not locked.\\n    function token(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice \\ube4c\\ub9ac\\uac70\\ub098, ksdGateway\\ub97c \\ud1b5\\ud574\\uc11c \\ub4e4\\uc5b4\\uc628 ksd\\uc758 \\uc591.\\n    /// @param usr address of user\\n    /// @notice The amount of KSD lent to, or depositted by (through KSDGateway) the {usr}\\n    function ksd(address usr) external view returns (uint256);\\n\\n    /// @notice total KSD Issued [rad]\\n    function totalIssued() external view returns (uint256);\\n\\n    /// @notice Total Unbacked KSD [rad]\\n    function vice() external view returns (uint256);\\n\\n    /// @notice Total Debt Ceiling [rad]\\n    function line() external view returns (uint256);\\n\\n    /// @notice unbacked KSD [rad]\\n    function sin(address usr) external view returns (uint256);\\n\\n    /// @notice initialize collateral\\n    /// @param collateralType type of collateral to initialize.\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance\\n    function init(bytes32 collateralType) external;\\n\\n    /// @notice config something\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc640 \\uc624\\ub77c\\ud074 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance and oracle\\n    function config(\\n        bytes32 collateralType,\\n        bytes32 what,\\n        uint256 data\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0a8\\ub2e4.\\n    ///          \\uc7a5\\ubd80\\uc758 \\uae30\\ub85d\\ub41c token\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\uae30\\ud0a4 \\ub54c\\ubb38\\uc5d0 \\ubb34\\uc870\\uac74 \\ud5c8\\uac00\\ub41c contract\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice Increase the amount of 'unlocked collateral'\\n    ///          (which means that the token is deposited into CDP but not yet considered as 'locked' as collateral)\\n    ///         This function changes the amount of 'unlocked collateral' of the CDP, so it should only be called by authorized contracts.\\n    function addCollateral(\\n        bytes32 collateralType,\\n        address usr,\\n        int256 amount\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc744 \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function.\\n    function sendCollateral(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        uint256 amoount\\n    ) external;\\n\\n    /// @notice ksd\\ub97c \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function. (\\uc2e4\\uc81c ksd token\\uc744 \\ubcf4\\ub0b4\\ub294 \\uac83\\uc774 \\uc544\\ub2c8\\ub77c, \\uc7a5\\ubd80 \\uc0c1\\uc758 \\uae30\\ub85d\\ub9cc \\ubc14\\ub01c)\\n    function sendKsd(\\n        address src,\\n        address dst,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice token, ksd \\uc591\\uc744 \\ud1b5\\ud574\\uc11c vault\\uc758 \\uac12\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0b4.\\n    /// @param collateralType type of collateral\\n    /// @param debtor owner of vault\\n    /// @param collateralVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 token\\uc758 owner) \\ub2f4\\ubcf4\\ubb3c\\uc744 \\uac00\\uc838\\uc624\\uac70\\ub098 vault\\uc5d0\\uc11c unlock \\uc2dc\\ud0a8 \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub123\\uc744 \\uc8fc\\uc18c\\n    /// @param ksdVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 ksd\\uc758 owner) ksd\\ub97c vault\\uc5d0 \\ub123\\uc5b4\\uc8fc\\uac70\\ub098, vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd\\ub97c \\ub123\\uc5b4\\uc904 \\uacf3\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev vault\\uc5d0 ksd\\ub97c \\uac1a\\uac70\\ub098/\\ube4c\\ub9ac\\uac70\\ub098, \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub354 lock \\uc2dc\\ud0a4\\uac70\\ub098/\\ube7c\\uac70\\ub098\\n    /// \\ub2e8, vault\\ub294 \\ud56d\\uc0c1 safe \\ud574\\uc57c\\ud558\\uace0, dust \\uc774\\uc0c1\\uc758 ksd\\ub97c \\uc720\\uc9c0\\ud574\\uc57c \\ud55c\\ub2e4.\\n    /// \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4. \\uc608\\ub97c\\ub4e4\\uc5b4, \\ud5c8\\ub77d\\ubc1b\\uc9c0 \\uc54a\\uc740 \\uc0ac\\ub78c\\uc774 locked\\ub418\\uc9c0 \\uc54a\\uc740 \\ub0a8\\uc758 collateral\\ub97c \\uc790\\uc2e0\\uc758 vault\\ub85c lock \\uc2dc\\ud0a4\\uc9c0 \\ubabb\\ud574\\uc57c \\ud55c\\ub2e4.\\n    function actionLoan(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice vault\\uc5d0 \\uc7a0\\uae34 collateral\\uc591\\uc774\\ub098 ksd \\ubd80\\ucc44\\ub97c \\uc774\\ub3d9\\uc2dc\\ud0a8\\ub2e4.\\n    /// @param collateralType type of collateral\\n    /// @param src address of vault (accountInfo)\\n    /// @param dst address of vault (accountInfo)\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4.\\n    function fork(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\ubab0\\uc218 (confiscation)\\n    /// @param collateralType type of collateral\\n    /// @param debtor \\uccad\\uc0b0\\ub420 vault \\uc8fc\\uc18c\\n    /// @param collateralVault vault\\uc5d0\\uc11c locked\\ub41c \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ubab0\\uc218\\ud574\\uac08 \\uc8fc\\uccb4. (\\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 \\ud56d\\uc0c1 auctionHouse. auction\\uc5d0\\uc11c \\ud314\\uc544\\uc57c \\ud558\\uae30 \\ub54c\\ubb38)\\n    /// @param ksdVault vault\\uc5d0\\uc11c \\ube4c\\ub824\\uac04 ksd\\ub294 \\ub2f4\\ubcf4\\ubb3c\\uc774 auction\\uc5d0 \\ub4e4\\uc5b4\\uac04 \\uc21c\\uac04 backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\uc774\\uae30 \\ub54c\\ubb38\\uc5d0, \\uc774\\uac83\\uc744 \\ub9e1\\uc544\\uc904 \\uc8fc\\uccb4\\uac00 \\ud544\\uc694. \\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 minusBank\\uac00 \\ub9e1\\uc544\\uc900\\ub2e4.\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev liquidator\\uc758 liquidate\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub9bc\\n    function grab(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\uc0c1\\uc1c4\\ud558\\ub294 function. msg.sender\\uc758 ksd\\ub97c \\uc18c\\ubaa8\\ud55c\\ub2e4.\\n    function heal(uint256 amount) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\ub9cc\\ub4e4\\uc5b4\\uc11c msg.sender\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev minusBank\\uc5d0\\uc11c keeper\\ub4e4\\uc5d0\\uac8c incentive\\ub97c \\uc8fc\\uae30 \\uc704\\ud574\\uc11c, \\ubbf8\\ub9ac ksd\\ub97c \\ub300\\ucd9c\\ubc1b\\ub294 \\uc5ed\\ud560\\ub85c \\uc4f0\\uc778\\ub2e4.\\n    /// \\ub530\\ub77c\\uc11c, \\uc624\\uc9c1 minusBank\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function suck(\\n        address u,\\n        address v,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice stability fee\\ub97c ksdReceiver\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev StabilityFeeCollector\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function collectStabilityFee(\\n        bytes32 collateralType,\\n        address ksdReceiver,\\n        int256 rateDiff\\n    ) external;\\n}\\n\",\"keccak256\":\"0xd665010e6fac1b9f0423339abad116c599c5ef2960fac177b2108fa68fd15b71\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP13.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\ninterface IKIP13 {\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x651958b745058d476a41ab467d508d2fe6c131d83cdbe9dfe28b3893d32c48fd\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP13.sol\\\";\\n\\ninterface IKIP7 is IKIP13 {\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function safeTransfer(\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransfer(address recipient, uint256 amount) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external;\\n}\\n\",\"keccak256\":\"0x6fb8afaff38611db93f55c13447c08ea47e5392b895a75bf43999808176528e0\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7Detailed.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP7.sol\\\";\\n\\ninterface IKIP7Detailed is IKIP7 {\\n    function name() external view returns (string memory);\\n\\n    function symbol() external view returns (string memory);\\n\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0xb19fcc63818f59c23defe41b45aa9235cd43a373d97fe222fc939ad3f0f697c9\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7Extended.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP7.sol\\\";\\nimport \\\"./IKIP7Detailed.sol\\\";\\nimport \\\"./IKIP13.sol\\\";\\n\\ninterface IKIP7Extended is IKIP7Detailed {\\n    function mint(address usr, uint256 amount) external returns (bool);\\n\\n    function burn(address usr, uint256 amount) external returns (bool);\\n}\\n\",\"keccak256\":\"0x68ea4321698aef5d82970660626d6e07ea4908b0b94bee9d6ceb2f8776c6c06b\",\"license\":\"MIT\"},\"contracts/lending/KSDGatway.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../library/Pausable.sol\\\";\\nimport \\\"../library/AccessControl.sol\\\";\\nimport \\\"../interface/IKSDGateway.sol\\\";\\nimport \\\"../interface/ILedger.sol\\\";\\nimport \\\"../interface/kip/IKIP7Extended.sol\\\";\\n\\n/// @title KSD input/output contract\\n/// @notice A collection of functions related to KSD move\\ncontract KSDGateway is IKSDGateway, AccessControl, Pausable {\\n    function __KSDGateway_init() public initializer {\\n        __Pausable_init();\\n    }\\n\\n    // --- data ---\\n    ILedger public ledger; // ledger contract which manage lending.\\n    IKIP7Extended public ksd; // Stablecoin Token in kokoa system.\\n    uint256 constant ONE = 10**27; // constant variable.\\n\\n    // --- config ---\\n    /// @notice Initialize interface variable.\\n    function config(bytes32 what, address data) external onlyAdmin whenNotPaused {\\n        if (what == \\\"ledger\\\") ledger = ILedger(data);\\n        else if (what == \\\"ksd\\\") ksd = IKIP7Extended(data);\\n        else revert(\\\"KSDGateway::config:unrecognized-param\\\");\\n    }\\n\\n    // --- function ---\\n    /// @notice Ksd redemption & ksd burn\\n    /// @param usr Target receiving ksd from ledger.\\n    /// @param wad Amount of ksd token.\\n    function join(address usr, uint256 wad) external override {\\n        ledger.sendKsd(address(this), usr, ONE * (wad + 1));\\n        ksd.burn(msg.sender, wad);\\n    }\\n\\n    /// @notice Ksd mint & borrow ksd (loan)\\n    /// @param usr Who issues ksd.\\n    /// @param wad Amount of ksd token.\\n    function exit(address usr, uint256 wad) external override whenNotPaused {\\n        ledger.sendKsd(msg.sender, address(this), ONE * wad);\\n        ksd.mint(usr, wad);\\n    }\\n\\n    /// @notice Ksd redemption & ksd burn.\\n    /// @dev Acting on behalf.\\n    /// @param ksdOwner The owner of the ksd to burn.\\n    /// @param usr Target receiving ksd from ledger.\\n    /// @param wad Amount of ksd token.\\n    function joinFrom(\\n        address ksdOwner,\\n        address usr,\\n        uint256 wad\\n    ) external override onlyAdmin {\\n        ledger.sendKsd(address(this), usr, ONE * (wad + 1));\\n        ksd.burn(ksdOwner, wad);\\n    }\\n\\n    /// @notice Ksd mint & borrow ksd (loan)\\n    /// @dev Acting on behalf (Transaction through ksd owner)\\n    /// @param ksdOwner Someone who will provide ksd from ledger to issue ksd.\\n    /// @param usr Who issues ksd.\\n    /// @param wad Amount of ksd token.\\n    function exitFrom(\\n        address ksdOwner,\\n        address usr,\\n        uint256 wad\\n    ) external override whenNotPaused onlyAdmin {\\n        ledger.sendKsd(ksdOwner, address(this), ONE * wad);\\n        ksd.mint(usr, wad);\\n    }\\n}\\n\",\"keccak256\":\"0x83d24c5f41ba8aafe85b73a1ea2e827dc015eaadb72db8b7e400c4e419e62052\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/Pausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./AccessControl.sol\\\";\\n\\nabstract contract Pausable is AccessControl {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    bool private _paused;\\n\\n    function __Pausable_init() internal initializer {\\n        __AccessControl_init();\\n        _setRoleAdmin(bytes32(\\\"pauser\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"pauser\\\"), msg.sender);\\n    }\\n\\n    function paused() public view virtual returns (bool) {\\n        return _paused;\\n    }\\n\\n    modifier whenNotPaused() virtual {\\n        require(!paused(), \\\"Pausable: paused\\\");\\n        _;\\n    }\\n\\n    modifier whenPaused() {\\n        require(paused(), \\\"Pausable: not paused\\\");\\n        _;\\n    }\\n\\n    function pause() public whenNotPaused onlyRole(\\\"pauser\\\") {\\n        _paused = true;\\n        emit Paused(msg.sender);\\n    }\\n\\n    function unpause() public whenPaused onlyRole(\\\"pauser\\\") {\\n        _paused = false;\\n        emit Unpaused(msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x09830075c06c05d623c2db6ce3f84b495181ab439043cdaab714060b9fc23f5a\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610fb6806100206000396000f3fe608060405234801561001057600080fd5b50600436106101165760003560e01c80638456cb59116100a2578063d366f3b911610071578063d366f3b91461021c578063d547741f1461022f578063ed53be2914610242578063ef693bed14610255578063f2fde38b1461026857610116565b80638456cb59146101e657806391d14854146101ee578063a217fddf14610201578063a6d5f1031461020957610116565b80633b4da69f116100e95780633b4da69f1461017c5780633f4ba83a1461018f5780634ef0d4971461019757806356397c351461019f5780635c975abb146101cf57610116565b8063213681aa1461011b578063248a9ca3146101305780632f2ff15d1461015657806336568abe14610169575b600080fd5b61012e610129366004610dd0565b61027b565b005b61014361013e366004610e54565b6103a3565b6040519081526020015b60405180910390f35b61012e610164366004610e6c565b6103bc565b61012e610177366004610e6c565b6103de565b61012e61018a366004610e0b565b610461565b61012e61056f565b61012e61060d565b6002546101b79061010090046001600160a01b031681565b6040516001600160a01b03909116815260200161014d565b60025460ff165b604051901515815260200161014d565b61012e61068b565b6101d66101fc366004610e6c565b6106ff565b610143600081565b6003546101b7906001600160a01b031681565b61012e61022a366004610e6c565b61072a565b61012e61023d366004610e6c565b610819565b61012e610250366004610dd0565b610836565b61012e610263366004610e0b565b610922565b61012e610276366004610daf565b6109fc565b61028d6430b236b4b760d91b33610a32565b60025461010090046001600160a01b0316632db8083030846102b0856001610f33565b6102c6906b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016102e493929190610e97565b600060405180830381600087803b1580156102fe57600080fd5b505af1158015610312573d6000803e3d6000fd5b5050600354604051632770a7eb60e21b81526001600160a01b038781166004830152602482018690529091169250639dc29fac91506044015b602060405180830381600087803b15801561036557600080fd5b505af1158015610379573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061039d9190610e34565b50505050565b600081815260016020819052604090912001545b919050565b6103c5826103a3565b6103cf8133610a32565b6103d98383610a96565b505050565b6001600160a01b03811633146104535760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61045d8282610b01565b5050565b60025461010090046001600160a01b0316632db808303084610484856001610f33565b61049a906b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016104b893929190610e97565b600060405180830381600087803b1580156104d257600080fd5b505af11580156104e6573d6000803e3d6000fd5b5050600354604051632770a7eb60e21b8152336004820152602481018590526001600160a01b039091169250639dc29fac91506044015b602060405180830381600087803b15801561053757600080fd5b505af115801561054b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d99190610e34565b60025460ff166105b85760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015260640161044a565b653830bab9b2b960d11b6105cc8133610a32565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600054610100900460ff16806106225750303b155b80610630575060005460ff16155b61064c5760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff1615801561066e576000805461ffff19166101011790555b610676610b68565b8015610688576000805461ff00191690555b50565b60025460ff16156106ae5760405162461bcd60e51b815260040161044a90610ebb565b653830bab9b2b960d11b6106c28133610a32565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610602565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b61073c6430b236b4b760d91b33610a32565b60025460ff161561075f5760405162461bcd60e51b815260040161044a90610ebb565b81653632b233b2b960d11b14156107955760028054610100600160a81b0319166101006001600160a01b0384160217905561045d565b81621adcd960ea1b14156107c357600380546001600160a01b0319166001600160a01b03831617905561045d565b60405162461bcd60e51b815260206004820152602560248201527f4b5344476174657761793a3a636f6e6669673a756e7265636f676e697a65642d604482015264706172616d60d81b606482015260840161044a565b610822826103a3565b61082c8133610a32565b6103d98383610b01565b60025460ff16156108595760405162461bcd60e51b815260040161044a90610ebb565b61086b6430b236b4b760d91b33610a32565b60025461010090046001600160a01b0316632db808308430610899856b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016108b793929190610e97565b600060405180830381600087803b1580156108d157600080fd5b505af11580156108e5573d6000803e3d6000fd5b50506003546040516340c10f1960e01b81526001600160a01b0386811660048301526024820186905290911692506340c10f19915060440161034b565b60025460ff16156109455760405162461bcd60e51b815260040161044a90610ebb565b60025461010090046001600160a01b0316632db808303330610973856b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b815260040161099193929190610e97565b600060405180830381600087803b1580156109ab57600080fd5b505af11580156109bf573d6000803e3d6000fd5b50506003546040516340c10f1960e01b81526001600160a01b0386811660048301526024820186905290911692506340c10f19915060440161051d565b610a0e6437bbb732b960d91b33610a32565b610a206437bbb732b960d91b82610a96565b6106886437bbb732b960d91b33610b01565b610a3c82826106ff565b61045d5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b606482015260840161044a565b610aa082826106ff565b61045d5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610b0b82826106ff565b1561045d5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b7d5750303b155b80610b8b575060005460ff16155b610ba75760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610bc9576000805461ffff19166101011790555b610bd1610bff565b610bec653830bab9b2b960d11b6437bbb732b960d91b610c68565b610676653830bab9b2b960d11b33610cbd565b600054610100900460ff1680610c145750303b155b80610c22575060005460ff16155b610c3e5760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610c60576000805461ffff19166101011790555b610676610cc7565b6000610c73836103a3565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b61045d8282610a96565b600054610100900460ff1680610cdc5750303b155b80610cea575060005460ff16155b610d065760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610d28576000805461ffff19166101011790555b610d3a6437bbb732b960d91b33610cbd565b610d546430b236b4b760d91b6437bbb732b960d91b610c68565b610d716737b832b930ba37b960c11b6437bbb732b960d91b610c68565b610d836430b236b4b760d91b33610cbd565b6106766737b832b930ba37b960c11b33610cbd565b80356001600160a01b03811681146103b757600080fd5b600060208284031215610dc0578081fd5b610dc982610d98565b9392505050565b600080600060608486031215610de4578182fd5b610ded84610d98565b9250610dfb60208501610d98565b9150604084013590509250925092565b60008060408385031215610e1d578182fd5b610e2683610d98565b946020939093013593505050565b600060208284031215610e45578081fd5b81518015158114610dc9578182fd5b600060208284031215610e65578081fd5b5035919050565b60008060408385031215610e7e578182fd5b82359150610e8e60208401610d98565b90509250929050565b6001600160a01b039384168152919092166020820152604081019190915260600190565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60008219821115610f4657610f46610f6a565b500190565b6000816000190483118215151615610f6557610f65610f6a565b500290565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ceeb1eb7b942b7a42be37e8263c7664270adc2870577db808f1196f865250ff264736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101165760003560e01c80638456cb59116100a2578063d366f3b911610071578063d366f3b91461021c578063d547741f1461022f578063ed53be2914610242578063ef693bed14610255578063f2fde38b1461026857610116565b80638456cb59146101e657806391d14854146101ee578063a217fddf14610201578063a6d5f1031461020957610116565b80633b4da69f116100e95780633b4da69f1461017c5780633f4ba83a1461018f5780634ef0d4971461019757806356397c351461019f5780635c975abb146101cf57610116565b8063213681aa1461011b578063248a9ca3146101305780632f2ff15d1461015657806336568abe14610169575b600080fd5b61012e610129366004610dd0565b61027b565b005b61014361013e366004610e54565b6103a3565b6040519081526020015b60405180910390f35b61012e610164366004610e6c565b6103bc565b61012e610177366004610e6c565b6103de565b61012e61018a366004610e0b565b610461565b61012e61056f565b61012e61060d565b6002546101b79061010090046001600160a01b031681565b6040516001600160a01b03909116815260200161014d565b60025460ff165b604051901515815260200161014d565b61012e61068b565b6101d66101fc366004610e6c565b6106ff565b610143600081565b6003546101b7906001600160a01b031681565b61012e61022a366004610e6c565b61072a565b61012e61023d366004610e6c565b610819565b61012e610250366004610dd0565b610836565b61012e610263366004610e0b565b610922565b61012e610276366004610daf565b6109fc565b61028d6430b236b4b760d91b33610a32565b60025461010090046001600160a01b0316632db8083030846102b0856001610f33565b6102c6906b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016102e493929190610e97565b600060405180830381600087803b1580156102fe57600080fd5b505af1158015610312573d6000803e3d6000fd5b5050600354604051632770a7eb60e21b81526001600160a01b038781166004830152602482018690529091169250639dc29fac91506044015b602060405180830381600087803b15801561036557600080fd5b505af1158015610379573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061039d9190610e34565b50505050565b600081815260016020819052604090912001545b919050565b6103c5826103a3565b6103cf8133610a32565b6103d98383610a96565b505050565b6001600160a01b03811633146104535760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61045d8282610b01565b5050565b60025461010090046001600160a01b0316632db808303084610484856001610f33565b61049a906b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016104b893929190610e97565b600060405180830381600087803b1580156104d257600080fd5b505af11580156104e6573d6000803e3d6000fd5b5050600354604051632770a7eb60e21b8152336004820152602481018590526001600160a01b039091169250639dc29fac91506044015b602060405180830381600087803b15801561053757600080fd5b505af115801561054b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d99190610e34565b60025460ff166105b85760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015260640161044a565b653830bab9b2b960d11b6105cc8133610a32565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600054610100900460ff16806106225750303b155b80610630575060005460ff16155b61064c5760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff1615801561066e576000805461ffff19166101011790555b610676610b68565b8015610688576000805461ff00191690555b50565b60025460ff16156106ae5760405162461bcd60e51b815260040161044a90610ebb565b653830bab9b2b960d11b6106c28133610a32565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610602565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b61073c6430b236b4b760d91b33610a32565b60025460ff161561075f5760405162461bcd60e51b815260040161044a90610ebb565b81653632b233b2b960d11b14156107955760028054610100600160a81b0319166101006001600160a01b0384160217905561045d565b81621adcd960ea1b14156107c357600380546001600160a01b0319166001600160a01b03831617905561045d565b60405162461bcd60e51b815260206004820152602560248201527f4b5344476174657761793a3a636f6e6669673a756e7265636f676e697a65642d604482015264706172616d60d81b606482015260840161044a565b610822826103a3565b61082c8133610a32565b6103d98383610b01565b60025460ff16156108595760405162461bcd60e51b815260040161044a90610ebb565b61086b6430b236b4b760d91b33610a32565b60025461010090046001600160a01b0316632db808308430610899856b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b81526004016108b793929190610e97565b600060405180830381600087803b1580156108d157600080fd5b505af11580156108e5573d6000803e3d6000fd5b50506003546040516340c10f1960e01b81526001600160a01b0386811660048301526024820186905290911692506340c10f19915060440161034b565b60025460ff16156109455760405162461bcd60e51b815260040161044a90610ebb565b60025461010090046001600160a01b0316632db808303330610973856b033b2e3c9fd0803ce8000000610f4b565b6040518463ffffffff1660e01b815260040161099193929190610e97565b600060405180830381600087803b1580156109ab57600080fd5b505af11580156109bf573d6000803e3d6000fd5b50506003546040516340c10f1960e01b81526001600160a01b0386811660048301526024820186905290911692506340c10f19915060440161051d565b610a0e6437bbb732b960d91b33610a32565b610a206437bbb732b960d91b82610a96565b6106886437bbb732b960d91b33610b01565b610a3c82826106ff565b61045d5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b606482015260840161044a565b610aa082826106ff565b61045d5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610b0b82826106ff565b1561045d5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b7d5750303b155b80610b8b575060005460ff16155b610ba75760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610bc9576000805461ffff19166101011790555b610bd1610bff565b610bec653830bab9b2b960d11b6437bbb732b960d91b610c68565b610676653830bab9b2b960d11b33610cbd565b600054610100900460ff1680610c145750303b155b80610c22575060005460ff16155b610c3e5760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610c60576000805461ffff19166101011790555b610676610cc7565b6000610c73836103a3565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b61045d8282610a96565b600054610100900460ff1680610cdc5750303b155b80610cea575060005460ff16155b610d065760405162461bcd60e51b815260040161044a90610ee5565b600054610100900460ff16158015610d28576000805461ffff19166101011790555b610d3a6437bbb732b960d91b33610cbd565b610d546430b236b4b760d91b6437bbb732b960d91b610c68565b610d716737b832b930ba37b960c11b6437bbb732b960d91b610c68565b610d836430b236b4b760d91b33610cbd565b6106766737b832b930ba37b960c11b33610cbd565b80356001600160a01b03811681146103b757600080fd5b600060208284031215610dc0578081fd5b610dc982610d98565b9392505050565b600080600060608486031215610de4578182fd5b610ded84610d98565b9250610dfb60208501610d98565b9150604084013590509250925092565b60008060408385031215610e1d578182fd5b610e2683610d98565b946020939093013593505050565b600060208284031215610e45578081fd5b81518015158114610dc9578182fd5b600060208284031215610e65578081fd5b5035919050565b60008060408385031215610e7e578182fd5b82359150610e8e60208401610d98565b90509250929050565b6001600160a01b039384168152919092166020820152604081019190915260600190565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60008219821115610f4657610f46610f6a565b500190565b6000816000190483118215151615610f6557610f65610f6a565b500290565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ceeb1eb7b942b7a42be37e8263c7664270adc2870577db808f1196f865250ff264736f6c63430008030033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "exit(address,uint256)": {
+        "params": {
+          "usr": "Who issues ksd.",
+          "wad": "Amount of ksd token."
+        }
+      },
+      "exitFrom(address,address,uint256)": {
+        "details": "Acting on behalf (Transaction through ksd owner)",
+        "params": {
+          "ksdOwner": "Someone who will provide ksd from ledger to issue ksd.",
+          "usr": "Who issues ksd.",
+          "wad": "Amount of ksd token."
+        }
+      },
+      "join(address,uint256)": {
+        "params": {
+          "usr": "Target receiving ksd from ledger.",
+          "wad": "Amount of ksd token."
+        }
+      },
+      "joinFrom(address,address,uint256)": {
+        "details": "Acting on behalf.",
+        "params": {
+          "ksdOwner": "The owner of the ksd to burn.",
+          "usr": "Target receiving ksd from ledger.",
+          "wad": "Amount of ksd token."
+        }
+      }
+    },
+    "title": "KSD input/output contract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "config(bytes32,address)": {
+        "notice": "Initialize interface variable."
+      },
+      "exit(address,uint256)": {
+        "notice": "Ksd mint & borrow ksd (loan)"
+      },
+      "exitFrom(address,address,uint256)": {
+        "notice": "Ksd mint & borrow ksd (loan)"
+      },
+      "join(address,uint256)": {
+        "notice": "Ksd redemption & ksd burn"
+      },
+      "joinFrom(address,address,uint256)": {
+        "notice": "Ksd redemption & ksd burn."
+      }
+    },
+    "notice": "A collection of functions related to KSD move",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 23220,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23223,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 20166,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)"
+      },
+      {
+        "astId": 20556,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "_paused",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      },
+      {
+        "astId": 15945,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "ledger",
+        "offset": 1,
+        "slot": "2",
+        "type": "t_contract(ILedger)8804"
+      },
+      {
+        "astId": 15948,
+        "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+        "label": "ksd",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_contract(IKIP7Extended)9928"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IKIP7Extended)9928": {
+        "encoding": "inplace",
+        "label": "contract IKIP7Extended",
+        "numberOfBytes": "20"
+      },
+      "t_contract(ILedger)8804": {
+        "encoding": "inplace",
+        "label": "contract ILedger",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)20161_storage"
+      },
+      "t_struct(RoleData)20161_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 20158,
+            "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 20160,
+            "contract": "contracts/lending/KSDGatway.sol:KSDGateway",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      }
+    }
+  }
+}

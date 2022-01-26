@@ -1,0 +1,1381 @@
+{
+  "address": "0x642D0e87d820dBb1D605cE8770C7EE58c90b0B5B",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimReward",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "Deposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "LogInit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "lpToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogPoolAddition",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetPool",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lastRewardTimestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpSupply",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "accRewardPerShare",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdatePool",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "Withdraw",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "kokoa_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "rewardTokenVesting_",
+          "type": "address"
+        }
+      ],
+      "name": "__KokoaRewardManager_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "accRewardPrecision",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "add",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "claimReward",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimRewardAll",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        }
+      ],
+      "name": "claimRewardAllByOther",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        }
+      ],
+      "name": "claimRewardAndStake",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimRewardAndStakeAll",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        }
+      ],
+      "name": "claimRewardAndStakeByOther",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        }
+      ],
+      "name": "claimRewardByOther",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "bonus",
+          "type": "bool"
+        }
+      ],
+      "name": "claimableReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimable",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "incinerator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "kokoa",
+      "outputs": [
+        {
+          "internalType": "contract IKIP7",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "pools",
+          "type": "address[]"
+        }
+      ],
+      "name": "massUpdatePools",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "amount",
+          "type": "int256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onChanged",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onDeposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "poolInfo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "accRewardPerShare",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastRewardTimestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "init",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "poolLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pop",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "rewardPool",
+      "outputs": [
+        {
+          "internalType": "contract IRewardPool",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardPools",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "pools",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardTokenVesting",
+      "outputs": [
+        {
+          "internalType": "contract ITokenVesting",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "skokoa",
+      "outputs": [
+        {
+          "internalType": "contract IStakingPool",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAllocPoint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        }
+      ],
+      "name": "updatePool",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "userInfo",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "rewardDebt",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimedReward",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa32d6768ee63939f2078568eedb3c313227697a030d1411091ffc1e5923ccc98",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0x642D0e87d820dBb1D605cE8770C7EE58c90b0B5B",
+    "transactionIndex": 14,
+    "gasUsed": "3258991",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x923e80a0abcfafa7ef1136b4678be4b04745b7cc294b7bf66779d5bbde223d02",
+    "transactionHash": "0xa32d6768ee63939f2078568eedb3c313227697a030d1411091ffc1e5923ccc98",
+    "logs": [],
+    "blockNumber": 80597065,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "2970c11c048d41724b49e0b344470d88",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"ClaimReward\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"LogInit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"pid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"allocPoint\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"lpToken\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"LogPoolAddition\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"allocPoint\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"LogSetPool\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lastRewardTimestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSupply\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"accRewardPerShare\",\"type\":\"uint256\"}],\"name\":\"LogUpdatePool\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"kokoa_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTokenVesting_\",\"type\":\"address\"}],\"name\":\"__KokoaRewardManager_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"accRewardPrecision\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"allocPoint\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"claimReward\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimRewardAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"}],\"name\":\"claimRewardAllByOther\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"}],\"name\":\"claimRewardAndStake\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimRewardAndStakeAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"}],\"name\":\"claimRewardAndStakeByOther\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"}],\"name\":\"claimRewardByOther\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"bonus\",\"type\":\"bool\"}],\"name\":\"claimableReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"claimable\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"incinerator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"kokoa\",\"outputs\":[{\"internalType\":\"contract IKIP7\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"pools\",\"type\":\"address[]\"}],\"name\":\"massUpdatePools\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"amount\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onChanged\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onDeposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"poolInfo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"accRewardPerShare\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastRewardTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"allocPoint\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"init\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"poolLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pop\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"rewardPool\",\"outputs\":[{\"internalType\":\"contract IRewardPool\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPools\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"pools\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardTokenVesting\",\"outputs\":[{\"internalType\":\"contract ITokenVesting\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"allocPoint\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"skokoa\",\"outputs\":[{\"internalType\":\"contract IStakingPool\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalAllocPoint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"}],\"name\":\"updatePool\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userInfo\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"rewardDebt\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"claimedReward\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"It manages all kokoa rewards. Its base code is from sushiswap. Therefore, the way to distribute reward is very similar to sushiswap. The main difference between sushiswap and KokoaRewardManager lies in staking. Sushiswap forces to stake token, but KokoaRewardManager does not own token. It just expect registered pool to call onDeposit/onWithdraw/onChanged, and get balance and totalSupply of pool to calculate how to distribute reward. Additionally, unlike SushiSwap where SUSHI tokens for liquidity mining are generated blockwise, Kokoa Reward Manager mints the Kokoa tokens for reward in advance, and distributes them according to the vesting logic\",\"kind\":\"dev\",\"methods\":{\"add(uint256,address,uint256)\":{\"details\":\"it should be called by the governance (initially, admin EOA).\",\"params\":{\"pool\":\"address of pool to register\"}},\"claimReward(address,address)\":{\"params\":{\"pool\":\"address of pool\",\"to\":\"receiver address of kokoa reward\"}},\"claimableReward(address,address,bool)\":{\"params\":{\"bonus\":\"calculate fee\",\"pool\":\"address of a reward pool\",\"usr\":\"address of user\"}},\"massUpdatePools(address[])\":{\"params\":{\"pools\":\"address list of pools to update\"}},\"onChanged(int256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool (eng)Only Reward Pools should be able to call this function\",\"params\":{\"amount\":\"amount changed\",\"to\":\"address of user\"}},\"onDeposit(uint256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool (eng)Only Reward Pools should be able to call this function\",\"params\":{\"amount\":\"amount increased\",\"to\":\"address of user\"}},\"onWithdraw(uint256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool (eng)Only Reward Pools should be able to call this function\",\"params\":{\"amount\":\"amount decreased\",\"to\":\"address of user\"}},\"set(address,uint256,uint256)\":{\"details\":\"it should be called by the governance (initially, admin EOA).\",\"params\":{\"allocPoint\":\"a weight parameter for Kokoa distribution\",\"pool\":\"address of pool to register\"}},\"updatePool(address)\":{\"details\":\"\\ub0b4\\ubd80\\uc801\\uc73c\\ub85c _updatePool\\uc774 \\ubd88\\ub9ac\\ub294\\ub370, \\uc774 \\ud568\\uc218\\ub294 \\uc720\\uc800\\uac00 \\ud480\\uc5d0 staking \\uc591\\uc774 \\ubcc0\\ud654\\ud558\\uac70\\ub098, reward\\ub97c claim\\ud558\\uae30 \\uc804\\uc5d0 \\ud56d\\uc0c1 \\ubd88\\ub9b0\\ub2e4 \\ub530\\ub77c\\uc11c \\uc774 \\ud568\\uc218\\ub97c \\ubc16\\uc5d0\\uc11c \\uba85\\uc2dc\\uc801\\uc73c\\ub85c \\ubd88\\ub9b4 \\uc77c\\uc740 \\uac70\\uc758 \\uc5c6\\uc744 \\uac83\\uc774\\ub2e4. \\uc77c\\ub2e8 sushiswap \\uc5d0\\uc11c \\uad6c\\ud604\\ud588\\uae30 \\ub54c\\ubb38\\uc5d0 \\uac00\\uc838\\uc654\\ub2e4. (eng)It calls _updatePool function.       _updatePool is a function that should be called before whenever a user's stake is changed or one claims reward       So updatePool will not be called in any other circumstances, but we still implemented this part because it's in SushiSwap code\",\"params\":{\"pool\":\"address of pool to update\"}}},\"title\":\"A manager for distributing kokoa reward.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"accRewardPrecision()\":{\"notice\":\"reward \\ubd84\\ubc30\\uc591\\uc744 \\uacc4\\uc0b0\\ud560 \\ub54c \\ub098\\ub217\\uc148\\uc744 \\ud558\\ub294\\ub370, \\uc774\\ub54c \\uc5bc\\ub9c8\\ub9cc\\ud07c\\uc758 \\uc720\\ud6a8\\uc22b\\uc790\\ub85c \\ub098\\ub217\\uc148\\uc744 \\ud560 \\uac83\\uc778\\uc9c0 \\uacb0\\uc815\\ud55c\\ub2e4.\"},\"claimReward(address,address)\":{\"notice\":\"\\uc720\\uc800\\uac00 \\ubd84\\ubc30\\ubc1b\\uc740 kokoa reward\\ub97c claim \\ud558\\ub294 function\"},\"claimableReward(address,address,bool)\":{\"notice\":\"returns amount of Kokoa reward a user is able to claim from a pool (i.e., 'claimable' reward)\"},\"massUpdatePools(address[])\":{\"notice\":\"\\uc5ec\\ub7ec \\ud480\\ub4e4\\uc5d0 \\ub300\\ud574\\uc11c updatePool\\uc744 \\uc2dc\\ucf1c\\uc900\\ub2e4. (eng)Do updatePool for multiple pools\"},\"onChanged(int256,address)\":{\"notice\":\"onDeposit\\uacfc onWithdraw\\uc758 wrapperA wrapper function for onDeposit and onWithdraw\"},\"onDeposit(uint256,address)\":{\"notice\":\"\\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.When the amount a user staked in a pool is increased, this function should be called in order to keep track of the reward\"},\"onWithdraw(uint256,address)\":{\"notice\":\"\\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.When the amount a user staked in a pool is decreased, this function should be called in order to keep track of the reward\"},\"poolInfo(address)\":{\"notice\":\"pool info\"},\"poolLength()\":{\"notice\":\"number of registered pools\"},\"rewardPool(uint256)\":{\"notice\":\"registered pool\"},\"rewardPools()\":{\"notice\":\"all registered pools\"},\"set(address,uint256,uint256)\":{\"notice\":\"\\ub4f1\\ub85d\\ub41c \\ud480\\uc774 \\ubc1b\\ub294 kokoa reward\\uc758 \\ube44\\uc728\\uc744 \\uc870\\uc808\\ud55c\\ub2e4.Adjust the reward ratio of the selected pool\"},\"totalAllocPoint()\":{\"notice\":\"total allocation point\"},\"updatePool(address)\":{\"notice\":\"\\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ub420 reward \\uc591\\uc744 \\uc5c5\\ub370\\uc774\\ud2b8 \\uc2dc\\ud0a8\\ub2e4.Update the amount of reward of a pool that should be distributed to its users\"},\"userInfo(address,address)\":{\"notice\":\"user info.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/reward/KokoaRewardManager.sol\":\"KokoaRewardManager\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interface/IKokoaRewardManager.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./IRewardPool.sol\\\";\\n\\n/// @title A manager about kokoa rewards.\\n/// @dev It manages all kokoa rewards. It's base code is from sushiswap.\\n/// Therefore, the way to distribute reward is very similar to sushiswap.\\n/// The main difference between sushiswap and KokoaRewardManager is staking.\\n/// Sushiswap forces to stake token, but KokoaRewardManager does not own token.\\n/// It just expect registered pool to call onDeposit/onWithdraw/onChanged, and\\n/// get balance and totalSupply of pool to calculate how to distribute reward.\\n/// \\ub610\\ud55c, \\uae30\\uc874 sushiswap \\uc5d0\\uc11c\\ub294 \\ube14\\ub85d\\ub2f9 minting\\uc774 \\ub418\\uc5b4 \\ub9ac\\uc6cc\\ub4dc\\ub97c \\uc0dd\\uc0b0\\ud588\\uc9c0\\ub9cc,\\n/// \\uc774 \\ubcc0\\ud615\\ub41c \\ucf54\\ub4dc\\uc5d0\\uc11c\\ub294 vesting \\ub85c\\uc9c1\\uc5d0 \\ub530\\ub77c\\uc11c vesting\\ub41c \\uc591\\uc744 \\ub4f1\\ub85d\\ub41c \\ud480\\uc5d0\\uac8c \\ubd84\\ubc30\\ud55c\\ub2e4.\\ninterface IKokoaRewardManager {\\n    struct PoolInfo {\\n        uint256 accRewardPerShare;\\n        uint256 lastRewardTimestamp;\\n        uint256 allocPoint;\\n        bool init;\\n        uint256 fee;\\n    }\\n\\n    struct UserInfo {\\n        int256 rewardDebt;\\n        uint256 claimedReward; // it is used in referral contract.\\n    }\\n\\n    /// @notice count of registered pools\\n    function poolLength() external view returns (uint256);\\n\\n    /// @notice user info.\\n    function userInfo(address, address) external view returns (int256, uint256);\\n\\n    /// @notice registered pool\\n    function rewardPool(uint256 index) external view returns (IRewardPool);\\n\\n    /// @notice all registered pools\\n    function rewardPools() external view returns (address[] memory);\\n\\n    /// @notice pool info\\n    function poolInfo(address pool)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            bool,\\n            uint256\\n        );\\n\\n    /// @notice total allocation point\\n    function totalAllocPoint() external view returns (uint256);\\n\\n    /// @notice add pool to kokoaRewardManager\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @param pool address of pool to register\\n    /// @dev \\uc774 \\ud568\\uc218\\ub294 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function add(\\n        uint256 allocPoint,\\n        address pool,\\n        uint256 fee\\n    ) external;\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c \\ud480\\uc774 \\ubc1b\\ub294 kokoa reward\\uc758 \\ube44\\uc728\\uc744 \\uc870\\uc808\\ud55c\\ub2e4.\\n    /// @param pool address of pool to register\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @dev \\uc774 \\ud568\\uc218\\ub294 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function set(\\n        address pool,\\n        uint256 allocPoint,\\n        uint256 fee\\n    ) external;\\n\\n    /// @notice amount of kokoa reward to distribute, but not claimed yet\\n    /// @param pool address of pool\\n    /// @param usr address of user who is distributed kokoa reward\\n    function claimableReward(\\n        address pool,\\n        address usr,\\n        bool bonus\\n    ) external view returns (uint256 pending);\\n\\n    /// @notice \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ub420 reward \\uc591\\uc744 \\uc5c5\\ub370\\uc774\\ud2b8 \\uc2dc\\ud0a8\\ub2e4.\\n    /// @param pool address of pool to update\\n    /// @dev \\ub0b4\\ubd80\\uc801\\uc73c\\ub85c _updatePool\\uc774 \\ubd88\\ub9ac\\ub294\\ub370, \\uc774 \\ud568\\uc218\\ub294 \\uc720\\uc800\\uac00 \\ud480\\uc5d0 staking \\uc591\\uc774 \\ubcc0\\ud654\\ud558\\uac70\\ub098, reward\\ub97c claim\\ud558\\uae30 \\uc804\\uc5d0 \\ud56d\\uc0c1 \\ubd88\\ub9b0\\ub2e4\\n    /// \\ub530\\ub77c\\uc11c \\uc774 \\ud568\\uc218\\ub97c \\ubc16\\uc5d0\\uc11c \\uba85\\uc2dc\\uc801\\uc73c\\ub85c \\ubd88\\ub9b4 \\uc77c\\uc740 \\uac70\\uc758 \\uc5c6\\uc744 \\uac83\\uc774\\ub2e4. \\uc77c\\ub2e8 sushiswap \\uc5d0\\uc11c \\uad6c\\ud604\\ud588\\uae30 \\ub54c\\ubb38\\uc5d0 \\uac00\\uc838\\uc654\\ub2e4.\\n    function updatePool(address pool) external;\\n\\n    /// @notice \\uc5ec\\ub7ec \\ud480\\ub4e4\\uc5d0 \\ub300\\ud574\\uc11c updatePool\\uc744 \\uc2dc\\ucf1c\\uc900\\ub2e4.\\n    /// @param pools address list of pools to update\\n    function massUpdatePools(address[] calldata pools) external;\\n\\n    /// @notice reward \\ubd84\\ubc30\\uc591\\uc744 \\uacc4\\uc0b0\\ud560 \\ub54c \\ub098\\ub217\\uc148\\uc744 \\ud558\\ub294\\ub370, \\uc774\\ub54c \\uc5bc\\ub9c8\\ub9cc\\ud07c\\uc758 \\uc720\\ud6a8\\uc22b\\uc790\\ub85c \\ub098\\ub217\\uc148\\uc744 \\ud560 \\uac83\\uc778\\uc9c0 \\uacb0\\uc815\\ud55c\\ub2e4.\\n    function accRewardPrecision() external pure returns (uint256);\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onDeposit(uint256 amount, address to) external;\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onWithdraw(uint256 amount, address to) external;\\n\\n    /// @notice onDeposit\\uacfc onWithdraw\\uc758 wrapper\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onChanged(int256 amount, address to) external;\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ubd84\\ubc30\\ubc1b\\uc740 kokoa reward\\ub97c claim \\ud558\\ub294 function\\n    /// @param pool address of pool\\n    /// @param to receiver address of kokoa reward\\n    function claimReward(address pool, address to) external returns (bool success);\\n\\n    function claimRewardAll() external returns (bool success);\\n\\n    function claimRewardByOther(address pool, address usr) external returns (bool success);\\n\\n    function claimRewardAllByOther(address usr) external returns (bool success);\\n\\n    function claimRewardAndStake(address pool) external returns (bool success);\\n\\n    function claimRewardAndStakeByOther(address pool, address usr) external returns (bool success);\\n\\n    function claimRewardAndStakeAll() external returns (bool success);\\n\\n    // --- Event ---\\n\\n    event Deposit(address indexed pool, uint256 amount, address indexed to);\\n    event Withdraw(address indexed pool, uint256 amount, address indexed to);\\n    event ClaimReward(address indexed pool, address indexed user, uint256 amount);\\n    event LogPoolAddition(uint256 indexed pid, uint256 allocPoint, address indexed lpToken, uint256 fee);\\n    event LogSetPool(address indexed pool, uint256 allocPoint, uint256 fee);\\n    event LogUpdatePool(address indexed pool, uint256 lastRewardTimestamp, uint256 lpSupply, uint256 accRewardPerShare);\\n    event LogInit();\\n}\\n\",\"keccak256\":\"0xf5fd39c90207f92e54dfface789fc8b9949c7fe270da35c57c503163db521e65\",\"license\":\"MIT\"},\"contracts/interface/IRewardPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IRewardPool {\\n    function balanceOf(address usr) external view returns (uint256 balance);\\n\\n    function totalSupply() external view returns (uint256 amount);\\n}\\n\",\"keccak256\":\"0xeee82cf1d159c402ad5a1994821948516e692dcb5c20ae6235e5686ffea8b47d\",\"license\":\"MIT\"},\"contracts/interface/IStakingPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./IRewardPool.sol\\\";\\nimport \\\"./kip/IKIP7.sol\\\";\\n\\n/// @title A token staking pool.\\n/// @dev KokoaRewardManager gives reward user who stakes token to this pool.\\ninterface IStakingPool is IRewardPool {\\n    event Stake(address indexed from, address indexed to, uint256 amount);\\n    event Unstake(address indexed from, address indexed to, uint256 amount);\\n\\n    function token() external view returns (IKIP7);\\n\\n    /// @notice stake token\\n    function stake(address to, uint256 amount) external;\\n\\n    /// @notice unstake token\\n    function unstake(address to, uint256 amount) external;\\n}\\n\",\"keccak256\":\"0xad13533bf43060acf2c6341c1a4ea798ebd008aa6a40dbe1b729edd683eb9ee0\",\"license\":\"MIT\"},\"contracts/interface/ITokenVesting.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\n/**\\n * @title RewardTokenVesting\\n * @dev A token holder contract that can release its token balance to RewardManager contract.\\n */\\ninterface ITokenVesting {\\n    event TokensReleased(uint256 amount);\\n\\n    /**\\n     * @return address of token contract.\\n     */\\n    function token() external view returns (address);\\n\\n    /**\\n     * @return address of rewardManger who receives token.\\n     */\\n    function beneficiary() external view returns (address);\\n\\n    /**\\n     * @return the start time of the token vesting.\\n     */\\n    function totalBalance() external view returns (uint256);\\n\\n    /**\\n     * @return the start time of the token vesting.\\n     */\\n    function start() external view returns (uint256);\\n\\n    /**\\n     * @return the duration of the token vesting.\\n     */\\n    function duration() external pure returns (uint256);\\n\\n    /**\\n     * @return the amount of the token released.\\n     */\\n    function released() external view returns (uint256);\\n\\n    /**\\n     * @return the amount of the token released.\\n     */\\n    function releasableAmount() external view returns (uint256);\\n\\n    /**\\n     * @notice Transfers vested tokens to rewardManager.\\n     */\\n    function release() external;\\n\\n    /**\\n     * @param from block timestamp\\n     * @param to block timestamp\\n     * @return the amount of the token release amount between `from` and `to`.\\n     */\\n    function releaseAmount(uint256 from, uint256 to) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x2fe1baf6735ca83aaf955f2767d40a4d923e9201f06555ea03bc153207628912\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP13.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\ninterface IKIP13 {\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x651958b745058d476a41ab467d508d2fe6c131d83cdbe9dfe28b3893d32c48fd\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP13.sol\\\";\\n\\ninterface IKIP7 is IKIP13 {\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function safeTransfer(\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransfer(address recipient, uint256 amount) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external;\\n}\\n\",\"keccak256\":\"0x6fb8afaff38611db93f55c13447c08ea47e5392b895a75bf43999808176528e0\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/Pausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./AccessControl.sol\\\";\\n\\nabstract contract Pausable is AccessControl {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    bool private _paused;\\n\\n    function __Pausable_init() internal initializer {\\n        __AccessControl_init();\\n        _setRoleAdmin(bytes32(\\\"pauser\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"pauser\\\"), msg.sender);\\n    }\\n\\n    function paused() public view virtual returns (bool) {\\n        return _paused;\\n    }\\n\\n    modifier whenNotPaused() virtual {\\n        require(!paused(), \\\"Pausable: paused\\\");\\n        _;\\n    }\\n\\n    modifier whenPaused() {\\n        require(paused(), \\\"Pausable: not paused\\\");\\n        _;\\n    }\\n\\n    function pause() public whenNotPaused onlyRole(\\\"pauser\\\") {\\n        _paused = true;\\n        emit Paused(msg.sender);\\n    }\\n\\n    function unpause() public whenPaused onlyRole(\\\"pauser\\\") {\\n        _paused = false;\\n        emit Unpaused(msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x09830075c06c05d623c2db6ce3f84b495181ab439043cdaab714060b9fc23f5a\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/contracts/utils/SafeCast.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Wrappers over Solidity's uintXX/intXX casting operators with added overflow\\n * checks.\\n *\\n * Downcasting from uint256/int256 in Solidity does not revert on overflow. This can\\n * easily result in undesired exploitation or bugs, since developers usually\\n * assume that overflows raise errors. `SafeCast` restores this intuition by\\n * reverting the transaction when such an operation overflows.\\n *\\n * Using this library instead of the unchecked operations eliminates an entire\\n * class of bugs, so it's recommended to use it always.\\n *\\n * Can be combined with {SafeMath} and {SignedSafeMath} to extend it to smaller types, by performing\\n * all math on `uint256` and `int256` and then downcasting.\\n */\\nlibrary SafeCast {\\n    /**\\n     * @dev Returns the downcasted uint224 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint224).\\n     *\\n     * Counterpart to Solidity's `uint224` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 224 bits\\n     */\\n    function toUint224(uint256 value) internal pure returns (uint224) {\\n        require(value <= type(uint224).max, \\\"SafeCast: value doesn't fit in 224 bits\\\");\\n        return uint224(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint128 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint128).\\n     *\\n     * Counterpart to Solidity's `uint128` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 128 bits\\n     */\\n    function toUint128(uint256 value) internal pure returns (uint128) {\\n        require(value <= type(uint128).max, \\\"SafeCast: value doesn't fit in 128 bits\\\");\\n        return uint128(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint96 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint96).\\n     *\\n     * Counterpart to Solidity's `uint96` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 96 bits\\n     */\\n    function toUint96(uint256 value) internal pure returns (uint96) {\\n        require(value <= type(uint96).max, \\\"SafeCast: value doesn't fit in 96 bits\\\");\\n        return uint96(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint64 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint64).\\n     *\\n     * Counterpart to Solidity's `uint64` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 64 bits\\n     */\\n    function toUint64(uint256 value) internal pure returns (uint64) {\\n        require(value <= type(uint64).max, \\\"SafeCast: value doesn't fit in 64 bits\\\");\\n        return uint64(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint32 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint32).\\n     *\\n     * Counterpart to Solidity's `uint32` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 32 bits\\n     */\\n    function toUint32(uint256 value) internal pure returns (uint32) {\\n        require(value <= type(uint32).max, \\\"SafeCast: value doesn't fit in 32 bits\\\");\\n        return uint32(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint16 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint16).\\n     *\\n     * Counterpart to Solidity's `uint16` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 16 bits\\n     */\\n    function toUint16(uint256 value) internal pure returns (uint16) {\\n        require(value <= type(uint16).max, \\\"SafeCast: value doesn't fit in 16 bits\\\");\\n        return uint16(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint8 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint8).\\n     *\\n     * Counterpart to Solidity's `uint8` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 8 bits.\\n     */\\n    function toUint8(uint256 value) internal pure returns (uint8) {\\n        require(value <= type(uint8).max, \\\"SafeCast: value doesn't fit in 8 bits\\\");\\n        return uint8(value);\\n    }\\n\\n    /**\\n     * @dev Converts a signed int256 into an unsigned uint256.\\n     *\\n     * Requirements:\\n     *\\n     * - input must be greater than or equal to 0.\\n     */\\n    function toUint256(int256 value) internal pure returns (uint256) {\\n        require(value >= 0, \\\"SafeCast: value must be positive\\\");\\n        return uint256(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int128 from int256, reverting on\\n     * overflow (when the input is less than smallest int128 or\\n     * greater than largest int128).\\n     *\\n     * Counterpart to Solidity's `int128` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 128 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt128(int256 value) internal pure returns (int128) {\\n        require(value >= type(int128).min && value <= type(int128).max, \\\"SafeCast: value doesn't fit in 128 bits\\\");\\n        return int128(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int64 from int256, reverting on\\n     * overflow (when the input is less than smallest int64 or\\n     * greater than largest int64).\\n     *\\n     * Counterpart to Solidity's `int64` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 64 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt64(int256 value) internal pure returns (int64) {\\n        require(value >= type(int64).min && value <= type(int64).max, \\\"SafeCast: value doesn't fit in 64 bits\\\");\\n        return int64(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int32 from int256, reverting on\\n     * overflow (when the input is less than smallest int32 or\\n     * greater than largest int32).\\n     *\\n     * Counterpart to Solidity's `int32` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 32 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt32(int256 value) internal pure returns (int32) {\\n        require(value >= type(int32).min && value <= type(int32).max, \\\"SafeCast: value doesn't fit in 32 bits\\\");\\n        return int32(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int16 from int256, reverting on\\n     * overflow (when the input is less than smallest int16 or\\n     * greater than largest int16).\\n     *\\n     * Counterpart to Solidity's `int16` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 16 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt16(int256 value) internal pure returns (int16) {\\n        require(value >= type(int16).min && value <= type(int16).max, \\\"SafeCast: value doesn't fit in 16 bits\\\");\\n        return int16(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int8 from int256, reverting on\\n     * overflow (when the input is less than smallest int8 or\\n     * greater than largest int8).\\n     *\\n     * Counterpart to Solidity's `int8` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 8 bits.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt8(int256 value) internal pure returns (int8) {\\n        require(value >= type(int8).min && value <= type(int8).max, \\\"SafeCast: value doesn't fit in 8 bits\\\");\\n        return int8(value);\\n    }\\n\\n    /**\\n     * @dev Converts an unsigned uint256 into a signed int256.\\n     *\\n     * Requirements:\\n     *\\n     * - input must be less than or equal to maxInt256.\\n     */\\n    function toInt256(uint256 value) internal pure returns (int256) {\\n        // Note: Unsafe cast below is okay because `type(int256).max` is guaranteed to be positive\\n        require(value <= uint256(type(int256).max), \\\"SafeCast: value doesn't fit in an int256\\\");\\n        return int256(value);\\n    }\\n}\\n\",\"keccak256\":\"0x08d867b4c0bb782b9135691fa732b6846e0f133006489c3aa505abd1f6de56cb\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"},\"contracts/reward/KokoaRewardManager.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\npragma experimental ABIEncoderV2;\\n\\nimport \\\"../library/openzeppelin/contracts/utils/SafeCast.sol\\\";\\nimport \\\"../interface/IKokoaRewardManager.sol\\\";\\nimport \\\"../interface/IRewardPool.sol\\\";\\nimport \\\"../interface/ITokenVesting.sol\\\";\\nimport \\\"../interface/IStakingPool.sol\\\";\\nimport \\\"../library/AccessControl.sol\\\";\\nimport \\\"../interface/kip/IKIP7.sol\\\";\\nimport \\\"../library/Pausable.sol\\\";\\n\\n/// @title A manager for distributing kokoa reward.\\n/// @dev It manages all kokoa rewards. Its base code is from sushiswap.\\n/// Therefore, the way to distribute reward is very similar to sushiswap.\\n/// The main difference between sushiswap and KokoaRewardManager lies in staking.\\n/// Sushiswap forces to stake token, but KokoaRewardManager does not own token.\\n/// It just expect registered pool to call onDeposit/onWithdraw/onChanged, and\\n/// get balance and totalSupply of pool to calculate how to distribute reward.\\n/// Additionally, unlike SushiSwap where SUSHI tokens for liquidity mining are generated blockwise,\\n/// Kokoa Reward Manager mints the Kokoa tokens for reward in advance, and distributes them according to the vesting logic\\ncontract KokoaRewardManager is IKokoaRewardManager, AccessControl, Pausable {\\n    uint256 public constant version = 1;\\n\\n    IKIP7 public kokoa;\\n    ITokenVesting public rewardTokenVesting;\\n\\n    mapping(address => PoolInfo) public override poolInfo;\\n    IRewardPool[] public override rewardPool;\\n\\n    mapping(address => mapping(address => UserInfo)) public override userInfo;\\n    uint256 public override totalAllocPoint;\\n\\n    uint256 private constant ACC_REWARD_PRECISION = 1e12;\\n    IStakingPool public skokoa;\\n    address public incinerator;\\n\\n    modifier onlyRewardPool() {\\n        require(poolInfo[msg.sender].init, \\\"KokoaRewardManager::onlyRewardPool: invalid reward pool\\\");\\n        _;\\n    }\\n\\n    function __KokoaRewardManager_init(address kokoa_, address rewardTokenVesting_) public initializer {\\n        __Pausable_init();\\n        kokoa = IKIP7(kokoa_);\\n        rewardTokenVesting = ITokenVesting(rewardTokenVesting_);\\n    }\\n\\n    function config(bytes32 what, address data) external onlyAdmin whenNotPaused {\\n        if (what == \\\"skokoa\\\") {\\n            skokoa = IStakingPool(data);\\n        } else if (what == \\\"incinerator\\\") {\\n            incinerator = data;\\n        } else revert(\\\"KokoaRewardManager::config: unrecognized-param\\\");\\n    }\\n\\n    /// @notice number of registered pools\\n    function poolLength() external view override returns (uint256) {\\n        return rewardPool.length;\\n    }\\n\\n    /// @notice all registered pools\\n    function rewardPools() external view override returns (address[] memory pools) {\\n        pools = new address[](rewardPool.length);\\n        for (uint256 i = 0; i < rewardPool.length; i++) {\\n            pools[i] = address(rewardPool[i]);\\n        }\\n    }\\n\\n    /// @notice add pool to kokoaRewardManager\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @param allocPoint a weight parameter for Kokoa distribution\\n    ////               i.e., (allocPoint / totalAllocPoint) == ratio of tokens allocated to this specific pool.\\n    ////                if allocPoint = 3 and totalAllocPoint = 10, it means that 30% of the reward tokens should be allocated to that pool.\\n    /// @param pool address of pool to register\\n    /// @dev it should be called by the governance (initially, admin EOA).\\n    function add(\\n        uint256 allocPoint,\\n        address pool,\\n        uint256 fee\\n    ) external override onlyAdmin {\\n        require(!poolInfo[pool].init, \\\"KokoaRewardManager::add: pool is already added\\\");\\n        require(fee >= 0 && fee <= 10000, \\\"KokoaRewardManager::add: invalid fee ratio\\\");\\n        totalAllocPoint = totalAllocPoint + allocPoint;\\n        rewardPool.push(IRewardPool(pool));\\n\\n        poolInfo[pool] = PoolInfo({allocPoint: allocPoint, lastRewardTimestamp: block.timestamp, accRewardPerShare: 0, init: true, fee: fee});\\n        emit LogPoolAddition(rewardPool.length - 1, allocPoint, pool, fee);\\n    }\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c \\ud480\\uc774 \\ubc1b\\ub294 kokoa reward\\uc758 \\ube44\\uc728\\uc744 \\uc870\\uc808\\ud55c\\ub2e4.\\n    /// @notice Adjust the reward ratio of the selected pool\\n    /// @param pool address of pool to register\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @param allocPoint a weight parameter for Kokoa distribution\\n    /// @dev it should be called by the governance (initially, admin EOA).\\n    function set(\\n        address pool,\\n        uint256 allocPoint,\\n        uint256 fee\\n    ) external override onlyAdmin {\\n        require(poolInfo[pool].init, \\\"KokoaRewardManager::set: pool is not initialized\\\");\\n        require(fee >= 0 && fee <= 10000, \\\"KokoaRewardManager::add: invalid fee ratio\\\");\\n        totalAllocPoint = totalAllocPoint - poolInfo[pool].allocPoint + allocPoint;\\n        poolInfo[pool].allocPoint = allocPoint;\\n        poolInfo[pool].fee = fee;\\n        emit LogSetPool(pool, allocPoint, fee);\\n    }\\n\\n    function pop() external onlyAdmin {\\n        address pool = address(rewardPool[rewardPool.length-1]);\\n        require(poolInfo[pool].init, \\\"KokoaRewardManager::pop: pool is not initialized\\\");\\n        totalAllocPoint = totalAllocPoint - poolInfo[pool].allocPoint;\\n        uint256 length = rewardPool.length;\\n        rewardPool.pop();\\n        delete poolInfo[pool];\\n        require(rewardPool.length == length-1,'KokoaRewardManager::pop:pop failure');\\n    }\\n\\n    /// @notice returns amount of Kokoa reward a user is able to claim from a pool (i.e., 'claimable' reward)\\n    /// @param pool address of a reward pool\\n    /// @param usr address of user\\n    /// @param bonus calculate fee\\n    function claimableReward(\\n        address pool,\\n        address usr,\\n        bool bonus\\n    ) public view override whenNotPaused returns (uint256 claimable) {\\n        require(poolInfo[pool].init, \\\"KokoaRewardManager::claimableReward: pool is not initialized\\\");\\n        PoolInfo memory _poolInfo = poolInfo[pool];\\n        UserInfo storage user = userInfo[pool][usr];\\n        uint256 accRewardPerShare = _poolInfo.accRewardPerShare;\\n        uint256 tokenTotalSupply = IRewardPool(pool).totalSupply();\\n        if (block.timestamp > _poolInfo.lastRewardTimestamp && tokenTotalSupply != 0) {\\n            uint256 releasedReward = rewardTokenVesting.releaseAmount(_poolInfo.lastRewardTimestamp, block.timestamp);\\n            uint256 reward = (releasedReward * _poolInfo.allocPoint) / totalAllocPoint;\\n            accRewardPerShare = accRewardPerShare + ((reward * ACC_REWARD_PRECISION) / tokenTotalSupply);\\n        }\\n        uint256 userBalance = IRewardPool(pool).balanceOf(usr);\\n        claimable = SafeCast.toUint256(SafeCast.toInt256((userBalance * accRewardPerShare) / ACC_REWARD_PRECISION) - user.rewardDebt);\\n        if (!bonus) {\\n            claimable = (claimable * (10000 - _poolInfo.fee)) / 10000;\\n        }\\n    }\\n\\n    function accRewardPrecision() external pure override returns (uint256) {\\n        return ACC_REWARD_PRECISION;\\n    }\\n\\n    /// @notice \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ub420 reward \\uc591\\uc744 \\uc5c5\\ub370\\uc774\\ud2b8 \\uc2dc\\ud0a8\\ub2e4.\\n    /// @dev \\ub0b4\\ubd80\\uc801\\uc73c\\ub85c _updatePool\\uc774 \\ubd88\\ub9ac\\ub294\\ub370, \\uc774 \\ud568\\uc218\\ub294 \\uc720\\uc800\\uac00 \\ud480\\uc5d0 staking \\uc591\\uc774 \\ubcc0\\ud654\\ud558\\uac70\\ub098, reward\\ub97c claim\\ud558\\uae30 \\uc804\\uc5d0 \\ud56d\\uc0c1 \\ubd88\\ub9b0\\ub2e4\\n    /// \\ub530\\ub77c\\uc11c \\uc774 \\ud568\\uc218\\ub97c \\ubc16\\uc5d0\\uc11c \\uba85\\uc2dc\\uc801\\uc73c\\ub85c \\ubd88\\ub9b4 \\uc77c\\uc740 \\uac70\\uc758 \\uc5c6\\uc744 \\uac83\\uc774\\ub2e4. \\uc77c\\ub2e8 sushiswap \\uc5d0\\uc11c \\uad6c\\ud604\\ud588\\uae30 \\ub54c\\ubb38\\uc5d0 \\uac00\\uc838\\uc654\\ub2e4.\\n    /// (eng)\\n    /// @notice Update the amount of reward of a pool that should be distributed to its users\\n    /// @dev It calls _updatePool function.\\n    ///       _updatePool is a function that should be called before whenever a user's stake is changed or one claims reward\\n    ///       So updatePool will not be called in any other circumstances, but we still implemented this part because it's in SushiSwap code\\n    /// @param pool address of pool to update\\n    function updatePool(address pool) external override whenNotPaused {\\n        _updatePool(pool);\\n    }\\n\\n    /// @notice \\uc5ec\\ub7ec \\ud480\\ub4e4\\uc5d0 \\ub300\\ud574\\uc11c updatePool\\uc744 \\uc2dc\\ucf1c\\uc900\\ub2e4.\\n    /// (eng)\\n    /// @notice Do updatePool for multiple pools\\n    /// @param pools address list of pools to update\\n    function massUpdatePools(address[] calldata pools) external override whenNotPaused {\\n        uint256 len = pools.length;\\n        for (uint256 i = 0; i < len; ++i) {\\n            _updatePool(pools[i]);\\n        }\\n    }\\n\\n    function _updatePool(address pool) internal {\\n        require(poolInfo[pool].init, \\\"KokoaRewardManager::_updatePool: pool is not initialized\\\");\\n        PoolInfo memory _poolInfo = poolInfo[pool];\\n        if (block.timestamp > _poolInfo.lastRewardTimestamp) {\\n            uint256 lpSupply = IRewardPool(pool).totalSupply();\\n            if (lpSupply > 0) {\\n                rewardTokenVesting.release();\\n                uint256 releasedReward = rewardTokenVesting.releaseAmount(_poolInfo.lastRewardTimestamp, block.timestamp);\\n                uint256 reward = (releasedReward * _poolInfo.allocPoint) / totalAllocPoint;\\n\\n                _poolInfo.accRewardPerShare = _poolInfo.accRewardPerShare + ((reward * ACC_REWARD_PRECISION) / lpSupply);\\n            }\\n            _poolInfo.lastRewardTimestamp = block.timestamp;\\n            poolInfo[pool] = _poolInfo;\\n            emit LogUpdatePool(pool, _poolInfo.lastRewardTimestamp, lpSupply, _poolInfo.accRewardPerShare);\\n        }\\n    }\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    /// (eng)\\n    /// @notice When the amount a user staked in a pool is increased, this function should be called in order to keep track of the reward\\n    /// @dev Only Reward Pools should be able to call this function\\n    /// @param amount amount increased\\n    /// @param to address of user\\n    function onDeposit(uint256 amount, address to) public override onlyRewardPool whenNotPaused {\\n        _updatePool(msg.sender);\\n        PoolInfo memory pool = poolInfo[msg.sender];\\n        UserInfo storage user = userInfo[msg.sender][to];\\n\\n        user.rewardDebt += SafeCast.toInt256((amount * pool.accRewardPerShare) / ACC_REWARD_PRECISION);\\n\\n        emit Deposit(msg.sender, amount, to);\\n    }\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    /// (eng)\\n    /// @notice When the amount a user staked in a pool is decreased, this function should be called in order to keep track of the reward\\n    /// @dev Only Reward Pools should be able to call this function\\n    /// @param amount amount decreased\\n    /// @param to address of user\\n    function onWithdraw(uint256 amount, address to) public override onlyRewardPool whenNotPaused {\\n        _updatePool(msg.sender);\\n        PoolInfo memory pool = poolInfo[msg.sender];\\n        UserInfo storage user = userInfo[msg.sender][to];\\n\\n        user.rewardDebt -= SafeCast.toInt256((amount * pool.accRewardPerShare) / ACC_REWARD_PRECISION);\\n        emit Withdraw(msg.sender, amount, to);\\n    }\\n\\n    /// @notice onDeposit\\uacfc onWithdraw\\uc758 wrapper\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    /// (eng)\\n    /// @notice A wrapper function for onDeposit and onWithdraw\\n    /// @dev Only Reward Pools should be able to call this function\\n    /// @param amount amount changed\\n    /// @param to address of user\\n    function onChanged(int256 amount, address to) external override onlyRewardPool {\\n        if (amount > 0) {\\n            onDeposit(SafeCast.toUint256(amount), to);\\n        }\\n        if (amount < 0) {\\n            onWithdraw(SafeCast.toUint256(-amount), to);\\n        }\\n    }\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ubd84\\ubc30\\ubc1b\\uc740 kokoa reward\\ub97c claim \\ud558\\ub294 function\\n    /// (eng)\\n    /// @notice A function that harvests the accumulated Kokoa reward of a user\\n    /// @param pool address of pool\\n    /// @param to receiver address of kokoa reward\\n    function _claimReward(\\n        address pool,\\n        address from,\\n        address to,\\n        uint256 fee\\n    ) internal returns (bool success) {\\n        _updatePool(pool);\\n        PoolInfo memory _poolInfo = poolInfo[pool];\\n        UserInfo storage user = userInfo[pool][from];\\n        uint256 userBalance = IRewardPool(pool).balanceOf(from);\\n        int256 accumulatedReward = SafeCast.toInt256((userBalance * _poolInfo.accRewardPerShare) / ACC_REWARD_PRECISION);\\n        uint256 _claimableReward = SafeCast.toUint256(accumulatedReward - user.rewardDebt);\\n        if (_claimableReward == 0) {\\n            success = false;\\n            return success;\\n        }\\n\\n        // Effects\\n        user.rewardDebt = accumulatedReward;\\n\\n        // Interactions\\n        kokoa.transfer(to, (_claimableReward * (10000 - fee)) / 10000);\\n        if (fee > 0) {\\n            kokoa.transfer(incinerator, (_claimableReward * fee) / 10000);\\n        }\\n\\n        user.claimedReward = user.claimedReward + _claimableReward;\\n        emit ClaimReward(pool, from, _claimableReward);\\n        success = true;\\n    }\\n\\n    function claimReward(address pool, address to) external override whenNotPaused returns (bool success) {\\n        PoolInfo memory _poolInfo = poolInfo[pool];\\n        return _claimReward(pool, msg.sender, to, _poolInfo.fee);\\n    }\\n\\n    function claimRewardAll() public override whenNotPaused returns (bool success) {\\n        success = true;\\n        for (uint256 i = 0; i < rewardPool.length; i++) {\\n            address pool = address(rewardPool[i]);\\n            PoolInfo memory _poolInfo = poolInfo[pool];\\n            bool _success = _claimReward(pool, msg.sender, msg.sender, _poolInfo.fee);\\n            success = success && _success;\\n        }\\n    }\\n\\n    function claimRewardByOther(address pool, address usr) external override whenNotPaused onlyAdmin returns (bool success) {\\n        PoolInfo memory _poolInfo = poolInfo[pool];\\n        return _claimReward(pool, usr, usr, _poolInfo.fee);\\n    }\\n\\n    function claimRewardAllByOther(address usr) public override whenNotPaused onlyAdmin returns (bool success) {\\n        success = true;\\n        for (uint256 i = 0; i < rewardPool.length; i++) {\\n            address pool = address(rewardPool[i]);\\n            PoolInfo memory _poolInfo = poolInfo[pool];\\n            bool _success = _claimReward(pool, usr, usr, _poolInfo.fee);\\n            success = success && _success;\\n        }\\n    }\\n\\n    function claimRewardAndStake(address pool) external override whenNotPaused returns (bool success) {\\n        uint256 claimable = claimableReward(pool, msg.sender, true);\\n        if (claimable == 0) {\\n            success = false;\\n            return success;\\n        }\\n\\n        success = _claimReward(pool, msg.sender, address(this), 0);\\n        require(success, \\\"KokoaRewardManager::claimRewardAndStake: claim failure\\\");\\n\\n        kokoa.approve(address(skokoa), claimable);\\n        skokoa.stake(msg.sender, claimable);\\n    }\\n\\n    function claimRewardAndStakeByOther(address pool, address usr) external override whenNotPaused onlyAdmin returns (bool success) {\\n        uint256 claimable = claimableReward(pool, usr, true);\\n        if (claimable == 0) {\\n            success = false;\\n            return success;\\n        }\\n\\n        success = _claimReward(pool, usr, address(this), 0);\\n        require(success, \\\"KokoaRewardManager::claimRewardAndStake: claim failure\\\");\\n\\n        kokoa.approve(address(skokoa), claimable);\\n        skokoa.stake(usr, claimable);\\n    }\\n\\n    function claimRewardAndStakeAll() external override whenNotPaused returns (bool success) {\\n        uint256 amount;\\n        uint256 claimable;\\n        success = true;\\n\\n        for (uint256 i = 0; i < rewardPool.length; i++) {\\n            address pool = address(rewardPool[i]);\\n            claimable = claimableReward(pool, msg.sender, true);\\n            if (claimable == 0) {\\n                continue;\\n            }\\n            amount += claimable;\\n\\n            bool _success = _claimReward(pool, msg.sender, address(this), 0);\\n            success = success && _success;\\n        }\\n\\n        require(success, \\\"KokoaRewardManager::claimRewardAndStakeAll: claim failure\\\");\\n\\n        if (amount > 0) {\\n            kokoa.approve(address(skokoa), amount);\\n            skokoa.stake(msg.sender, amount);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x540853a45d7bdd71a3e97fb6593ebe3235896808b1ae70c2d3bfaebe64d49fe0\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50612eec806100206000396000f3fe608060405234801561001057600080fd5b50600436106102485760003560e01c80638456cb591161013b578063b9955e39116100b8578063eaa648d91161007c578063eaa648d914610541578063f2fde38b14610554578063f3759d5c14610567578063f71db5431461057a578063f80a5fd21461058f57610248565b8063b9955e39146104e2578063bea679ac146104f5578063c3554aef14610508578063d366f3b91461051b578063d547741f1461052e57610248565b8063a217fddf116100ff578063a217fddf14610499578063a3333309146104a1578063a4ece52c146104b4578063a80c3c58146104bc578063b1f0657f146104cf57610248565b80638456cb59146103f55780638d608833146103fd57806391d14854146104055780639a7b5f11146104185780639c0ca5291461048657610248565b80634953c782116101c95780636abaa9081161018d5780636abaa908146103995780636e0a6bba146103b15780637706c4ba146103bc5780637b46c54f146103cf5780638308d7e9146103e257610248565b80634953c782146103585780634e9a471e1461036b57806354fd4d501461037e5780635c975abb14610386578063637830ca1461039157610248565b80632f2ff15d116102105780632f2ff15d146102f257806336568abe14610307578063387f9c011461031a57806339eaed291461033d5780633f4ba83a1461035057610248565b8063081e3eda1461024d5780630f208beb1461026457806317caf6f1146102ab5780631d44810d146102b4578063248a9ca3146102df575b600080fd5b6005545b6040519081526020015b60405180910390f35b6102966102723660046129f1565b60066020908152600092835260408084209091529082529020805460019091015482565b6040805192835260208301919091520161025b565b61025160075481565b6009546102c7906001600160a01b031681565b6040516001600160a01b03909116815260200161025b565b6102516102ed366004612b27565b6105a2565b610305610300366004612b3f565b6105bb565b005b610305610315366004612b3f565b6105dd565b61032d6103283660046129f1565b610660565b604051901515815260200161025b565b61030561034b366004612a9b565b61070f565b610305610791565b61032d6103663660046129f1565b61082f565b610251610379366004612a23565b6108c2565b610251600181565b60025460ff1661032d565b61032d610c39565b6002546102c79061010090046001600160a01b031681565b64e8d4a51000610251565b6102c76103ca366004612b27565b610d34565b6103056103dd3660046129d0565b610d5e565b6103056103f0366004612a69565b610d8d565b610305610ee1565b61032d610f55565b61032d610413366004612b3f565b611195565b61045c6104263660046129d0565b60046020819052600091825260409091208054600182015460028301546003840154939094015491939092909160ff9091169085565b6040805195865260208601949094529284019190915215156060830152608082015260a00161025b565b610305610494366004612b3f565b6111c0565b610251600081565b6008546102c7906001600160a01b031681565b61030561122b565b61032d6104ca3660046129d0565b611415565b6103056104dd3660046129f1565b611524565b6103056104f0366004612b79565b6115e2565b610305610503366004612b3f565b6117a3565b6003546102c7906001600160a01b031681565b610305610529366004612b3f565b6118d9565b61030561053c366004612b3f565b6119d4565b61032d61054f3660046129d0565b6119f1565b6103056105623660046129d0565b611b5f565b610305610575366004612b3f565b611b95565b610582611cc1565b60405161025b9190612bad565b61032d61059d3660046129f1565b611daf565b600081815260016020819052604090912001545b919050565b6105c4826105a2565b6105ce8133611f32565b6105d88383611f96565b505050565b6001600160a01b03811633146106525760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61065c8282612001565b5050565b600061066e60025460ff1690565b1561068b5760405162461bcd60e51b815260040161064990612c57565b61069d6430b236b4b760d91b33611f32565b6001600160a01b038316600090815260046020818152604092839020835160a08101855281548152600182015492810192909252600281015493820193909352600383015460ff16151560608201529101546080820181905261070590859085908190612068565b9150505b92915050565b60025460ff16156107325760405162461bcd60e51b815260040161064990612c57565b8060005b8181101561078b5761077b84848381811061076157634e487b7160e01b600052603260045260246000fd5b905060200201602081019061077691906129d0565b612373565b61078481612e5d565b9050610736565b50505050565b60025460ff166107da5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b6044820152606401610649565b653830bab9b2b960d11b6107ee8133611f32565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600061083d60025460ff1690565b1561085a5760405162461bcd60e51b815260040161064990612c57565b6001600160a01b038316600090815260046020818152604092839020835160a08101855281548152600182015492810192909252600281015493820193909352600383015460ff16151560608201529101546080820181905261070590859033908690612068565b60006108d060025460ff1690565b156108ed5760405162461bcd60e51b815260040161064990612c57565b6001600160a01b03841660009081526004602052604090206003015460ff1661097e5760405162461bcd60e51b815260206004820152603c60248201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d61626c6552657760448201527f6172643a20706f6f6c206973206e6f7420696e697469616c697a6564000000006064820152608401610649565b6001600160a01b038085166000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff161515606082015290840154608082015285855260068352818520968a168552958252808420865182516318160ddd60e01b81529251919690959490936318160ddd9380830193919290829003018186803b158015610a1d57600080fd5b505afa158015610a31573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a559190612b61565b9050836020015142118015610a6957508015155b15610b4357600354602085015160405163a1ac471760e01b815260048101919091524260248201526000916001600160a01b03169063a1ac47179060440160206040518083038186803b158015610abf57600080fd5b505afa158015610ad3573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610af79190612b61565b90506000600754866040015183610b0e9190612de8565b610b189190612dc8565b905082610b2a64e8d4a5100083612de8565b610b349190612dc8565b610b3e9085612db0565b935050505b6040516370a0823160e01b81526001600160a01b038881166004830152600091908a16906370a082319060240160206040518083038186803b158015610b8857600080fd5b505afa158015610b9c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610bc09190612b61565b8454909150610bfa90610beb64e8d4a51000610bdc8786612de8565b610be69190612dc8565b6126b9565b610bf59190612e07565b612723565b955086610c2d576127108560800151612710610c169190612e46565b610c209088612de8565b610c2a9190612dc8565b95505b50505050509392505050565b6000610c4760025460ff1690565b15610c645760405162461bcd60e51b815260040161064990612c57565b50600160005b600554811015610d3057600060058281548110610c9757634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b031680835260048083526040808520815160a08101835281548152600182015495810195909552600281015491850191909152600381015460ff1615156060850152015460808301819052909350909190610d0c90849033908190612068565b9050848015610d185750805b94505050508080610d2890612e5d565b915050610c6a565b5090565b60058181548110610d4457600080fd5b6000918252602090912001546001600160a01b0316905081565b60025460ff1615610d815760405162461bcd60e51b815260040161064990612c57565b610d8a81612373565b50565b610d9f6430b236b4b760d91b33611f32565b6001600160a01b03831660009081526004602052604090206003015460ff16610e235760405162461bcd60e51b815260206004820152603060248201527f4b6f6b6f615265776172644d616e616765723a3a7365743a20706f6f6c20697360448201526f081b9bdd081a5b9a5d1a585b1a5e995960821b6064820152608401610649565b612710811115610e455760405162461bcd60e51b815260040161064990612d25565b6001600160a01b0383166000908152600460205260409020600201546007548391610e6f91612e46565b610e799190612db0565b6007556001600160a01b0383166000818152600460208181526040928390206002810187905590910184905581518581529081018490527f6dd4644973608d04233550086430be78f05e73522701680db76fb37a206473d791015b60405180910390a2505050565b60025460ff1615610f045760405162461bcd60e51b815260040161064990612c57565b653830bab9b2b960d11b610f188133611f32565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610824565b6000610f6360025460ff1690565b15610f805760405162461bcd60e51b815260040161064990612c57565b506001600080805b60055481101561102357600060058281548110610fb557634e487b7160e01b600052603260045260246000fd5b6000918252602090912001546001600160a01b03169050610fd8813360016108c2565b925082610fe55750611011565b610fef8385612db0565b935060006110008233306000612068565b905085801561100c5750805b955050505b8061101b81612e5d565b915050610f88565b50826110975760405162461bcd60e51b815260206004820152603960248201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d5265776172644160448201527f6e645374616b65416c6c3a20636c61696d206661696c757265000000000000006064820152608401610649565b81156111905760025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101859052610100909204169063095ea7b390604401602060405180830381600087803b1580156110f257600080fd5b505af1158015611106573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061112a9190612b0b565b506008546040516356e4bb9760e11b8152336004820152602481018490526001600160a01b039091169063adc9772e90604401600060405180830381600087803b15801561117757600080fd5b505af115801561118b573d6000803e3d6000fd5b505050505b505090565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b3360009081526004602052604090206003015460ff166111f25760405162461bcd60e51b815260040161064990612bfa565b600082131561120d5761120d61120783612723565b826117a3565b600082121561065c5761065c611225610bf584612e78565b82611b95565b61123d6430b236b4b760d91b33611f32565b600580546000919061125190600190612e46565b8154811061126f57634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b0316808352600490915260409091206003015490915060ff166113025760405162461bcd60e51b815260206004820152603060248201527f4b6f6b6f615265776172644d616e616765723a3a706f703a20706f6f6c20697360448201526f081b9bdd081a5b9a5d1a585b1a5e995960821b6064820152608401610649565b6001600160a01b03811660009081526004602052604090206002015460075461132b9190612e46565b6007556005805490818061134f57634e487b7160e01b600052603160045260246000fd5b60008281526020808220830160001990810180546001600160a01b03191690559092019092556001600160a01b03841682526004908190526040822082815560018181018490556002820184905560038201805460ff191690559101919091556113b99082612e46565b6005541461065c5760405162461bcd60e51b815260206004820152602360248201527f4b6f6b6f615265776172644d616e616765723a3a706f703a706f70206661696c60448201526275726560e81b6064820152608401610649565b600061142360025460ff1690565b156114405760405162461bcd60e51b815260040161064990612c57565b6114526430b236b4b760d91b33611f32565b50600160005b60055481101561151e5760006005828154811061148557634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b031680835260048083526040808520815160a08101835281548152600182015495810195909552600281015491850191909152600381015460ff16151560608501520154608083018190529093509091906114fa90849088908190612068565b90508480156115065750805b9450505050808061151690612e5d565b915050611458565b50919050565b600054610100900460ff16806115395750303b155b80611547575060005460ff16155b6115635760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015611585576000805461ffff19166101011790555b61158d612775565b60028054610100600160a81b0319166101006001600160a01b038681169190910291909117909155600380546001600160a01b03191691841691909117905580156105d8576000805461ff0019169055505050565b6115f46430b236b4b760d91b33611f32565b6001600160a01b03821660009081526004602052604090206003015460ff16156116775760405162461bcd60e51b815260206004820152602e60248201527f4b6f6b6f615265776172644d616e616765723a3a6164643a20706f6f6c20697360448201526d08185b1c9958591e48185919195960921b6064820152608401610649565b6127108111156116995760405162461bcd60e51b815260040161064990612d25565b826007546116a79190612db0565b60075560058054600180820183557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db090910180546001600160a01b0319166001600160a01b0386169081179091556040805160a08101825260008082524260208084019182528385018b815260608501888152608086018b8152888652600493849052969094209451855591518488015590516002840155905160038301805460ff1916911515919091179055915191015591546117659190612e46565b60408051868152602081018590527f49557ceef3d96292d21ba3d53e9f3fe30e7dc2e6d8b84d257678a4a851bf37ee910160405180910390a3505050565b3360009081526004602052604090206003015460ff166117d55760405162461bcd60e51b815260040161064990612bfa565b60025460ff16156117f85760405162461bcd60e51b815260040161064990612c57565b61180133612373565b336000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff16151560608201529301546080840152938352600681528383206001600160a01b03861684529052919020815161187a9064e8d4a5100090610bdc9087612de8565b81600001600082825461188d9190612d6f565b90915550506040518481526001600160a01b0384169033907fe31c7b8d08ee7db0afa68782e1028ef92305caeea8626633ad44d413e30f6b2f906020015b60405180910390a350505050565b6118eb6430b236b4b760d91b33611f32565b60025460ff161561190e5760405162461bcd60e51b815260040161064990612c57565b8165736b6f6b6f6160d01b141561193f57600880546001600160a01b0319166001600160a01b03831617905561065c565b816a34b731b4b732b930ba37b960a91b141561197557600980546001600160a01b0319166001600160a01b03831617905561065c565b60405162461bcd60e51b815260206004820152602e60248201527f4b6f6b6f615265776172644d616e616765723a3a636f6e6669673a20756e726560448201526d636f676e697a65642d706172616d60901b6064820152608401610649565b6119dd826105a2565b6119e78133611f32565b6105d88383612001565b60006119ff60025460ff1690565b15611a1c5760405162461bcd60e51b815260040161064990612c57565b6000611a2a833360016108c2565b905080611a3b5760009150506105b6565b611a488333306000612068565b915081611a675760405162461bcd60e51b815260040161064990612ccf565b60025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101849052610100909204169063095ea7b390604401602060405180830381600087803b158015611abc57600080fd5b505af1158015611ad0573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611af49190612b0b565b506008546040516356e4bb9760e11b8152336004820152602481018390526001600160a01b039091169063adc9772e90604401600060405180830381600087803b158015611b4157600080fd5b505af1158015611b55573d6000803e3d6000fd5b5050505050919050565b611b716437bbb732b960d91b33611f32565b611b836437bbb732b960d91b82611f96565b610d8a6437bbb732b960d91b33612001565b3360009081526004602052604090206003015460ff16611bc75760405162461bcd60e51b815260040161064990612bfa565b60025460ff1615611bea5760405162461bcd60e51b815260040161064990612c57565b611bf333612373565b336000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff16151560608201529301546080840152938352600681528383206001600160a01b038616845290529190208151611c6c9064e8d4a5100090610bdc9087612de8565b816000016000828254611c7f9190612e07565b90915550506040518481526001600160a01b0384169033907f56c54ba9bd38d8fd62012e42c7ee564519b09763c426d331b3661b537ead19b2906020016118cb565b60055460609067ffffffffffffffff811115611ced57634e487b7160e01b600052604160045260246000fd5b604051908082528060200260200182016040528015611d16578160200160208202803683370190505b50905060005b600554811015610d305760058181548110611d4757634e487b7160e01b600052603260045260246000fd5b9060005260206000200160009054906101000a90046001600160a01b0316828281518110611d8557634e487b7160e01b600052603260045260246000fd5b6001600160a01b039092166020928302919091019091015280611da781612e5d565b915050611d1c565b6000611dbd60025460ff1690565b15611dda5760405162461bcd60e51b815260040161064990612c57565b611dec6430b236b4b760d91b33611f32565b6000611dfa848460016108c2565b905080611e0b576000915050610709565b611e188484306000612068565b915081611e375760405162461bcd60e51b815260040161064990612ccf565b60025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101849052610100909204169063095ea7b390604401602060405180830381600087803b158015611e8c57600080fd5b505af1158015611ea0573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611ec49190612b0b565b506008546040516356e4bb9760e11b81526001600160a01b038581166004830152602482018490529091169063adc9772e90604401600060405180830381600087803b158015611f1357600080fd5b505af1158015611f27573d6000803e3d6000fd5b505050505092915050565b611f3c8282611195565b61065c5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b6064820152608401610649565b611fa08282611195565b61065c5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61200b8282611195565b1561065c5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600061207385612373565b6001600160a01b038581166000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff161515606082015290840154608082015285855260068352818520968b168086529690925280842090516370a0823160e01b8152928301959095529392906370a082319060240160206040518083038186803b15801561211357600080fd5b505afa158015612127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061214b9190612b61565b9050600061216864e8d4a51000856000015184610bdc9190612de8565b9050600061217f846000015483610bf59190612e07565b9050806121945760009550505050505061236b565b81845560025461010090046001600160a01b031663a9059cbb896127106121bb8b82612e46565b6121c59086612de8565b6121cf9190612dc8565b6040516001600160e01b031960e085901b1681526001600160a01b0390921660048301526024820152604401602060405180830381600087803b15801561221557600080fd5b505af1158015612229573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061224d9190612b0b565b508615612309576002546009546001600160a01b0361010090920482169163a9059cbb911661271061227f8b86612de8565b6122899190612dc8565b6040516001600160e01b031960e085901b1681526001600160a01b0390921660048301526024820152604401602060405180830381600087803b1580156122cf57600080fd5b505af11580156122e3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906123079190612b0b565b505b8084600101546123199190612db0565b60018501556040518181526001600160a01b03808b1691908c16907f7e77f685b38c861064cb08f2776eb5dfd3c82f652ed9f21221b8c53b75628e519060200160405180910390a36001955050505050505b949350505050565b6001600160a01b03811660009081526004602052604090206003015460ff166124045760405162461bcd60e51b815260206004820152603860248201527f4b6f6b6f615265776172644d616e616765723a3a5f757064617465506f6f6c3a60448201527f20706f6f6c206973206e6f7420696e697469616c697a656400000000000000006064820152608401610649565b6001600160a01b038116600090815260046020818152604092839020835160a081018552815481526001820154928101839052600282015494810194909452600381015460ff161515606085015290910154608083015242111561065c576000826001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561249d57600080fd5b505afa1580156124b1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906124d59190612b61565b9050801561261e57600360009054906101000a90046001600160a01b03166001600160a01b03166386d1a69f6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561252d57600080fd5b505af1158015612541573d6000803e3d6000fd5b5050600354602085015160405163a1ac471760e01b81526004810191909152426024820152600093506001600160a01b03909116915063a1ac47179060440160206040518083038186803b15801561259857600080fd5b505afa1580156125ac573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906125d09190612b61565b905060006007548460400151836125e79190612de8565b6125f19190612dc8565b90508261260364e8d4a5100083612de8565b61260d9190612dc8565b84516126199190612db0565b845250505b4260208381019182526001600160a01b0385166000818152600480845260409182902087518082559551600182018190558389015160028301556060808a015160038401805460ff191691151591909117905560808a01519290930191909155825190815293840186905290830193909352917ffa4534c55db3b65cd96eafe03e5ce9fd87638590f49d5907978ff8489ea66ecb9101610ed4565b60006001600160ff1b03821115610d305760405162461bcd60e51b815260206004820152602860248201527f53616665436173743a2076616c756520646f65736e27742066697420696e2061604482015267371034b73a191a9b60c11b6064820152608401610649565b600080821215610d305760405162461bcd60e51b815260206004820181905260248201527f53616665436173743a2076616c7565206d75737420626520706f7369746976656044820152606401610649565b600054610100900460ff168061278a5750303b155b80612798575060005460ff16155b6127b45760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff161580156127d6576000805461ffff19166101011790555b6127de612820565b6127f9653830bab9b2b960d11b6437bbb732b960d91b612889565b61280c653830bab9b2b960d11b336128de565b8015610d8a576000805461ff001916905550565b600054610100900460ff16806128355750303b155b80612843575060005460ff16155b61285f5760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015612881576000805461ffff19166101011790555b61280c6128e8565b6000612894836105a2565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b61065c8282611f96565b600054610100900460ff16806128fd5750303b155b8061290b575060005460ff16155b6129275760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015612949576000805461ffff19166101011790555b61295b6437bbb732b960d91b336128de565b6129756430b236b4b760d91b6437bbb732b960d91b612889565b6129926737b832b930ba37b960c11b6437bbb732b960d91b612889565b6129a46430b236b4b760d91b336128de565b61280c6737b832b930ba37b960c11b336128de565b80356001600160a01b03811681146105b657600080fd5b6000602082840312156129e1578081fd5b6129ea826129b9565b9392505050565b60008060408385031215612a03578081fd5b612a0c836129b9565b9150612a1a602084016129b9565b90509250929050565b600080600060608486031215612a37578081fd5b612a40846129b9565b9250612a4e602085016129b9565b91506040840135612a5e81612ea8565b809150509250925092565b600080600060608486031215612a7d578283fd5b612a86846129b9565b95602085013595506040909401359392505050565b60008060208385031215612aad578182fd5b823567ffffffffffffffff80821115612ac4578384fd5b818501915085601f830112612ad7578384fd5b813581811115612ae5578485fd5b8660208260051b8501011115612af9578485fd5b60209290920196919550909350505050565b600060208284031215612b1c578081fd5b81516129ea81612ea8565b600060208284031215612b38578081fd5b5035919050565b60008060408385031215612b51578182fd5b82359150612a1a602084016129b9565b600060208284031215612b72578081fd5b5051919050565b600080600060608486031215612b8d578283fd5b83359250612b9d602085016129b9565b9150604084013590509250925092565b6020808252825182820181905260009190848201906040850190845b81811015612bee5783516001600160a01b031683529284019291840191600101612bc9565b50909695505050505050565b60208082526037908201527f4b6f6b6f615265776172644d616e616765723a3a6f6e6c79526577617264506f60408201527f6f6c3a20696e76616c69642072657761726420706f6f6c000000000000000000606082015260800190565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60208082526036908201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d526577617264416040820152756e645374616b653a20636c61696d206661696c75726560501b606082015260800190565b6020808252602a908201527f4b6f6b6f615265776172644d616e616765723a3a6164643a20696e76616c69646040820152692066656520726174696f60b01b606082015260800190565b600080821280156001600160ff1b0384900385131615612d9157612d91612e92565b600160ff1b8390038412811615612daa57612daa612e92565b50500190565b60008219821115612dc357612dc3612e92565b500190565b600082612de357634e487b7160e01b81526012600452602481fd5b500490565b6000816000190483118215151615612e0257612e02612e92565b500290565b60008083128015600160ff1b850184121615612e2557612e25612e92565b6001600160ff1b0384018313811615612e4057612e40612e92565b50500390565b600082821015612e5857612e58612e92565b500390565b6000600019821415612e7157612e71612e92565b5060010190565b6000600160ff1b821415612e8e57612e8e612e92565b0390565b634e487b7160e01b600052601160045260246000fd5b8015158114610d8a57600080fdfea2646970667358221220f84e2083ef7e172c1bfba4b06ee068560b04f29c9206e8936992cc624610753664736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106102485760003560e01c80638456cb591161013b578063b9955e39116100b8578063eaa648d91161007c578063eaa648d914610541578063f2fde38b14610554578063f3759d5c14610567578063f71db5431461057a578063f80a5fd21461058f57610248565b8063b9955e39146104e2578063bea679ac146104f5578063c3554aef14610508578063d366f3b91461051b578063d547741f1461052e57610248565b8063a217fddf116100ff578063a217fddf14610499578063a3333309146104a1578063a4ece52c146104b4578063a80c3c58146104bc578063b1f0657f146104cf57610248565b80638456cb59146103f55780638d608833146103fd57806391d14854146104055780639a7b5f11146104185780639c0ca5291461048657610248565b80634953c782116101c95780636abaa9081161018d5780636abaa908146103995780636e0a6bba146103b15780637706c4ba146103bc5780637b46c54f146103cf5780638308d7e9146103e257610248565b80634953c782146103585780634e9a471e1461036b57806354fd4d501461037e5780635c975abb14610386578063637830ca1461039157610248565b80632f2ff15d116102105780632f2ff15d146102f257806336568abe14610307578063387f9c011461031a57806339eaed291461033d5780633f4ba83a1461035057610248565b8063081e3eda1461024d5780630f208beb1461026457806317caf6f1146102ab5780631d44810d146102b4578063248a9ca3146102df575b600080fd5b6005545b6040519081526020015b60405180910390f35b6102966102723660046129f1565b60066020908152600092835260408084209091529082529020805460019091015482565b6040805192835260208301919091520161025b565b61025160075481565b6009546102c7906001600160a01b031681565b6040516001600160a01b03909116815260200161025b565b6102516102ed366004612b27565b6105a2565b610305610300366004612b3f565b6105bb565b005b610305610315366004612b3f565b6105dd565b61032d6103283660046129f1565b610660565b604051901515815260200161025b565b61030561034b366004612a9b565b61070f565b610305610791565b61032d6103663660046129f1565b61082f565b610251610379366004612a23565b6108c2565b610251600181565b60025460ff1661032d565b61032d610c39565b6002546102c79061010090046001600160a01b031681565b64e8d4a51000610251565b6102c76103ca366004612b27565b610d34565b6103056103dd3660046129d0565b610d5e565b6103056103f0366004612a69565b610d8d565b610305610ee1565b61032d610f55565b61032d610413366004612b3f565b611195565b61045c6104263660046129d0565b60046020819052600091825260409091208054600182015460028301546003840154939094015491939092909160ff9091169085565b6040805195865260208601949094529284019190915215156060830152608082015260a00161025b565b610305610494366004612b3f565b6111c0565b610251600081565b6008546102c7906001600160a01b031681565b61030561122b565b61032d6104ca3660046129d0565b611415565b6103056104dd3660046129f1565b611524565b6103056104f0366004612b79565b6115e2565b610305610503366004612b3f565b6117a3565b6003546102c7906001600160a01b031681565b610305610529366004612b3f565b6118d9565b61030561053c366004612b3f565b6119d4565b61032d61054f3660046129d0565b6119f1565b6103056105623660046129d0565b611b5f565b610305610575366004612b3f565b611b95565b610582611cc1565b60405161025b9190612bad565b61032d61059d3660046129f1565b611daf565b600081815260016020819052604090912001545b919050565b6105c4826105a2565b6105ce8133611f32565b6105d88383611f96565b505050565b6001600160a01b03811633146106525760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b61065c8282612001565b5050565b600061066e60025460ff1690565b1561068b5760405162461bcd60e51b815260040161064990612c57565b61069d6430b236b4b760d91b33611f32565b6001600160a01b038316600090815260046020818152604092839020835160a08101855281548152600182015492810192909252600281015493820193909352600383015460ff16151560608201529101546080820181905261070590859085908190612068565b9150505b92915050565b60025460ff16156107325760405162461bcd60e51b815260040161064990612c57565b8060005b8181101561078b5761077b84848381811061076157634e487b7160e01b600052603260045260246000fd5b905060200201602081019061077691906129d0565b612373565b61078481612e5d565b9050610736565b50505050565b60025460ff166107da5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b6044820152606401610649565b653830bab9b2b960d11b6107ee8133611f32565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600061083d60025460ff1690565b1561085a5760405162461bcd60e51b815260040161064990612c57565b6001600160a01b038316600090815260046020818152604092839020835160a08101855281548152600182015492810192909252600281015493820193909352600383015460ff16151560608201529101546080820181905261070590859033908690612068565b60006108d060025460ff1690565b156108ed5760405162461bcd60e51b815260040161064990612c57565b6001600160a01b03841660009081526004602052604090206003015460ff1661097e5760405162461bcd60e51b815260206004820152603c60248201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d61626c6552657760448201527f6172643a20706f6f6c206973206e6f7420696e697469616c697a6564000000006064820152608401610649565b6001600160a01b038085166000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff161515606082015290840154608082015285855260068352818520968a168552958252808420865182516318160ddd60e01b81529251919690959490936318160ddd9380830193919290829003018186803b158015610a1d57600080fd5b505afa158015610a31573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a559190612b61565b9050836020015142118015610a6957508015155b15610b4357600354602085015160405163a1ac471760e01b815260048101919091524260248201526000916001600160a01b03169063a1ac47179060440160206040518083038186803b158015610abf57600080fd5b505afa158015610ad3573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610af79190612b61565b90506000600754866040015183610b0e9190612de8565b610b189190612dc8565b905082610b2a64e8d4a5100083612de8565b610b349190612dc8565b610b3e9085612db0565b935050505b6040516370a0823160e01b81526001600160a01b038881166004830152600091908a16906370a082319060240160206040518083038186803b158015610b8857600080fd5b505afa158015610b9c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610bc09190612b61565b8454909150610bfa90610beb64e8d4a51000610bdc8786612de8565b610be69190612dc8565b6126b9565b610bf59190612e07565b612723565b955086610c2d576127108560800151612710610c169190612e46565b610c209088612de8565b610c2a9190612dc8565b95505b50505050509392505050565b6000610c4760025460ff1690565b15610c645760405162461bcd60e51b815260040161064990612c57565b50600160005b600554811015610d3057600060058281548110610c9757634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b031680835260048083526040808520815160a08101835281548152600182015495810195909552600281015491850191909152600381015460ff1615156060850152015460808301819052909350909190610d0c90849033908190612068565b9050848015610d185750805b94505050508080610d2890612e5d565b915050610c6a565b5090565b60058181548110610d4457600080fd5b6000918252602090912001546001600160a01b0316905081565b60025460ff1615610d815760405162461bcd60e51b815260040161064990612c57565b610d8a81612373565b50565b610d9f6430b236b4b760d91b33611f32565b6001600160a01b03831660009081526004602052604090206003015460ff16610e235760405162461bcd60e51b815260206004820152603060248201527f4b6f6b6f615265776172644d616e616765723a3a7365743a20706f6f6c20697360448201526f081b9bdd081a5b9a5d1a585b1a5e995960821b6064820152608401610649565b612710811115610e455760405162461bcd60e51b815260040161064990612d25565b6001600160a01b0383166000908152600460205260409020600201546007548391610e6f91612e46565b610e799190612db0565b6007556001600160a01b0383166000818152600460208181526040928390206002810187905590910184905581518581529081018490527f6dd4644973608d04233550086430be78f05e73522701680db76fb37a206473d791015b60405180910390a2505050565b60025460ff1615610f045760405162461bcd60e51b815260040161064990612c57565b653830bab9b2b960d11b610f188133611f32565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610824565b6000610f6360025460ff1690565b15610f805760405162461bcd60e51b815260040161064990612c57565b506001600080805b60055481101561102357600060058281548110610fb557634e487b7160e01b600052603260045260246000fd5b6000918252602090912001546001600160a01b03169050610fd8813360016108c2565b925082610fe55750611011565b610fef8385612db0565b935060006110008233306000612068565b905085801561100c5750805b955050505b8061101b81612e5d565b915050610f88565b50826110975760405162461bcd60e51b815260206004820152603960248201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d5265776172644160448201527f6e645374616b65416c6c3a20636c61696d206661696c757265000000000000006064820152608401610649565b81156111905760025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101859052610100909204169063095ea7b390604401602060405180830381600087803b1580156110f257600080fd5b505af1158015611106573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061112a9190612b0b565b506008546040516356e4bb9760e11b8152336004820152602481018490526001600160a01b039091169063adc9772e90604401600060405180830381600087803b15801561117757600080fd5b505af115801561118b573d6000803e3d6000fd5b505050505b505090565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b3360009081526004602052604090206003015460ff166111f25760405162461bcd60e51b815260040161064990612bfa565b600082131561120d5761120d61120783612723565b826117a3565b600082121561065c5761065c611225610bf584612e78565b82611b95565b61123d6430b236b4b760d91b33611f32565b600580546000919061125190600190612e46565b8154811061126f57634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b0316808352600490915260409091206003015490915060ff166113025760405162461bcd60e51b815260206004820152603060248201527f4b6f6b6f615265776172644d616e616765723a3a706f703a20706f6f6c20697360448201526f081b9bdd081a5b9a5d1a585b1a5e995960821b6064820152608401610649565b6001600160a01b03811660009081526004602052604090206002015460075461132b9190612e46565b6007556005805490818061134f57634e487b7160e01b600052603160045260246000fd5b60008281526020808220830160001990810180546001600160a01b03191690559092019092556001600160a01b03841682526004908190526040822082815560018181018490556002820184905560038201805460ff191690559101919091556113b99082612e46565b6005541461065c5760405162461bcd60e51b815260206004820152602360248201527f4b6f6b6f615265776172644d616e616765723a3a706f703a706f70206661696c60448201526275726560e81b6064820152608401610649565b600061142360025460ff1690565b156114405760405162461bcd60e51b815260040161064990612c57565b6114526430b236b4b760d91b33611f32565b50600160005b60055481101561151e5760006005828154811061148557634e487b7160e01b600052603260045260246000fd5b60009182526020808320909101546001600160a01b031680835260048083526040808520815160a08101835281548152600182015495810195909552600281015491850191909152600381015460ff16151560608501520154608083018190529093509091906114fa90849088908190612068565b90508480156115065750805b9450505050808061151690612e5d565b915050611458565b50919050565b600054610100900460ff16806115395750303b155b80611547575060005460ff16155b6115635760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015611585576000805461ffff19166101011790555b61158d612775565b60028054610100600160a81b0319166101006001600160a01b038681169190910291909117909155600380546001600160a01b03191691841691909117905580156105d8576000805461ff0019169055505050565b6115f46430b236b4b760d91b33611f32565b6001600160a01b03821660009081526004602052604090206003015460ff16156116775760405162461bcd60e51b815260206004820152602e60248201527f4b6f6b6f615265776172644d616e616765723a3a6164643a20706f6f6c20697360448201526d08185b1c9958591e48185919195960921b6064820152608401610649565b6127108111156116995760405162461bcd60e51b815260040161064990612d25565b826007546116a79190612db0565b60075560058054600180820183557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db090910180546001600160a01b0319166001600160a01b0386169081179091556040805160a08101825260008082524260208084019182528385018b815260608501888152608086018b8152888652600493849052969094209451855591518488015590516002840155905160038301805460ff1916911515919091179055915191015591546117659190612e46565b60408051868152602081018590527f49557ceef3d96292d21ba3d53e9f3fe30e7dc2e6d8b84d257678a4a851bf37ee910160405180910390a3505050565b3360009081526004602052604090206003015460ff166117d55760405162461bcd60e51b815260040161064990612bfa565b60025460ff16156117f85760405162461bcd60e51b815260040161064990612c57565b61180133612373565b336000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff16151560608201529301546080840152938352600681528383206001600160a01b03861684529052919020815161187a9064e8d4a5100090610bdc9087612de8565b81600001600082825461188d9190612d6f565b90915550506040518481526001600160a01b0384169033907fe31c7b8d08ee7db0afa68782e1028ef92305caeea8626633ad44d413e30f6b2f906020015b60405180910390a350505050565b6118eb6430b236b4b760d91b33611f32565b60025460ff161561190e5760405162461bcd60e51b815260040161064990612c57565b8165736b6f6b6f6160d01b141561193f57600880546001600160a01b0319166001600160a01b03831617905561065c565b816a34b731b4b732b930ba37b960a91b141561197557600980546001600160a01b0319166001600160a01b03831617905561065c565b60405162461bcd60e51b815260206004820152602e60248201527f4b6f6b6f615265776172644d616e616765723a3a636f6e6669673a20756e726560448201526d636f676e697a65642d706172616d60901b6064820152608401610649565b6119dd826105a2565b6119e78133611f32565b6105d88383612001565b60006119ff60025460ff1690565b15611a1c5760405162461bcd60e51b815260040161064990612c57565b6000611a2a833360016108c2565b905080611a3b5760009150506105b6565b611a488333306000612068565b915081611a675760405162461bcd60e51b815260040161064990612ccf565b60025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101849052610100909204169063095ea7b390604401602060405180830381600087803b158015611abc57600080fd5b505af1158015611ad0573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611af49190612b0b565b506008546040516356e4bb9760e11b8152336004820152602481018390526001600160a01b039091169063adc9772e90604401600060405180830381600087803b158015611b4157600080fd5b505af1158015611b55573d6000803e3d6000fd5b5050505050919050565b611b716437bbb732b960d91b33611f32565b611b836437bbb732b960d91b82611f96565b610d8a6437bbb732b960d91b33612001565b3360009081526004602052604090206003015460ff16611bc75760405162461bcd60e51b815260040161064990612bfa565b60025460ff1615611bea5760405162461bcd60e51b815260040161064990612c57565b611bf333612373565b336000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff16151560608201529301546080840152938352600681528383206001600160a01b038616845290529190208151611c6c9064e8d4a5100090610bdc9087612de8565b816000016000828254611c7f9190612e07565b90915550506040518481526001600160a01b0384169033907f56c54ba9bd38d8fd62012e42c7ee564519b09763c426d331b3661b537ead19b2906020016118cb565b60055460609067ffffffffffffffff811115611ced57634e487b7160e01b600052604160045260246000fd5b604051908082528060200260200182016040528015611d16578160200160208202803683370190505b50905060005b600554811015610d305760058181548110611d4757634e487b7160e01b600052603260045260246000fd5b9060005260206000200160009054906101000a90046001600160a01b0316828281518110611d8557634e487b7160e01b600052603260045260246000fd5b6001600160a01b039092166020928302919091019091015280611da781612e5d565b915050611d1c565b6000611dbd60025460ff1690565b15611dda5760405162461bcd60e51b815260040161064990612c57565b611dec6430b236b4b760d91b33611f32565b6000611dfa848460016108c2565b905080611e0b576000915050610709565b611e188484306000612068565b915081611e375760405162461bcd60e51b815260040161064990612ccf565b60025460085460405163095ea7b360e01b81526001600160a01b03918216600482015260248101849052610100909204169063095ea7b390604401602060405180830381600087803b158015611e8c57600080fd5b505af1158015611ea0573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611ec49190612b0b565b506008546040516356e4bb9760e11b81526001600160a01b038581166004830152602482018490529091169063adc9772e90604401600060405180830381600087803b158015611f1357600080fd5b505af1158015611f27573d6000803e3d6000fd5b505050505092915050565b611f3c8282611195565b61065c5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b6064820152608401610649565b611fa08282611195565b61065c5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61200b8282611195565b1561065c5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600061207385612373565b6001600160a01b038581166000818152600460208181526040808420815160a08101835281548152600182015481850152600282015481840152600382015460ff161515606082015290840154608082015285855260068352818520968b168086529690925280842090516370a0823160e01b8152928301959095529392906370a082319060240160206040518083038186803b15801561211357600080fd5b505afa158015612127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061214b9190612b61565b9050600061216864e8d4a51000856000015184610bdc9190612de8565b9050600061217f846000015483610bf59190612e07565b9050806121945760009550505050505061236b565b81845560025461010090046001600160a01b031663a9059cbb896127106121bb8b82612e46565b6121c59086612de8565b6121cf9190612dc8565b6040516001600160e01b031960e085901b1681526001600160a01b0390921660048301526024820152604401602060405180830381600087803b15801561221557600080fd5b505af1158015612229573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061224d9190612b0b565b508615612309576002546009546001600160a01b0361010090920482169163a9059cbb911661271061227f8b86612de8565b6122899190612dc8565b6040516001600160e01b031960e085901b1681526001600160a01b0390921660048301526024820152604401602060405180830381600087803b1580156122cf57600080fd5b505af11580156122e3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906123079190612b0b565b505b8084600101546123199190612db0565b60018501556040518181526001600160a01b03808b1691908c16907f7e77f685b38c861064cb08f2776eb5dfd3c82f652ed9f21221b8c53b75628e519060200160405180910390a36001955050505050505b949350505050565b6001600160a01b03811660009081526004602052604090206003015460ff166124045760405162461bcd60e51b815260206004820152603860248201527f4b6f6b6f615265776172644d616e616765723a3a5f757064617465506f6f6c3a60448201527f20706f6f6c206973206e6f7420696e697469616c697a656400000000000000006064820152608401610649565b6001600160a01b038116600090815260046020818152604092839020835160a081018552815481526001820154928101839052600282015494810194909452600381015460ff161515606085015290910154608083015242111561065c576000826001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561249d57600080fd5b505afa1580156124b1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906124d59190612b61565b9050801561261e57600360009054906101000a90046001600160a01b03166001600160a01b03166386d1a69f6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561252d57600080fd5b505af1158015612541573d6000803e3d6000fd5b5050600354602085015160405163a1ac471760e01b81526004810191909152426024820152600093506001600160a01b03909116915063a1ac47179060440160206040518083038186803b15801561259857600080fd5b505afa1580156125ac573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906125d09190612b61565b905060006007548460400151836125e79190612de8565b6125f19190612dc8565b90508261260364e8d4a5100083612de8565b61260d9190612dc8565b84516126199190612db0565b845250505b4260208381019182526001600160a01b0385166000818152600480845260409182902087518082559551600182018190558389015160028301556060808a015160038401805460ff191691151591909117905560808a01519290930191909155825190815293840186905290830193909352917ffa4534c55db3b65cd96eafe03e5ce9fd87638590f49d5907978ff8489ea66ecb9101610ed4565b60006001600160ff1b03821115610d305760405162461bcd60e51b815260206004820152602860248201527f53616665436173743a2076616c756520646f65736e27742066697420696e2061604482015267371034b73a191a9b60c11b6064820152608401610649565b600080821215610d305760405162461bcd60e51b815260206004820181905260248201527f53616665436173743a2076616c7565206d75737420626520706f7369746976656044820152606401610649565b600054610100900460ff168061278a5750303b155b80612798575060005460ff16155b6127b45760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff161580156127d6576000805461ffff19166101011790555b6127de612820565b6127f9653830bab9b2b960d11b6437bbb732b960d91b612889565b61280c653830bab9b2b960d11b336128de565b8015610d8a576000805461ff001916905550565b600054610100900460ff16806128355750303b155b80612843575060005460ff16155b61285f5760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015612881576000805461ffff19166101011790555b61280c6128e8565b6000612894836105a2565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b61065c8282611f96565b600054610100900460ff16806128fd5750303b155b8061290b575060005460ff16155b6129275760405162461bcd60e51b815260040161064990612c81565b600054610100900460ff16158015612949576000805461ffff19166101011790555b61295b6437bbb732b960d91b336128de565b6129756430b236b4b760d91b6437bbb732b960d91b612889565b6129926737b832b930ba37b960c11b6437bbb732b960d91b612889565b6129a46430b236b4b760d91b336128de565b61280c6737b832b930ba37b960c11b336128de565b80356001600160a01b03811681146105b657600080fd5b6000602082840312156129e1578081fd5b6129ea826129b9565b9392505050565b60008060408385031215612a03578081fd5b612a0c836129b9565b9150612a1a602084016129b9565b90509250929050565b600080600060608486031215612a37578081fd5b612a40846129b9565b9250612a4e602085016129b9565b91506040840135612a5e81612ea8565b809150509250925092565b600080600060608486031215612a7d578283fd5b612a86846129b9565b95602085013595506040909401359392505050565b60008060208385031215612aad578182fd5b823567ffffffffffffffff80821115612ac4578384fd5b818501915085601f830112612ad7578384fd5b813581811115612ae5578485fd5b8660208260051b8501011115612af9578485fd5b60209290920196919550909350505050565b600060208284031215612b1c578081fd5b81516129ea81612ea8565b600060208284031215612b38578081fd5b5035919050565b60008060408385031215612b51578182fd5b82359150612a1a602084016129b9565b600060208284031215612b72578081fd5b5051919050565b600080600060608486031215612b8d578283fd5b83359250612b9d602085016129b9565b9150604084013590509250925092565b6020808252825182820181905260009190848201906040850190845b81811015612bee5783516001600160a01b031683529284019291840191600101612bc9565b50909695505050505050565b60208082526037908201527f4b6f6b6f615265776172644d616e616765723a3a6f6e6c79526577617264506f60408201527f6f6c3a20696e76616c69642072657761726420706f6f6c000000000000000000606082015260800190565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60208082526036908201527f4b6f6b6f615265776172644d616e616765723a3a636c61696d526577617264416040820152756e645374616b653a20636c61696d206661696c75726560501b606082015260800190565b6020808252602a908201527f4b6f6b6f615265776172644d616e616765723a3a6164643a20696e76616c69646040820152692066656520726174696f60b01b606082015260800190565b600080821280156001600160ff1b0384900385131615612d9157612d91612e92565b600160ff1b8390038412811615612daa57612daa612e92565b50500190565b60008219821115612dc357612dc3612e92565b500190565b600082612de357634e487b7160e01b81526012600452602481fd5b500490565b6000816000190483118215151615612e0257612e02612e92565b500290565b60008083128015600160ff1b850184121615612e2557612e25612e92565b6001600160ff1b0384018313811615612e4057612e40612e92565b50500390565b600082821015612e5857612e58612e92565b500390565b6000600019821415612e7157612e71612e92565b5060010190565b6000600160ff1b821415612e8e57612e8e612e92565b0390565b634e487b7160e01b600052601160045260246000fd5b8015158114610d8a57600080fdfea2646970667358221220f84e2083ef7e172c1bfba4b06ee068560b04f29c9206e8936992cc624610753664736f6c63430008030033",
+  "devdoc": {
+    "details": "It manages all kokoa rewards. Its base code is from sushiswap. Therefore, the way to distribute reward is very similar to sushiswap. The main difference between sushiswap and KokoaRewardManager lies in staking. Sushiswap forces to stake token, but KokoaRewardManager does not own token. It just expect registered pool to call onDeposit/onWithdraw/onChanged, and get balance and totalSupply of pool to calculate how to distribute reward. Additionally, unlike SushiSwap where SUSHI tokens for liquidity mining are generated blockwise, Kokoa Reward Manager mints the Kokoa tokens for reward in advance, and distributes them according to the vesting logic",
+    "kind": "dev",
+    "methods": {
+      "add(uint256,address,uint256)": {
+        "details": "it should be called by the governance (initially, admin EOA).",
+        "params": {
+          "pool": "address of pool to register"
+        }
+      },
+      "claimReward(address,address)": {
+        "params": {
+          "pool": "address of pool",
+          "to": "receiver address of kokoa reward"
+        }
+      },
+      "claimableReward(address,address,bool)": {
+        "params": {
+          "bonus": "calculate fee",
+          "pool": "address of a reward pool",
+          "usr": "address of user"
+        }
+      },
+      "massUpdatePools(address[])": {
+        "params": {
+          "pools": "address list of pools to update"
+        }
+      },
+      "onChanged(int256,address)": {
+        "details": "무조건 해당 풀에서만 불려야 한다. 즉 msg.sender == pool (eng)Only Reward Pools should be able to call this function",
+        "params": {
+          "amount": "amount changed",
+          "to": "address of user"
+        }
+      },
+      "onDeposit(uint256,address)": {
+        "details": "무조건 해당 풀에서만 불려야 한다. 즉 msg.sender == pool (eng)Only Reward Pools should be able to call this function",
+        "params": {
+          "amount": "amount increased",
+          "to": "address of user"
+        }
+      },
+      "onWithdraw(uint256,address)": {
+        "details": "무조건 해당 풀에서만 불려야 한다. 즉 msg.sender == pool (eng)Only Reward Pools should be able to call this function",
+        "params": {
+          "amount": "amount decreased",
+          "to": "address of user"
+        }
+      },
+      "set(address,uint256,uint256)": {
+        "details": "it should be called by the governance (initially, admin EOA).",
+        "params": {
+          "allocPoint": "a weight parameter for Kokoa distribution",
+          "pool": "address of pool to register"
+        }
+      },
+      "updatePool(address)": {
+        "details": "내부적으로 _updatePool이 불리는데, 이 함수는 유저가 풀에 staking 양이 변화하거나, reward를 claim하기 전에 항상 불린다 따라서 이 함수를 밖에서 명시적으로 불릴 일은 거의 없을 것이다. 일단 sushiswap 에서 구현했기 때문에 가져왔다. (eng)It calls _updatePool function.       _updatePool is a function that should be called before whenever a user's stake is changed or one claims reward       So updatePool will not be called in any other circumstances, but we still implemented this part because it's in SushiSwap code",
+        "params": {
+          "pool": "address of pool to update"
+        }
+      }
+    },
+    "title": "A manager for distributing kokoa reward.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "accRewardPrecision()": {
+        "notice": "reward 분배양을 계산할 때 나눗셈을 하는데, 이때 얼마만큼의 유효숫자로 나눗셈을 할 것인지 결정한다."
+      },
+      "claimReward(address,address)": {
+        "notice": "유저가 분배받은 kokoa reward를 claim 하는 function"
+      },
+      "claimableReward(address,address,bool)": {
+        "notice": "returns amount of Kokoa reward a user is able to claim from a pool (i.e., 'claimable' reward)"
+      },
+      "massUpdatePools(address[])": {
+        "notice": "여러 풀들에 대해서 updatePool을 시켜준다. (eng)Do updatePool for multiple pools"
+      },
+      "onChanged(int256,address)": {
+        "notice": "onDeposit과 onWithdraw의 wrapperA wrapper function for onDeposit and onWithdraw"
+      },
+      "onDeposit(uint256,address)": {
+        "notice": "등록된 pool에서 유저가 staking한 양이 늘었을 때, 유저에게 분배할 reward 양을 계산하기 위해서 불린다.When the amount a user staked in a pool is increased, this function should be called in order to keep track of the reward"
+      },
+      "onWithdraw(uint256,address)": {
+        "notice": "등록된 pool에서 유저가 staking한 양이 줄었을 때, 유저에게 분배할 reward 양을 계산하기 위해서 불린다.When the amount a user staked in a pool is decreased, this function should be called in order to keep track of the reward"
+      },
+      "poolInfo(address)": {
+        "notice": "pool info"
+      },
+      "poolLength()": {
+        "notice": "number of registered pools"
+      },
+      "rewardPool(uint256)": {
+        "notice": "registered pool"
+      },
+      "rewardPools()": {
+        "notice": "all registered pools"
+      },
+      "set(address,uint256,uint256)": {
+        "notice": "등록된 풀이 받는 kokoa reward의 비율을 조절한다.Adjust the reward ratio of the selected pool"
+      },
+      "totalAllocPoint()": {
+        "notice": "total allocation point"
+      },
+      "updatePool(address)": {
+        "notice": "유저에게 분배될 reward 양을 업데이트 시킨다.Update the amount of reward of a pool that should be distributed to its users"
+      },
+      "userInfo(address,address)": {
+        "notice": "user info."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 25013,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 25016,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 21959,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)21954_storage)"
+      },
+      {
+        "astId": 22349,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "_paused",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      },
+      {
+        "astId": 32734,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "kokoa",
+        "offset": 1,
+        "slot": "2",
+        "type": "t_contract(IKIP7)9935"
+      },
+      {
+        "astId": 32737,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "rewardTokenVesting",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_contract(ITokenVesting)9578"
+      },
+      {
+        "astId": 32743,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "poolInfo",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_struct(PoolInfo)8211_storage)"
+      },
+      {
+        "astId": 32748,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "rewardPool",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_array(t_contract(IRewardPool)9128)dyn_storage"
+      },
+      {
+        "astId": 32756,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "userInfo",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_struct(UserInfo)8216_storage))"
+      },
+      {
+        "astId": 32759,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "totalAllocPoint",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 32765,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "skokoa",
+        "offset": 0,
+        "slot": "8",
+        "type": "t_contract(IStakingPool)9379"
+      },
+      {
+        "astId": 32767,
+        "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+        "label": "incinerator",
+        "offset": 0,
+        "slot": "9",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_contract(IRewardPool)9128)dyn_storage": {
+        "base": "t_contract(IRewardPool)9128",
+        "encoding": "dynamic_array",
+        "label": "contract IRewardPool[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IKIP7)9935": {
+        "encoding": "inplace",
+        "label": "contract IKIP7",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IRewardPool)9128": {
+        "encoding": "inplace",
+        "label": "contract IRewardPool",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IStakingPool)9379": {
+        "encoding": "inplace",
+        "label": "contract IStakingPool",
+        "numberOfBytes": "20"
+      },
+      "t_contract(ITokenVesting)9578": {
+        "encoding": "inplace",
+        "label": "contract ITokenVesting",
+        "numberOfBytes": "20"
+      },
+      "t_int256": {
+        "encoding": "inplace",
+        "label": "int256",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_struct(UserInfo)8216_storage))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => struct IKokoaRewardManager.UserInfo))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_struct(UserInfo)8216_storage)"
+      },
+      "t_mapping(t_address,t_struct(PoolInfo)8211_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct IKokoaRewardManager.PoolInfo)",
+        "numberOfBytes": "32",
+        "value": "t_struct(PoolInfo)8211_storage"
+      },
+      "t_mapping(t_address,t_struct(UserInfo)8216_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct IKokoaRewardManager.UserInfo)",
+        "numberOfBytes": "32",
+        "value": "t_struct(UserInfo)8216_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)21954_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)21954_storage"
+      },
+      "t_struct(PoolInfo)8211_storage": {
+        "encoding": "inplace",
+        "label": "struct IKokoaRewardManager.PoolInfo",
+        "members": [
+          {
+            "astId": 8202,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "accRewardPerShare",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 8204,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "lastRewardTimestamp",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 8206,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "allocPoint",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 8208,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "init",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_bool"
+          },
+          {
+            "astId": 8210,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "fee",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "160"
+      },
+      "t_struct(RoleData)21954_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 21951,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 21953,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(UserInfo)8216_storage": {
+        "encoding": "inplace",
+        "label": "struct IKokoaRewardManager.UserInfo",
+        "members": [
+          {
+            "astId": 8213,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "rewardDebt",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_int256"
+          },
+          {
+            "astId": 8215,
+            "contract": "contracts/reward/KokoaRewardManager.sol:KokoaRewardManager",
+            "label": "claimedReward",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

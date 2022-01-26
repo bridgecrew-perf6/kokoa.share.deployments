@@ -1,0 +1,681 @@
+{
+  "address": "0xf1bdb9C7757a03ac104543a41BFAFdeF2da5F3d7",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Stake",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Unstake",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "__JoblessYield_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "__KDAIYield_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_totalAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "applyProfit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "ksdAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "expectedApr",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "receiver",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "toAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "toValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract IKIP7",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "unstake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "yieldFactory",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x9084756081749dbceb4d1b6f63077a1a3b8757bb8da132b8ae257aea717301f3",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0xf1bdb9C7757a03ac104543a41BFAFdeF2da5F3d7",
+    "transactionIndex": 17,
+    "gasUsed": "1039761",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x8a4e11e1dce24c63b807a94e6c44529e9c0a63759319951dcf18535e1366acfc",
+    "transactionHash": "0x9084756081749dbceb4d1b6f63077a1a3b8757bb8da132b8ae257aea717301f3",
+    "logs": [],
+    "blockNumber": 79128683,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "daac9cba34dfabe5953ff704314717f0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Stake\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Unstake\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"__JoblessYield_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"__KDAIYield_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_totalAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"applyProfit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"ksdAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"expectedApr\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"receiver\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenAmount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"toAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenAmount\",\"type\":\"uint256\"}],\"name\":\"toValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IKIP7\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenAmount\",\"type\":\"uint256\"}],\"name\":\"unstake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yieldFactory\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"stake(uint256)\":{\"params\":{\"tokenAmount\":\"Amount of token to stake.\"}},\"unstake(uint256)\":{\"params\":{\"tokenAmount\":\"Amount of token to unstake.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"applyProfit()\":{\"notice\":\"Convert the generated reward to ksd and distribute it to the beneficiaries.\"},\"expectedApr()\":{\"notice\":\"expected apr of this yield\"},\"stake(uint256)\":{\"notice\":\"stake token to this contract\"},\"unstake(uint256)\":{\"notice\":\"unstake token from this contract.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/collateral/KDAI/KDAIYield.sol\":\"KDAIYield\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/collateral/KDAI/KDAIYield.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../../yield/JoblessYield.sol\\\";\\n\\ncontract KDAIYield is JoblessYield {\\n    function __KDAIYield_init() public initializer {\\n        __JoblessYield_init();\\n    }\\n}\\n\",\"keccak256\":\"0x7b150f39f687848d9c3fd31083ba2f3d493dd95b2a63e776b10b3db3e5e72616\",\"license\":\"MIT\"},\"contracts/interface/IKlaySwapBridge.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./klayswap/IKlaytnExchangeImpl.sol\\\";\\nimport \\\"./klayswap/IKlaytnFactoryImpl.sol\\\";\\nimport \\\"./klayswap/IKlaySwapSupporterExtended.sol\\\";\\n\\n/// @title Interaction contract with klayswap.\\n/// @notice Use exchange functions in klayswap.\\ninterface IKlaySwapBridge {\\n    /// @notice Get pool(exchange) address from tokens.\\n    function tokenToPool(address tokenA, address tokenB) external view returns (address);\\n\\n    /// @notice Exchange klay for another token.\\n    function exchangeKlayPos(\\n        address token,\\n        uint256 amount,\\n        address[] calldata path\\n    ) external payable;\\n\\n    /// @notice Exchange tokenA for tokenB.\\n    function exchangeKctPos(\\n        address tokenA,\\n        uint256 amountA,\\n        address tokenB,\\n        uint256 amountB,\\n        address[] calldata path\\n    ) external;\\n\\n    /// @notice Exchange klay for another token.\\n    function exchangeKlayNeg(\\n        address token,\\n        uint256 amount,\\n        address[] calldata path\\n    ) external payable;\\n\\n    /// @notice Exchange tokenA for tokenB.\\n    function exchangeKctNeg(\\n        address tokenA,\\n        uint256 amountA,\\n        address tokenB,\\n        uint256 amountB,\\n        address[] calldata path\\n    ) external;\\n}\\n\",\"keccak256\":\"0x1bde114f35291d568ed1348d316afb44285383f085006c23c68431fc9cccedc6\",\"license\":\"MIT\"},\"contracts/interface/IYield.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IYield {\\n    event Stake(address from, uint256 amount);\\n    event Unstake(address from, uint256 amount);\\n\\n    function totalValue() external view returns (uint256);\\n\\n    function totalAmount() external view returns (uint256);\\n\\n    /// @notice expected apr of this yield\\n    function expectedApr() external view returns (uint256);\\n\\n    /// @notice add klay to cn node\\n    function stake(uint256 tokenAmount) external;\\n\\n    /// @notice remove klay from cn node\\n    /// @dev pending 7 days\\n    function unstake(uint256 tokenAmount) external;\\n\\n    /// @notice Convert the generated reward(klay) to ksd and distribute it to the beneficiaries\\n    function applyProfit() external returns (uint256 ksdAmount);\\n}\\n\",\"keccak256\":\"0xfd3ed9ddce1288a3b4b1d96d9be160b2a53e3750f3e5dfc5bc381af00f4deaac\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP13.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\ninterface IKIP13 {\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x651958b745058d476a41ab467d508d2fe6c131d83cdbe9dfe28b3893d32c48fd\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP13.sol\\\";\\n\\ninterface IKIP7 is IKIP13 {\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function safeTransfer(\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransfer(address recipient, uint256 amount) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount,\\n        bytes calldata data\\n    ) external;\\n\\n    function safeTransferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external;\\n}\\n\",\"keccak256\":\"0x6fb8afaff38611db93f55c13447c08ea47e5392b895a75bf43999808176528e0\",\"license\":\"MIT\"},\"contracts/interface/kip/IKIP7Detailed.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./IKIP7.sol\\\";\\n\\ninterface IKIP7Detailed is IKIP7 {\\n    function name() external view returns (string memory);\\n\\n    function symbol() external view returns (string memory);\\n\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0xb19fcc63818f59c23defe41b45aa9235cd43a373d97fe222fc939ad3f0f697c9\",\"license\":\"MIT\"},\"contracts/interface/klayswap/IKlaySwapSupporterExtended.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IKlaySwapSupporterExtended {\\n    function _version() external pure returns (string memory);\\n\\n    // sklay \\ub9cc\\ud07c unstaking\\n    function _estimateKlayFromDelegation(uint256 sklay) external view returns (uint256);\\n\\n    // klay \\ub9cc\\ud07c staking\\n    function _estimateSKlayFromDelegation(uint256 klay) external view returns (uint256);\\n\\n    // klay => sklay swap\\n    function _estimateKlayFromSwap(uint256 sklay) external view returns (uint256);\\n\\n    // sklay => klay swap\\n    function _estimateSKlayFromSwap(uint256 klay) external view returns (uint256);\\n\\n    // sklay \\ub9cc\\ud07c addLiquidity \\ud588\\uc744\\ub54c \\ud544\\uc694\\ud55c klay\\n    function _estimateKlayFromLiquidity(\\n        uint256 sklay,\\n        uint256 swapKlay,\\n        uint256 swapSKlay\\n    ) external view returns (uint256);\\n\\n    // klay \\ub9cc\\ud07c addLiquidity \\ud588\\uc744\\ub54c \\ud544\\uc694\\ud55c sklay\\n    function _estimateSKlayFromLiquidity(uint256 klay) external view returns (uint256);\\n\\n    // (klay, sklay) \\ub9cc\\ud07c addLiquidity \\ud588\\uc744\\ub54c \\uc608\\uc0c1\\n    function _estimateAddLiquidity(uint256 klay, uint256 sklay)\\n        external\\n        view\\n        returns (\\n            bool res,\\n            uint256 estimatedLP,\\n            uint256 estimatedKlay,\\n            uint256 estimatedSKlay\\n        );\\n\\n    function _estimateLPFromKlay(uint256 amount) external view returns (uint256 lp);\\n\\n    function _estimateKlayFromLP(uint256 amount) external view returns (uint256 klay);\\n\\n    function _estimateKlayByQuickWithdraw(uint256 amount)\\n        external\\n        view\\n        returns (\\n            uint256 klay,\\n            uint256 sklay,\\n            uint256 klayFromSwap,\\n            uint256 totalReturn\\n        );\\n\\n    function _calc(uint256 klay)\\n        external\\n        view\\n        returns (\\n            bool find,\\n            uint256 liquidityKlay,\\n            uint256 delegationKlay,\\n            uint256 swapKlay,\\n            uint256 totalSKlay\\n        );\\n\\n    function _calcKlayForDelegation(\\n        uint256 klay,\\n        uint256 klayForSwap,\\n        uint256 sklayBySwap\\n    ) external view returns (uint256);\\n\\n    function _getPoolRate() external view returns (uint256 delegationPoolRate, uint256 swapPoolRate);\\n\\n    function _comparePoolRate() external view returns (bool);\\n\\n    function _getUserStat(address user)\\n        external\\n        view\\n        returns (\\n            address wallet,\\n            uint256 lp,\\n            uint256 klay,\\n            uint256 ksp,\\n            uint256 lastClaimedIndex,\\n            uint256 historyIndex,\\n            uint256 rewardKSPSum,\\n            uint256 lastKSPIndex\\n        );\\n\\n    function addLiquidity(uint256 swapPoolRate) external payable;\\n\\n    // klay \\ub2e8\\uc704\\n    // lp \\uc218\\ub7c9 \\uacc4\\uc0b0\\ud574\\ub0b4\\uba74\\uc11c \\uc18c\\ub7c9 \\ucc28\\uc774\\ub0a0 \\uc218 \\uc788\\ub2e4.\\n    // lp 1 wei \\ub354 \\ubc1b\\ub294\\ub2e4\\n\\n    // function removeLiquidity(uint amount, bool quick, uint swapPoolRate, uint minTotalReturn) external;\\n    function removeLiquidity(\\n        address user,\\n        uint256 amount,\\n        bool quick,\\n        uint256 swapPoolRate,\\n        uint256 minTotalReturn\\n    ) external;\\n\\n    // function claimKlay(uint hid) external;\\n    function claimKlay(address usr, uint256 hid) external;\\n\\n    function claimKSP() external;\\n\\n    function claimToken(address token) external;\\n\\n    function claimCount(address usr) external view returns (uint256);\\n\\n    function historyCount(address usr) external view returns (uint256);\\n\\n    function history(address usr, uint256 hid)\\n        external\\n        view\\n        returns (\\n            address,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            bool\\n        );\\n}\\n\",\"keccak256\":\"0xef31daf3cecfb3803193d7e840d4430316b5c02f369a027666d478c6bed3b63a\",\"license\":\"MIT\"},\"contracts/interface/klayswap/IKlaytnExchangeImpl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../kip/IKIP7Detailed.sol\\\";\\n\\ninterface IKlaytnExchange is IKIP7Detailed {\\n    function fee() external view returns (uint256);\\n\\n    function getCurrentPool() external view returns (uint256, uint256);\\n\\n    function addKctLiquidity(uint256 amountA, uint256 amountB) external;\\n\\n    function estimatePos(address token, uint256 amount) external view returns (uint256);\\n\\n    function estimateNeg(address token, uint256 amount) external view returns (uint256);\\n\\n    function addKlayLiquidity(uint256 amount) external payable;\\n\\n    function tokenA() external view returns (address);\\n\\n    function tokenB() external view returns (address);\\n\\n    function removeLiquidity(uint256 amount) external;\\n\\n    function claimReward() external;\\n\\n    function updateMiningIndex() external;\\n\\n    function changeMiningRate(uint256 _mining) external;\\n}\\n\",\"keccak256\":\"0xf73ef854715fe5c95229cb544fb23bb98483976769eace23a24a9b841c4cbe44\",\"license\":\"MIT\"},\"contracts/interface/klayswap/IKlaytnFactoryImpl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IKlaytnFactory {\\n    function tokenToPool(address tokenA, address tokenB) external view returns (address);\\n\\n    function exchangeKctPos(\\n        address tokenA,\\n        uint256 amountA,\\n        address tokenB,\\n        uint256 amountB,\\n        address[] calldata path\\n    ) external;\\n\\n    function exchangeKctNeg(\\n        address tokenA,\\n        uint256 amountA,\\n        address tokenB,\\n        uint256 amountB,\\n        address[] calldata path\\n    ) external;\\n\\n    function exchangeKlayPos(\\n        address token,\\n        uint256 amount,\\n        address[] calldata path\\n    ) external payable;\\n\\n    function exchangeKlayNeg(\\n        address token,\\n        uint256 amount,\\n        address[] calldata path\\n    ) external payable;\\n\\n    function getPoolCount() external view returns (uint256);\\n\\n    function createKctPool(\\n        address tokenA,\\n        uint256 amountA,\\n        address tokenB,\\n        uint256 amountB,\\n        uint256 fee\\n    ) external;\\n\\n    function createKlayPool(\\n        address token,\\n        uint256 amount,\\n        uint256 fee\\n    ) external payable;\\n\\n    function getPoolAddress(uint256 idx) external view returns (address);\\n}\\n\",\"keccak256\":\"0x1dff8b30ec20ec0060f34b4255e919823c1725a0190fc9e413dc0afa72f2b8f0\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/Pausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./AccessControl.sol\\\";\\n\\nabstract contract Pausable is AccessControl {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    bool private _paused;\\n\\n    function __Pausable_init() internal initializer {\\n        __AccessControl_init();\\n        _setRoleAdmin(bytes32(\\\"pauser\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"pauser\\\"), msg.sender);\\n    }\\n\\n    function paused() public view virtual returns (bool) {\\n        return _paused;\\n    }\\n\\n    modifier whenNotPaused() virtual {\\n        require(!paused(), \\\"Pausable: paused\\\");\\n        _;\\n    }\\n\\n    modifier whenPaused() {\\n        require(paused(), \\\"Pausable: not paused\\\");\\n        _;\\n    }\\n\\n    function pause() public whenNotPaused onlyRole(\\\"pauser\\\") {\\n        _paused = true;\\n        emit Paused(msg.sender);\\n    }\\n\\n    function unpause() public whenPaused onlyRole(\\\"pauser\\\") {\\n        _paused = false;\\n        emit Unpaused(msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x09830075c06c05d623c2db6ce3f84b495181ab439043cdaab714060b9fc23f5a\",\"license\":\"MIT\"},\"contracts/library/WadRayMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nlibrary WadRayMath {\\n    uint256 internal constant WAD = 1e18;\\n    uint256 internal constant halfWAD = WAD / 2;\\n\\n    uint256 internal constant RAY = 1e27;\\n    uint256 internal constant halfRAY = RAY / 2;\\n\\n    uint256 internal constant WAD_RAY_RATIO = 1e9;\\n\\n    /**\\n     * @return One ray, 1e27\\n     **/\\n    function ray() internal pure returns (uint256) {\\n        return RAY;\\n    }\\n\\n    /**\\n     * @return One wad, 1e18\\n     **/\\n\\n    function wad() internal pure returns (uint256) {\\n        return WAD;\\n    }\\n\\n    /**\\n     * @return Half ray, 1e27/2\\n     **/\\n    function halfRay() internal pure returns (uint256) {\\n        return halfRAY;\\n    }\\n\\n    /**\\n     * @return Half ray, 1e18/2\\n     **/\\n    function halfWad() internal pure returns (uint256) {\\n        return halfWAD;\\n    }\\n\\n    /**\\n     * @dev Multiplies two wad, rounding half up to the nearest wad\\n     * @param a Wad\\n     * @param b Wad\\n     * @return The result of a*b, in wad\\n     **/\\n    function wadMul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        if (a == 0 || b == 0) {\\n            return 0;\\n        }\\n\\n        require(a <= (type(uint256).max - halfWAD) / b, \\\"WadRayMath::wadMul: overflow\\\");\\n\\n        return (a * b + halfWAD) / WAD;\\n    }\\n\\n    /**\\n     * @dev Divides two wad, rounding half up to the nearest wad\\n     * @param a Wad\\n     * @param b Wad\\n     * @return The result of a/b, in wad\\n     **/\\n    function wadDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        require(b != 0, \\\"WadRayMath::wadDiv: divide by zero\\\");\\n        uint256 halfB = b / 2;\\n\\n        require(a <= (type(uint256).max - halfB) / WAD, \\\"WadRayMath::wadDiv: overflow\\\");\\n\\n        return (a * WAD + halfB) / b;\\n    }\\n\\n    /**\\n     * @dev Multiplies two ray, rounding half up the nearest ray\\n     * @param a Ray\\n     * @param b Ray\\n     * @return The result of a*b, in ray\\n     **/\\n    function rayMul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        if (a == 0 || b == 0) {\\n            return 0;\\n        }\\n\\n        require(a <= (type(uint256).max - halfRAY) / b, \\\"WadRayMath::rayMul: overflow\\\");\\n\\n        return (a * b + halfRAY) / RAY;\\n    }\\n\\n    /**\\n     * @dev Divides two ray, rounding half up the nearest ray\\n     * @param a Ray\\n     * @param b Ray\\n     * @return The result of a/b, in ray\\n     **/\\n    function rayDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        require(b != 0, \\\"WadRayMath::rayDiv: divide by zero\\\");\\n        uint256 halfB = b / 2;\\n\\n        require(a <= (type(uint256).max - halfB) / RAY, \\\"WadRayMath::rayDiv: overflow\\\");\\n\\n        return (a * RAY + halfB) / b;\\n    }\\n\\n    function rayCeilMul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        if (a == 0 || b == 0) {\\n            return 0;\\n        }\\n\\n        require(a <= (type(uint256).max - RAY + 1) / b, \\\"WadRayMath::rayMul: overflow\\\");\\n\\n        return (a * b + RAY - 1) / RAY;\\n    }\\n\\n    function rayCeilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        require(b != 0, \\\"WadRayMath::rayDiv: divide by zero\\\");\\n\\n        require(a <= (type(uint256).max - b + 1) / RAY, \\\"WadRayMath::rayDiv: overflow\\\");\\n\\n        return (a * RAY + b - 1) / b;\\n    }\\n\\n    function rdiv(uint256 x, uint256 y) internal pure returns (uint256 z) {\\n        z = x * RAY;\\n        z = z / y;\\n    }\\n\\n    function rmul(uint256 x, uint256 y) internal pure returns (uint256 z) {\\n        z = x * y;\\n        require(y == 0 || z / y == x, \\\"WadRayMath:: rmul: overflow\\\");\\n        z = z / RAY;\\n    }\\n\\n    function wmul(uint256 x, uint256 y) internal pure returns (uint256 z) {\\n        z = x * y;\\n        require(y == 0 || z / y == x, \\\"WadRayMath:: wmul: overflow\\\");\\n        z = z / WAD;\\n    }\\n\\n    // copy from maker dao\\n    // https://github.com/makerdao/dss/blob/6c1c780d3c8ab6e27ea63d272e0d1176b05b9871/src/jug.sol#L62\\n    function rpow(\\n        uint256 x,\\n        uint256 n,\\n        uint256 b\\n    ) internal pure returns (uint256 z) {\\n        assembly {\\n            switch x\\n            case 0 {\\n                switch n\\n                case 0 {\\n                    z := b\\n                }\\n                default {\\n                    z := 0\\n                }\\n            }\\n            default {\\n                switch mod(n, 2)\\n                case 0 {\\n                    z := b\\n                }\\n                default {\\n                    z := x\\n                }\\n                let half := div(b, 2) // for rounding.\\n                for {\\n                    n := div(n, 2)\\n                } n {\\n                    n := div(n, 2)\\n                } {\\n                    let xx := mul(x, x)\\n                    if iszero(eq(div(xx, x), x)) {\\n                        revert(0, 0)\\n                    }\\n                    let xxRound := add(xx, half)\\n                    if lt(xxRound, xx) {\\n                        revert(0, 0)\\n                    }\\n                    x := div(xxRound, b)\\n                    if mod(n, 2) {\\n                        let zx := mul(z, x)\\n                        if and(iszero(iszero(x)), iszero(eq(div(zx, x), z))) {\\n                            revert(0, 0)\\n                        }\\n                        let zxRound := add(zx, half)\\n                        if lt(zxRound, zx) {\\n                            revert(0, 0)\\n                        }\\n                        z := div(zxRound, b)\\n                    }\\n                }\\n            }\\n        }\\n    }\\n\\n    /**\\n     * @dev Casts ray down to wad\\n     * @param a Ray\\n     * @return a casted to wad, rounded half up to the nearest wad\\n     **/\\n    function rayToWad(uint256 a) internal pure returns (uint256) {\\n        uint256 halfRatio = WAD_RAY_RATIO / 2;\\n        uint256 result = halfRatio + a;\\n        require(result >= halfRatio, \\\"WadRayMath::rayToWad: overflow\\\");\\n\\n        return result / WAD_RAY_RATIO;\\n    }\\n\\n    /**\\n     * @dev Converts wad up to ray\\n     * @param a Wad\\n     * @return a converted in ray\\n     **/\\n    function wadToRay(uint256 a) internal pure returns (uint256) {\\n        uint256 result = a * WAD_RAY_RATIO;\\n        require(result / WAD_RAY_RATIO == a, \\\"WadRayMath::wadToRay: overflow\\\");\\n        return result;\\n    }\\n}\\n\",\"keccak256\":\"0xbfda078b46cc0f7958d40bf2a4d9b8c10f3405680093aa3004c2e76e515651c4\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/contracts/utils/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    function add(uint256 x, int256 y) internal pure returns (uint256 z) {\\n        unchecked {\\n            z = x + uint256(y);\\n            require(y >= 0 || z <= x, \\\"Math: addition overflow\\\");\\n            require(y <= 0 || z >= x, \\\"Math: addition overflow\\\");\\n        }\\n    }\\n\\n    function sub(uint256 x, int256 y) internal pure returns (uint256 z) {\\n        unchecked {\\n            z = x - uint256(y);\\n            require(y <= 0 || z <= x, \\\"Math: subtraction overflow\\\");\\n            require(y >= 0 || z >= x, \\\"Math: subtraction overflow\\\");\\n        }\\n    }\\n\\n    function mul(uint256 x, int256 y) internal pure returns (int256 z) {\\n        unchecked {\\n            z = int256(x) * y;\\n            require(int256(x) >= 0, \\\"Math: multiplication overflow\\\");\\n            require(y == 0 || z / y == int256(x), \\\"Math: multiplication overflow\\\");\\n        }\\n    }\\n\\n    function mul(int256 x, uint256 y) internal pure returns (int256 z) {\\n        z = x * int256(y);\\n        require(int256(y) >= 0, \\\"Math: multiplication overflow\\\");\\n        require(x == 0 || z / x == int256(y), \\\"Math: multiplication overflow\\\");\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a >= b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a / b + (a % b == 0 ? 0 : 1);\\n    }\\n\\n    // from uniswap\\n    // babylonian method (https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)\\n    function sqrt(uint256 y) internal pure returns (uint256 z) {\\n        z = y;\\n        uint256 x = y / 2 + 1;\\n        while (x < z) {\\n            z = x;\\n            x = (y / x + x) / 2;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xd94cce7a88a43ad7e95b468dbd59a18e62f95be8b23a1619e0b96bfc1246eae1\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"},\"contracts/yield/JoblessYield.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../library/AccessControl.sol\\\";\\nimport \\\"../library/Pausable.sol\\\";\\nimport \\\"../library/WadRayMath.sol\\\";\\nimport \\\"../library/openzeppelin/contracts/utils/Math.sol\\\";\\nimport \\\"../interface/klayswap/IKlaytnExchangeImpl.sol\\\";\\nimport \\\"../interface/IKlaySwapBridge.sol\\\";\\nimport \\\"../interface/IYield.sol\\\";\\n\\nabstract contract JoblessYield is IYield, AccessControl, Pausable {\\n    IKIP7 public token;\\n    address public yieldFactory;\\n    uint256 public _totalAmount;\\n    address public receiver;\\n\\n    function __JoblessYield_init() public initializer {\\n        __Pausable_init();\\n    }\\n\\n    // --- config ---\\n    function config(bytes32 what, address data) external onlyAdmin {\\n        if (what == \\\"token\\\") token = IKIP7(data);\\n        else if (what == \\\"yieldFactory\\\") yieldFactory = data;\\n        else if (what == \\\"receiver\\\") receiver = data;\\n        else revert(\\\"JoblessYield::config:unrecognized-param\\\");\\n    }\\n\\n    function expectedApr() external view override returns (uint256) {\\n        return 1;\\n    }\\n\\n    function toValue(uint256 tokenAmount) public view returns (uint256) {\\n        return tokenAmount;\\n    }\\n\\n    function toAmount(uint256 value) public view returns (uint256) {\\n        return value;\\n    }\\n\\n    function totalValue() external view override returns (uint256) {\\n        return _totalAmount;\\n    }\\n\\n    function totalAmount() external view override returns (uint256) {\\n        return _totalAmount;\\n    }\\n\\n    // --- functions ---\\n    /// @notice stake token to this contract\\n    /// @param tokenAmount Amount of token to stake.\\n    function stake(uint256 tokenAmount) external override onlyAdmin whenNotPaused {\\n        token.transferFrom(msg.sender, address(this), tokenAmount);\\n        _totalAmount += tokenAmount;\\n        emit Stake(msg.sender, tokenAmount);\\n    }\\n\\n    /// @notice unstake token from this contract.\\n    /// @param tokenAmount Amount of token to unstake.\\n    function unstake(uint256 tokenAmount) public override onlyAdmin whenNotPaused {\\n        token.transfer(receiver, tokenAmount);\\n        _totalAmount -= tokenAmount;\\n        emit Unstake(msg.sender, tokenAmount);\\n    }\\n\\n    /// @dev turn token into ksd\\n    function tokenToKsd(uint256 tokenAmount) internal virtual {}\\n\\n    /// @notice Convert the generated reward to ksd and distribute it to the beneficiaries.\\n    function applyProfit() external override onlyAdmin returns (uint256 ksdAmount) {\\n        return 0;\\n    }\\n}\\n\",\"keccak256\":\"0xfae47aaa4aa60438abe1fa222b55e389f8aa0015dc776722b7e95f02e55c2824\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610e6b806100206000396000f3fe608060405234801561001057600080fd5b50600436106101735760003560e01c80638456cb59116100de578063d4c3eea011610097578063f2fde38b11610071578063f2fde38b146102bc578063f648fc0d14610229578063f7260d3e146102cf578063fc0c546a146102e257610173565b8063d4c3eea0146101b2578063d547741f146102a2578063df63c8b6146102b557610173565b80638456cb591461025157806391d1485414610259578063a217fddf1461026c578063a694fc3a14610274578063cf712f6f14610287578063d366f3b91461028f57610173565b80632f2ff15d116101305780632f2ff15d146101f257806336568abe146102055780633bbeaab5146102185780633f4ba83a146102215780634c41dd96146102295780635c975abb1461023a57610173565b806316fd84f71461017857806319c1b49f146101a85780631a39d8ef146101b25780632042c975146101c4578063248a9ca3146101cc5780632e17de78146101df575b600080fd5b60035461018b906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b6101b06102fa565b005b6004545b60405190815260200161019f565b6101b0610381565b6101b66101da366004610d35565b6103ea565b6101b06101ed366004610d35565b610403565b6101b0610200366004610d4d565b61051a565b6101b0610213366004610d4d565b61053c565b6101b660045481565b6101b06105ba565b6101b6610237366004610d35565b90565b60025460ff165b604051901515815260200161019f565b6101b0610651565b610241610267366004610d4d565b6106c5565b6101b6600081565b6101b0610282366004610d35565b6106f0565b6101b6610801565b6101b061029d366004610d4d565b61081b565b6101b06102b0366004610d4d565b610924565b60016101b6565b6101b06102ca366004610cf4565b610941565b60055461018b906001600160a01b031681565b60025461018b9061010090046001600160a01b031681565b600054610100900460ff168061030f5750303b155b8061031d575060005460ff16155b6103425760405162461bcd60e51b815260040161033990610da2565b60405180910390fd5b600054610100900460ff16158015610364576000805461ffff19166101011790555b61036c610977565b801561037e576000805461ff00191690555b50565b600054610100900460ff16806103965750303b155b806103a4575060005460ff16155b6103c05760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff161580156103e2576000805461ffff19166101011790555b61036c6102fa565b600081815260016020819052604090912001545b919050565b6104156430b236b4b760d91b33610a0e565b60025460ff16156104385760405162461bcd60e51b815260040161033990610d78565b60025460055460405163a9059cbb60e01b81526001600160a01b03918216600482015260248101849052610100909204169063a9059cbb90604401602060405180830381600087803b15801561048d57600080fd5b505af11580156104a1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104c59190610d15565b5080600460008282546104d89190610e08565b909155505060408051338152602081018390527f85082129d87b2fe11527cb1b3b7a520aeb5aa6913f88a3d8757fe40d1db02fdd91015b60405180910390a150565b610523826103ea565b61052d8133610a0e565b6105378383610a72565b505050565b6001600160a01b03811633146105ac5760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b6064820152608401610339565b6105b68282610add565b5050565b60025460ff166106035760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b6044820152606401610339565b653830bab9b2b960d11b6106178133610a0e565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa9060200161050f565b60025460ff16156106745760405162461bcd60e51b815260040161033990610d78565b653830bab9b2b960d11b6106888133610a0e565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a2589060200161050f565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b6107026430b236b4b760d91b33610a0e565b60025460ff16156107255760405162461bcd60e51b815260040161033990610d78565b6002546040516323b872dd60e01b8152336004820152306024820152604481018390526101009091046001600160a01b0316906323b872dd90606401602060405180830381600087803b15801561077b57600080fd5b505af115801561078f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b39190610d15565b5080600460008282546107c69190610df0565b909155505060408051338152602081018390527febedb8b3c678666e7f36970bc8f57abf6d8fa2e828c0da91ea5b75bf68ed101a910161050f565b60006108156430b236b4b760d91b33610a0e565b50600090565b61082d6430b236b4b760d91b33610a0e565b81643a37b5b2b760d91b14156108625760028054610100600160a81b0319166101006001600160a01b038416021790556105b6565b816b7969656c64466163746f727960a01b141561089957600380546001600160a01b0319166001600160a01b0383161790556105b6565b81673932b1b2b4bb32b960c11b14156108cc57600580546001600160a01b0319166001600160a01b0383161790556105b6565b60405162461bcd60e51b815260206004820152602760248201527f4a6f626c6573735969656c643a3a636f6e6669673a756e7265636f676e697a65604482015266642d706172616d60c81b6064820152608401610339565b61092d826103ea565b6109378133610a0e565b6105378383610add565b6109536437bbb732b960d91b33610a0e565b6109656437bbb732b960d91b82610a72565b61037e6437bbb732b960d91b33610add565b600054610100900460ff168061098c5750303b155b8061099a575060005460ff16155b6109b65760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff161580156109d8576000805461ffff19166101011790555b6109e0610b44565b6109fb653830bab9b2b960d11b6437bbb732b960d91b610bad565b61036c653830bab9b2b960d11b33610c02565b610a1882826106c5565b6105b65760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b6064820152608401610339565b610a7c82826106c5565b6105b65760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610ae782826106c5565b156105b65760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b595750303b155b80610b67575060005460ff16155b610b835760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff16158015610ba5576000805461ffff19166101011790555b61036c610c0c565b6000610bb8836103ea565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b6105b68282610a72565b600054610100900460ff1680610c215750303b155b80610c2f575060005460ff16155b610c4b5760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff16158015610c6d576000805461ffff19166101011790555b610c7f6437bbb732b960d91b33610c02565b610c996430b236b4b760d91b6437bbb732b960d91b610bad565b610cb66737b832b930ba37b960c11b6437bbb732b960d91b610bad565b610cc86430b236b4b760d91b33610c02565b61036c6737b832b930ba37b960c11b33610c02565b80356001600160a01b03811681146103fe57600080fd5b600060208284031215610d05578081fd5b610d0e82610cdd565b9392505050565b600060208284031215610d26578081fd5b81518015158114610d0e578182fd5b600060208284031215610d46578081fd5b5035919050565b60008060408385031215610d5f578081fd5b82359150610d6f60208401610cdd565b90509250929050565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60008219821115610e0357610e03610e1f565b500190565b600082821015610e1a57610e1a610e1f565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220b888665c3e7ee47f785ddbef33c2616043d50279edaee8813afe0d680012354a64736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101735760003560e01c80638456cb59116100de578063d4c3eea011610097578063f2fde38b11610071578063f2fde38b146102bc578063f648fc0d14610229578063f7260d3e146102cf578063fc0c546a146102e257610173565b8063d4c3eea0146101b2578063d547741f146102a2578063df63c8b6146102b557610173565b80638456cb591461025157806391d1485414610259578063a217fddf1461026c578063a694fc3a14610274578063cf712f6f14610287578063d366f3b91461028f57610173565b80632f2ff15d116101305780632f2ff15d146101f257806336568abe146102055780633bbeaab5146102185780633f4ba83a146102215780634c41dd96146102295780635c975abb1461023a57610173565b806316fd84f71461017857806319c1b49f146101a85780631a39d8ef146101b25780632042c975146101c4578063248a9ca3146101cc5780632e17de78146101df575b600080fd5b60035461018b906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b6101b06102fa565b005b6004545b60405190815260200161019f565b6101b0610381565b6101b66101da366004610d35565b6103ea565b6101b06101ed366004610d35565b610403565b6101b0610200366004610d4d565b61051a565b6101b0610213366004610d4d565b61053c565b6101b660045481565b6101b06105ba565b6101b6610237366004610d35565b90565b60025460ff165b604051901515815260200161019f565b6101b0610651565b610241610267366004610d4d565b6106c5565b6101b6600081565b6101b0610282366004610d35565b6106f0565b6101b6610801565b6101b061029d366004610d4d565b61081b565b6101b06102b0366004610d4d565b610924565b60016101b6565b6101b06102ca366004610cf4565b610941565b60055461018b906001600160a01b031681565b60025461018b9061010090046001600160a01b031681565b600054610100900460ff168061030f5750303b155b8061031d575060005460ff16155b6103425760405162461bcd60e51b815260040161033990610da2565b60405180910390fd5b600054610100900460ff16158015610364576000805461ffff19166101011790555b61036c610977565b801561037e576000805461ff00191690555b50565b600054610100900460ff16806103965750303b155b806103a4575060005460ff16155b6103c05760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff161580156103e2576000805461ffff19166101011790555b61036c6102fa565b600081815260016020819052604090912001545b919050565b6104156430b236b4b760d91b33610a0e565b60025460ff16156104385760405162461bcd60e51b815260040161033990610d78565b60025460055460405163a9059cbb60e01b81526001600160a01b03918216600482015260248101849052610100909204169063a9059cbb90604401602060405180830381600087803b15801561048d57600080fd5b505af11580156104a1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104c59190610d15565b5080600460008282546104d89190610e08565b909155505060408051338152602081018390527f85082129d87b2fe11527cb1b3b7a520aeb5aa6913f88a3d8757fe40d1db02fdd91015b60405180910390a150565b610523826103ea565b61052d8133610a0e565b6105378383610a72565b505050565b6001600160a01b03811633146105ac5760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b6064820152608401610339565b6105b68282610add565b5050565b60025460ff166106035760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b6044820152606401610339565b653830bab9b2b960d11b6106178133610a0e565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa9060200161050f565b60025460ff16156106745760405162461bcd60e51b815260040161033990610d78565b653830bab9b2b960d11b6106888133610a0e565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a2589060200161050f565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b6107026430b236b4b760d91b33610a0e565b60025460ff16156107255760405162461bcd60e51b815260040161033990610d78565b6002546040516323b872dd60e01b8152336004820152306024820152604481018390526101009091046001600160a01b0316906323b872dd90606401602060405180830381600087803b15801561077b57600080fd5b505af115801561078f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b39190610d15565b5080600460008282546107c69190610df0565b909155505060408051338152602081018390527febedb8b3c678666e7f36970bc8f57abf6d8fa2e828c0da91ea5b75bf68ed101a910161050f565b60006108156430b236b4b760d91b33610a0e565b50600090565b61082d6430b236b4b760d91b33610a0e565b81643a37b5b2b760d91b14156108625760028054610100600160a81b0319166101006001600160a01b038416021790556105b6565b816b7969656c64466163746f727960a01b141561089957600380546001600160a01b0319166001600160a01b0383161790556105b6565b81673932b1b2b4bb32b960c11b14156108cc57600580546001600160a01b0319166001600160a01b0383161790556105b6565b60405162461bcd60e51b815260206004820152602760248201527f4a6f626c6573735969656c643a3a636f6e6669673a756e7265636f676e697a65604482015266642d706172616d60c81b6064820152608401610339565b61092d826103ea565b6109378133610a0e565b6105378383610add565b6109536437bbb732b960d91b33610a0e565b6109656437bbb732b960d91b82610a72565b61037e6437bbb732b960d91b33610add565b600054610100900460ff168061098c5750303b155b8061099a575060005460ff16155b6109b65760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff161580156109d8576000805461ffff19166101011790555b6109e0610b44565b6109fb653830bab9b2b960d11b6437bbb732b960d91b610bad565b61036c653830bab9b2b960d11b33610c02565b610a1882826106c5565b6105b65760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b6064820152608401610339565b610a7c82826106c5565b6105b65760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610ae782826106c5565b156105b65760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b595750303b155b80610b67575060005460ff16155b610b835760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff16158015610ba5576000805461ffff19166101011790555b61036c610c0c565b6000610bb8836103ea565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b6105b68282610a72565b600054610100900460ff1680610c215750303b155b80610c2f575060005460ff16155b610c4b5760405162461bcd60e51b815260040161033990610da2565b600054610100900460ff16158015610c6d576000805461ffff19166101011790555b610c7f6437bbb732b960d91b33610c02565b610c996430b236b4b760d91b6437bbb732b960d91b610bad565b610cb66737b832b930ba37b960c11b6437bbb732b960d91b610bad565b610cc86430b236b4b760d91b33610c02565b61036c6737b832b930ba37b960c11b33610c02565b80356001600160a01b03811681146103fe57600080fd5b600060208284031215610d05578081fd5b610d0e82610cdd565b9392505050565b600060208284031215610d26578081fd5b81518015158114610d0e578182fd5b600060208284031215610d46578081fd5b5035919050565b60008060408385031215610d5f578081fd5b82359150610d6f60208401610cdd565b90509250929050565b60208082526010908201526f14185d5cd8589b194e881c185d5cd95960821b604082015260600190565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b60008219821115610e0357610e03610e1f565b500190565b600082821015610e1a57610e1a610e1f565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220b888665c3e7ee47f785ddbef33c2616043d50279edaee8813afe0d680012354a64736f6c63430008030033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "stake(uint256)": {
+        "params": {
+          "tokenAmount": "Amount of token to stake."
+        }
+      },
+      "unstake(uint256)": {
+        "params": {
+          "tokenAmount": "Amount of token to unstake."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "applyProfit()": {
+        "notice": "Convert the generated reward to ksd and distribute it to the beneficiaries."
+      },
+      "expectedApr()": {
+        "notice": "expected apr of this yield"
+      },
+      "stake(uint256)": {
+        "notice": "stake token to this contract"
+      },
+      "unstake(uint256)": {
+        "notice": "unstake token from this contract."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 23220,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23223,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 20166,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)"
+      },
+      {
+        "astId": 20556,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "_paused",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      },
+      {
+        "astId": 39860,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "token",
+        "offset": 1,
+        "slot": "2",
+        "type": "t_contract(IKIP7)9881"
+      },
+      {
+        "astId": 39862,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "yieldFactory",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      },
+      {
+        "astId": 39864,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "_totalAmount",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 39866,
+        "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+        "label": "receiver",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IKIP7)9881": {
+        "encoding": "inplace",
+        "label": "contract IKIP7",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)20161_storage"
+      },
+      "t_struct(RoleData)20161_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 20158,
+            "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 20160,
+            "contract": "contracts/collateral/KDAI/KDAIYield.sol:KDAIYield",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

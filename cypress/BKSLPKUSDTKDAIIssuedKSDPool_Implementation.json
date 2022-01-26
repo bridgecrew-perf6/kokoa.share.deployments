@@ -1,0 +1,607 @@
+{
+  "address": "0x79C5Bbf95c0B454E15002e24996232232f1367AA",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "COLLATERAL_TYPE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ledger_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "kokoaRewardManager_",
+          "type": "address"
+        }
+      ],
+      "name": "__BKSLPKUSDTKDAIIssuedKSDPool_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ledger_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "kokoaRewardManager_",
+          "type": "address"
+        }
+      ],
+      "name": "__IssuedKSDPool_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "usr",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ledger",
+      "outputs": [
+        {
+          "internalType": "contract ILedger",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "amount",
+          "type": "int256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onChanged",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onDeposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "onWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardManger",
+      "outputs": [
+        {
+          "internalType": "contract IKokoaRewardManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8249387c3fff42bb3a0822a345f2fd11d513820d0427938e653102104dedbc64",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0x79C5Bbf95c0B454E15002e24996232232f1367AA",
+    "transactionIndex": 7,
+    "gasUsed": "1082557",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x8d676050a8639fd4de889064b0e6dbec6f007755937be1a63f23fdff55c0fbbb",
+    "transactionHash": "0x8249387c3fff42bb3a0822a345f2fd11d513820d0427938e653102104dedbc64",
+    "logs": [],
+    "blockNumber": 80575926,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "de4f5741dec2c2b2fd1b551e118f3df0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"COLLATERAL_TYPE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ledger_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"kokoaRewardManager_\",\"type\":\"address\"}],\"name\":\"__BKSLPKUSDTKDAIIssuedKSDPool_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ledger_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"kokoaRewardManager_\",\"type\":\"address\"}],\"name\":\"__IssuedKSDPool_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"usr\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ledger\",\"outputs\":[{\"internalType\":\"contract ILedger\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"amount\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onChanged\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onDeposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"onWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardManger\",\"outputs\":[{\"internalType\":\"contract IKokoaRewardManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"balanceOf(address)\":{\"params\":{\"usr\":\"address of user\"}},\"onChanged(int256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4. (eng)Only ledger contract should be able to call this function\",\"params\":{\"amount\":\"amount changed\",\"to\":\"The address of the user\"}},\"onDeposit(uint256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4. (eng)Only ledger contract should be able to call this function\",\"params\":{\"amount\":\"amount increased\",\"to\":\"The address of the user\"}},\"onWithdraw(uint256,address)\":{\"details\":\"\\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4. (eng)Only ledger contract should be able to call this function\",\"params\":{\"amount\":\"amount decreased\",\"to\":\"The address of the user\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"balanceOf(address)\":{\"notice\":\"\\uc720\\uc800\\uac00 \\ub2f4\\ubcf4\\ub85c \\ubc1c\\ud589\\ud55c ksd \\uc591Amount of KSD that a user minted against his collateral asset.\"},\"onChanged(int256,address)\":{\"notice\":\"onDeposit\\uacfc onWithdraw\\uc758 wrapperA wrapper function for onDeposit and onWithdraw functions\"},\"onDeposit(uint256,address)\":{\"notice\":\"\\uc720\\uc800\\uac00 \\ubc1c\\ud589\\ud55c ksd\\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c \\ubd88\\ub7ec\\uc918\\uc57c \\ud558\\ub294 functionThis should be called when the amount of KSD user minted from CDP gets increased\"},\"onWithdraw(uint256,address)\":{\"notice\":\"\\uc720\\uc800\\uac00 \\ubc1c\\ud589\\ud55c ksd\\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c \\ubd88\\ub7ec\\uc918\\uc57c \\ud558\\ub294 functionThis should be called when the amount of KSD user minted from CDP gets decreased\"},\"totalSupply()\":{\"notice\":\"\\ub2f4\\ubcf4\\ub85c \\ubc1c\\ud589\\ub41c \\ucd1d ksd \\ucd1d \\uc591 (eng)Total amount of KSD minted from CDP\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol\":\"BKSLPKUSDTKDAIIssuedKSDPool\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../../reward/pool/IssuedKSDPool.sol\\\";\\n\\ncontract BKSLPKUSDTKDAIIssuedKSDPool is IssuedKSDPool {\\n    function __BKSLPKUSDTKDAIIssuedKSDPool_init(address ledger_, address kokoaRewardManager_) public initializer {\\n        __IssuedKSDPool_init(ledger_, kokoaRewardManager_);\\n    }\\n\\n    function COLLATERAL_TYPE() public pure override returns (bytes32) {\\n        return bytes32(\\\"KSLPKUSDTKDAI\\\");\\n    }\\n}\\n\",\"keccak256\":\"0x9e2ec31be4975ea5a448220faa0297fe5345b481e8bcf91f616ca1eafa8f971e\",\"license\":\"MIT\"},\"contracts/interface/IIssuedKSDPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\n/// @title Adapter between Ledger and KokoaRewardManager\\n/// @dev \\ub2f4\\ubcf4\\ub300\\ucd9c\\uc744 \\ud1b5\\ud574\\uc11c ksd\\ub97c \\ubc1c\\ud589\\ud55c \\uc720\\uc800\\ub4e4\\uc5d0\\uac8c kokoa reward\\ub97c \\ubd84\\ubc30\\uc2dc\\ucf1c\\uc8fc\\uae30 \\uc704\\ud574\\uc11c,\\n///      ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\uc640 KokoaRewardManager\\ub97c \\uc5f0\\uacb0\\ud55c contract\\n/// @dev This is a contract that connects ledger contract and KokoaRewardManager contact\\n///     in order to distribute Kokoa reward (liquidity mining) to users who borrow(=mint) KSD from CDP\\ninterface IIssuedKSDPool {\\n    /// @notice \\ub2f4\\ubcf4\\ub85c \\ubc1c\\ud589\\ub41c \\ucd1d ksd \\ucd1d \\uc591\\n    /// (eng)\\n    /// @notice Total amount of KSD minted from CDP\\n    function totalSupply() external view returns (uint256);\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ub2f4\\ubcf4\\ub85c \\ubc1c\\ud589\\ud55c ksd \\uc591\\n    /// @param usr address of user\\n    /// (eng)\\n    /// @notice Amount of KSD that a user minted against his collateral asset.\\n    /// @param usr address of user\\n    function balanceOf(address usr) external view returns (uint256);\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ubc1c\\ud589\\ud55c ksd\\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c \\ubd88\\ub7ec\\uc918\\uc57c \\ud558\\ub294 function\\n    /// @param amount amount increased\\n    /// @param to The address of the user\\n    /// @dev \\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice This should be called when the amount of KSD user minted from CDP gets increased\\n    /// @param amount amount increased\\n    /// @param to The address of the user\\n    /// @dev Only ledger contract should be able to call this function\\n    function onDeposit(uint256 amount, address to) external;\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ubc1c\\ud589\\ud55c ksd\\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c \\ubd88\\ub7ec\\uc918\\uc57c \\ud558\\ub294 function\\n    /// @param amount amount decreased\\n    /// @param to The address of the user\\n    /// @dev \\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice This should be called when the amount of KSD user minted from CDP gets decreased\\n    /// @param amount amount decreased\\n    /// @param to The address of the user\\n    /// @dev Only ledger contract should be able to call this function\\n    function onWithdraw(uint256 amount, address to) external;\\n\\n    /// @notice onDeposit\\uacfc onWithdraw\\uc758 wrapper\\n    /// @param amount amount changed\\n    /// @param to The address of the user\\n    /// @dev \\ubb34\\uc870\\uac74 ledger \\ucee8\\ud2b8\\ub809\\ud2b8\\ub9cc \\ubd80\\ub97c \\uc218 \\uc788\\uc5b4\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice A wrapper function for onDeposit and onWithdraw functions\\n    /// @param amount amount changed\\n    /// @param to The address of the user\\n    /// @dev Only ledger contract should be able to call this function\\n    function onChanged(int256 amount, address to) external;\\n}\\n\",\"keccak256\":\"0x09a1a46a57fde47aeedd5892893cd84be455273a01203ca688a9404ce96b4ce7\",\"license\":\"MIT\"},\"contracts/interface/IKokoaRewardManager.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./IRewardPool.sol\\\";\\n\\n/// @title A manager about kokoa rewards.\\n/// @dev It manages all kokoa rewards. It's base code is from sushiswap.\\n/// Therefore, the way to distribute reward is very similar to sushiswap.\\n/// The main difference between sushiswap and KokoaRewardManager is staking.\\n/// Sushiswap forces to stake token, but KokoaRewardManager does not own token.\\n/// It just expect registered pool to call onDeposit/onWithdraw/onChanged, and\\n/// get balance and totalSupply of pool to calculate how to distribute reward.\\n/// \\ub610\\ud55c, \\uae30\\uc874 sushiswap \\uc5d0\\uc11c\\ub294 \\ube14\\ub85d\\ub2f9 minting\\uc774 \\ub418\\uc5b4 \\ub9ac\\uc6cc\\ub4dc\\ub97c \\uc0dd\\uc0b0\\ud588\\uc9c0\\ub9cc,\\n/// \\uc774 \\ubcc0\\ud615\\ub41c \\ucf54\\ub4dc\\uc5d0\\uc11c\\ub294 vesting \\ub85c\\uc9c1\\uc5d0 \\ub530\\ub77c\\uc11c vesting\\ub41c \\uc591\\uc744 \\ub4f1\\ub85d\\ub41c \\ud480\\uc5d0\\uac8c \\ubd84\\ubc30\\ud55c\\ub2e4.\\ninterface IKokoaRewardManager {\\n    struct PoolInfo {\\n        uint256 accRewardPerShare;\\n        uint256 lastRewardTimestamp;\\n        uint256 allocPoint;\\n        bool init;\\n        uint256 fee;\\n    }\\n\\n    struct UserInfo {\\n        int256 rewardDebt;\\n        uint256 claimedReward; // it is used in referral contract.\\n    }\\n\\n    /// @notice count of registered pools\\n    function poolLength() external view returns (uint256);\\n\\n    /// @notice user info.\\n    function userInfo(address, address) external view returns (int256, uint256);\\n\\n    /// @notice registered pool\\n    function rewardPool(uint256 index) external view returns (IRewardPool);\\n\\n    /// @notice all registered pools\\n    function rewardPools() external view returns (address[] memory);\\n\\n    /// @notice pool info\\n    function poolInfo(address pool)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            bool,\\n            uint256\\n        );\\n\\n    /// @notice total allocation point\\n    function totalAllocPoint() external view returns (uint256);\\n\\n    /// @notice add pool to kokoaRewardManager\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @param pool address of pool to register\\n    /// @dev \\uc774 \\ud568\\uc218\\ub294 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function add(\\n        uint256 allocPoint,\\n        address pool,\\n        uint256 fee\\n    ) external;\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c \\ud480\\uc774 \\ubc1b\\ub294 kokoa reward\\uc758 \\ube44\\uc728\\uc744 \\uc870\\uc808\\ud55c\\ub2e4.\\n    /// @param pool address of pool to register\\n    /// @param allocPoint (allocPoint / totalAllocPoint) == kokoaRewardManager\\ub97c \\ud1b5\\ud574\\uc11c \\ub9c8\\uc774\\ub2dd\\ub41c \\ucd1d kokoa \\uc591 \\uc911\\uc5d0 \\uc774 \\ud480\\uc5d0 \\ubd84\\ubc30\\ub420 \\ube44\\uc728\\n    /// @dev \\uc774 \\ud568\\uc218\\ub294 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function set(\\n        address pool,\\n        uint256 allocPoint,\\n        uint256 fee\\n    ) external;\\n\\n    /// @notice amount of kokoa reward to distribute, but not claimed yet\\n    /// @param pool address of pool\\n    /// @param usr address of user who is distributed kokoa reward\\n    function claimableReward(\\n        address pool,\\n        address usr,\\n        bool bonus\\n    ) external view returns (uint256 pending);\\n\\n    /// @notice \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ub420 reward \\uc591\\uc744 \\uc5c5\\ub370\\uc774\\ud2b8 \\uc2dc\\ud0a8\\ub2e4.\\n    /// @param pool address of pool to update\\n    /// @dev \\ub0b4\\ubd80\\uc801\\uc73c\\ub85c _updatePool\\uc774 \\ubd88\\ub9ac\\ub294\\ub370, \\uc774 \\ud568\\uc218\\ub294 \\uc720\\uc800\\uac00 \\ud480\\uc5d0 staking \\uc591\\uc774 \\ubcc0\\ud654\\ud558\\uac70\\ub098, reward\\ub97c claim\\ud558\\uae30 \\uc804\\uc5d0 \\ud56d\\uc0c1 \\ubd88\\ub9b0\\ub2e4\\n    /// \\ub530\\ub77c\\uc11c \\uc774 \\ud568\\uc218\\ub97c \\ubc16\\uc5d0\\uc11c \\uba85\\uc2dc\\uc801\\uc73c\\ub85c \\ubd88\\ub9b4 \\uc77c\\uc740 \\uac70\\uc758 \\uc5c6\\uc744 \\uac83\\uc774\\ub2e4. \\uc77c\\ub2e8 sushiswap \\uc5d0\\uc11c \\uad6c\\ud604\\ud588\\uae30 \\ub54c\\ubb38\\uc5d0 \\uac00\\uc838\\uc654\\ub2e4.\\n    function updatePool(address pool) external;\\n\\n    /// @notice \\uc5ec\\ub7ec \\ud480\\ub4e4\\uc5d0 \\ub300\\ud574\\uc11c updatePool\\uc744 \\uc2dc\\ucf1c\\uc900\\ub2e4.\\n    /// @param pools address list of pools to update\\n    function massUpdatePools(address[] calldata pools) external;\\n\\n    /// @notice reward \\ubd84\\ubc30\\uc591\\uc744 \\uacc4\\uc0b0\\ud560 \\ub54c \\ub098\\ub217\\uc148\\uc744 \\ud558\\ub294\\ub370, \\uc774\\ub54c \\uc5bc\\ub9c8\\ub9cc\\ud07c\\uc758 \\uc720\\ud6a8\\uc22b\\uc790\\ub85c \\ub098\\ub217\\uc148\\uc744 \\ud560 \\uac83\\uc778\\uc9c0 \\uacb0\\uc815\\ud55c\\ub2e4.\\n    function accRewardPrecision() external pure returns (uint256);\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\ub298\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onDeposit(uint256 amount, address to) external;\\n\\n    /// @notice \\ub4f1\\ub85d\\ub41c pool\\uc5d0\\uc11c \\uc720\\uc800\\uac00 staking\\ud55c \\uc591\\uc774 \\uc904\\uc5c8\\uc744 \\ub54c, \\uc720\\uc800\\uc5d0\\uac8c \\ubd84\\ubc30\\ud560 reward \\uc591\\uc744 \\uacc4\\uc0b0\\ud558\\uae30 \\uc704\\ud574\\uc11c \\ubd88\\ub9b0\\ub2e4.\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onWithdraw(uint256 amount, address to) external;\\n\\n    /// @notice onDeposit\\uacfc onWithdraw\\uc758 wrapper\\n    /// @param amount amount of increasing user's balance\\n    /// @param to address of user\\n    /// @dev \\ubb34\\uc870\\uac74 \\ud574\\ub2f9 \\ud480\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4. \\uc989 msg.sender == pool\\n    function onChanged(int256 amount, address to) external;\\n\\n    /// @notice \\uc720\\uc800\\uac00 \\ubd84\\ubc30\\ubc1b\\uc740 kokoa reward\\ub97c claim \\ud558\\ub294 function\\n    /// @param pool address of pool\\n    /// @param to receiver address of kokoa reward\\n    function claimReward(address pool, address to) external returns (bool success);\\n\\n    function claimRewardAll() external returns (bool success);\\n\\n    function claimRewardByOther(address pool, address usr) external returns (bool success);\\n\\n    function claimRewardAllByOther(address usr) external returns (bool success);\\n\\n    function claimRewardAndStake(address pool) external returns (bool success);\\n\\n    function claimRewardAndStakeByOther(address pool, address usr) external returns (bool success);\\n\\n    function claimRewardAndStakeAll() external returns (bool success);\\n\\n    // --- Event ---\\n\\n    event Deposit(address indexed pool, uint256 amount, address indexed to);\\n    event Withdraw(address indexed pool, uint256 amount, address indexed to);\\n    event ClaimReward(address indexed pool, address indexed user, uint256 amount);\\n    event LogPoolAddition(uint256 indexed pid, uint256 allocPoint, address indexed lpToken, uint256 fee);\\n    event LogSetPool(address indexed pool, uint256 allocPoint, uint256 fee);\\n    event LogUpdatePool(address indexed pool, uint256 lastRewardTimestamp, uint256 lpSupply, uint256 accRewardPerShare);\\n    event LogInit();\\n}\\n\",\"keccak256\":\"0xf5fd39c90207f92e54dfface789fc8b9949c7fe270da35c57c503163db521e65\",\"license\":\"MIT\"},\"contracts/interface/ILedger.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface ILedger {\\n    // --- Events ---\\n    event CollateralChanged(bytes32 collateralType, address usr, int256 amount);\\n    event KSDChanged(address usr, int256 amount);\\n    event LoanChanged(bytes32 collateralType, address debtor, address collateralVault, address ksdVault, int256 collateralAmount, int256 loanAmount);\\n    event AccountChanged(bytes32 collateralType, address vault, uint256 lockedCollateral, uint256 loan);\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\uc900\\ub2e4.\\n    /// @notice authorize usr to manipulate msg.sender's vault\\n    function allow(address usr) external;\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\ubec7\\ub294.\\n    /// @notice Deauthorize usr from manipulating msg.sender's vault\\n    function disallow(address usr) external;\\n\\n    // --- Data view ---\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785.\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. totalLockedCollateral (\\uc804\\uccb4 locked\\ub41c \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. totalLoan (\\ubc1c\\ud589\\ub41c(\\ube4c\\ub9b0) KSD\\uc591)\\n    /// 3. rate (\\uc2dc\\uac04\\uc5d0 \\ub530\\ub77c \\uc810\\ucc28 \\uc99d\\uac00\\ud558\\uace0, accountInfo.loan \\uc5d0 \\uacf1\\ud574\\uc838\\uc11c \\uc0ac\\uc6a9\\uc790\\uac00 \\ube4c\\ub9b0 ksd\\uc758 \\uc591\\uc744 \\ub298\\ub9ac\\ub294 \\uc6a9\\ub3c4\\ub85c \\uc0ac\\uc6a9\\ub428. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (\\ub2f4\\ubcf4 \\ud0c0\\uc785\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd1d KSD)\\n    /// 6. dust (\\ud558\\ub098\\uc758 vault\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd5c\\uc800\\uc758 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Collateral Iinfo\\n    /// @param collateralType Type of collateral - initially, there's only one (Klay)\\n    /// @dev the value that it returns are\\n    /// 1. totalLockedCollateral\\n    /// 2. totalLoan\\n    /// 3. rate (It gradually increases over time and is multiplied by accountInfo.loan to increase the amount of ksd borrowed by the user.. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (Maximum KSD that can be minted from given collateral type)\\n    /// 6. dust (Minimum KSD that should be borrowed from a CDP)\\n    function collateralInfo(bytes32 collateralType)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256\\n        );\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\ub4e4 \\uc870\\ud68c\\n    /// @param collateralTypes \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785 list\\n    /// @dev collateralInfo \\uc758 \\uac12\\ub4e4\\uc744 array \\ub85c return\\n    function collateralInfos(bytes32[] calldata collateralTypes)\\n        external\\n        view\\n        returns (\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory\\n        );\\n\\n    /// @notice usr\\uc758 vault \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4 \\uc885\\ub958\\n    /// @param usr \\uc720\\uc800\\uc758 address\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. lockedCollateral (vault\\uc5d0 \\uc7a0\\uae34 \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. loan (vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Information of a user's vault\\n    /// @param collateralType type of collateral\\n    /// @param usr Address of the user\\n    /// @dev returns\\n    /// 1. lockedCollateral (amount of collateral locked in the user's vault)\\n    /// 2. loan (normalized amount of KSD minted from that vault)\\n    function accountInfo(bytes32 collateralType, address usr) external view returns (uint256, uint256);\\n\\n    /// @notice This function returns the index of a user of given collateral type\\n    ///         The index\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @dev \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785\\ub9c8\\ub2e4 cdp \\uc5f0 \\uc720\\uc800\\ub97c tracking \\ud558\\uae30 \\uc704\\ud55c \\uac83\\uc73c\\ub85c, \\uac01 \\uc720\\uc800\\uac00 \\uba87 \\ubc88\\uc9f8\\ub85c cdp\\ub97c \\uc5f4\\uc5c8\\ub294\\uc9c0\\ub97c \\uae30\\ub85d.\\n    /// @dev This function is designed to track the list of users who have opened a CDP (for each collateral type)\\n    ///       Since CDPs are never deleted once created, this index should not be update at any circumstances\\n    function accountIndex(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice access address of an account by index\\n    /// @param collateralType type of collateral\\n    /// @param index index of user\\n    /// @dev index \\ubc88\\uc9f8\\ub85c \\ub4e4\\uc5b4\\uc628 \\uc720\\uc800\\uc758 \\uc8fc\\uc18c\\ub97c \\ub9ac\\ud134\\n    /// @dev returns the address of {index}-th CDP opener\\n    function accountByIndex(bytes32 collateralType, uint256 index) external view returns (address);\\n\\n    /// @notice Total number of user who have opened a CDP (given collateral type) - always increasing\\n    /// @param collateralType type of collateral\\n    /// @dev \\uc9c0\\uae08\\uae4c\\uc9c0 cdp\\ub97c \\uc5f0 \\uc720\\uc800\\uc758 \\uc218\\n    function accountLength(bytes32 collateralType) external view returns (uint256);\\n\\n    /// @notice locked \\ub418\\uc9c0 \\uc54a\\uc740 \\ub2f4\\ubcf4\\ubb3c\\uc758 \\uc591. \\ub2e8, \\uc2e4\\uc81c \\ub2f4\\ubcf4\\ubb3c\\uc740 gateway \\ucee8\\ud2b8\\ub809\\ud2b8\\uac00 \\uad00\\ub9ac\\ud558\\uace0 \\uc788\\uc74c.\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @notice The amount of collateral that are not locked.\\n    function token(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice \\ube4c\\ub9ac\\uac70\\ub098, ksdGateway\\ub97c \\ud1b5\\ud574\\uc11c \\ub4e4\\uc5b4\\uc628 ksd\\uc758 \\uc591.\\n    /// @param usr address of user\\n    /// @notice The amount of KSD lent to, or depositted by (through KSDGateway) the {usr}\\n    function ksd(address usr) external view returns (uint256);\\n\\n    /// @notice total KSD Issued [rad]\\n    function totalIssued() external view returns (uint256);\\n\\n    /// @notice Total Unbacked KSD [rad]\\n    function vice() external view returns (uint256);\\n\\n    /// @notice Total Debt Ceiling [rad]\\n    function line() external view returns (uint256);\\n\\n    /// @notice unbacked KSD [rad]\\n    function sin(address usr) external view returns (uint256);\\n\\n    /// @notice initialize collateral\\n    /// @param collateralType type of collateral to initialize.\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance\\n    function init(bytes32 collateralType) external;\\n\\n    /// @notice config something\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc640 \\uc624\\ub77c\\ud074 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance and oracle\\n    function config(\\n        bytes32 collateralType,\\n        bytes32 what,\\n        uint256 data\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0a8\\ub2e4.\\n    ///          \\uc7a5\\ubd80\\uc758 \\uae30\\ub85d\\ub41c token\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\uae30\\ud0a4 \\ub54c\\ubb38\\uc5d0 \\ubb34\\uc870\\uac74 \\ud5c8\\uac00\\ub41c contract\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice Increase the amount of 'unlocked collateral'\\n    ///          (which means that the token is deposited into CDP but not yet considered as 'locked' as collateral)\\n    ///         This function changes the amount of 'unlocked collateral' of the CDP, so it should only be called by authorized contracts.\\n    function addCollateral(\\n        bytes32 collateralType,\\n        address usr,\\n        int256 amount\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc744 \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function.\\n    function sendCollateral(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        uint256 amoount\\n    ) external;\\n\\n    /// @notice ksd\\ub97c \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function. (\\uc2e4\\uc81c ksd token\\uc744 \\ubcf4\\ub0b4\\ub294 \\uac83\\uc774 \\uc544\\ub2c8\\ub77c, \\uc7a5\\ubd80 \\uc0c1\\uc758 \\uae30\\ub85d\\ub9cc \\ubc14\\ub01c)\\n    function sendKsd(\\n        address src,\\n        address dst,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice token, ksd \\uc591\\uc744 \\ud1b5\\ud574\\uc11c vault\\uc758 \\uac12\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0b4.\\n    /// @param collateralType type of collateral\\n    /// @param debtor owner of vault\\n    /// @param collateralVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 token\\uc758 owner) \\ub2f4\\ubcf4\\ubb3c\\uc744 \\uac00\\uc838\\uc624\\uac70\\ub098 vault\\uc5d0\\uc11c unlock \\uc2dc\\ud0a8 \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub123\\uc744 \\uc8fc\\uc18c\\n    /// @param ksdVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 ksd\\uc758 owner) ksd\\ub97c vault\\uc5d0 \\ub123\\uc5b4\\uc8fc\\uac70\\ub098, vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd\\ub97c \\ub123\\uc5b4\\uc904 \\uacf3\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev vault\\uc5d0 ksd\\ub97c \\uac1a\\uac70\\ub098/\\ube4c\\ub9ac\\uac70\\ub098, \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub354 lock \\uc2dc\\ud0a4\\uac70\\ub098/\\ube7c\\uac70\\ub098\\n    /// \\ub2e8, vault\\ub294 \\ud56d\\uc0c1 safe \\ud574\\uc57c\\ud558\\uace0, dust \\uc774\\uc0c1\\uc758 ksd\\ub97c \\uc720\\uc9c0\\ud574\\uc57c \\ud55c\\ub2e4.\\n    /// \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4. \\uc608\\ub97c\\ub4e4\\uc5b4, \\ud5c8\\ub77d\\ubc1b\\uc9c0 \\uc54a\\uc740 \\uc0ac\\ub78c\\uc774 locked\\ub418\\uc9c0 \\uc54a\\uc740 \\ub0a8\\uc758 collateral\\ub97c \\uc790\\uc2e0\\uc758 vault\\ub85c lock \\uc2dc\\ud0a4\\uc9c0 \\ubabb\\ud574\\uc57c \\ud55c\\ub2e4.\\n    function actionLoan(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice vault\\uc5d0 \\uc7a0\\uae34 collateral\\uc591\\uc774\\ub098 ksd \\ubd80\\ucc44\\ub97c \\uc774\\ub3d9\\uc2dc\\ud0a8\\ub2e4.\\n    /// @param collateralType type of collateral\\n    /// @param src address of vault (accountInfo)\\n    /// @param dst address of vault (accountInfo)\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4.\\n    function fork(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\ubab0\\uc218 (confiscation)\\n    /// @param collateralType type of collateral\\n    /// @param debtor \\uccad\\uc0b0\\ub420 vault \\uc8fc\\uc18c\\n    /// @param collateralVault vault\\uc5d0\\uc11c locked\\ub41c \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ubab0\\uc218\\ud574\\uac08 \\uc8fc\\uccb4. (\\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 \\ud56d\\uc0c1 auctionHouse. auction\\uc5d0\\uc11c \\ud314\\uc544\\uc57c \\ud558\\uae30 \\ub54c\\ubb38)\\n    /// @param ksdVault vault\\uc5d0\\uc11c \\ube4c\\ub824\\uac04 ksd\\ub294 \\ub2f4\\ubcf4\\ubb3c\\uc774 auction\\uc5d0 \\ub4e4\\uc5b4\\uac04 \\uc21c\\uac04 backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\uc774\\uae30 \\ub54c\\ubb38\\uc5d0, \\uc774\\uac83\\uc744 \\ub9e1\\uc544\\uc904 \\uc8fc\\uccb4\\uac00 \\ud544\\uc694. \\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 minusBank\\uac00 \\ub9e1\\uc544\\uc900\\ub2e4.\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev liquidator\\uc758 liquidate\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub9bc\\n    function grab(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\uc0c1\\uc1c4\\ud558\\ub294 function. msg.sender\\uc758 ksd\\ub97c \\uc18c\\ubaa8\\ud55c\\ub2e4.\\n    function heal(uint256 amount) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\ub9cc\\ub4e4\\uc5b4\\uc11c msg.sender\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev minusBank\\uc5d0\\uc11c keeper\\ub4e4\\uc5d0\\uac8c incentive\\ub97c \\uc8fc\\uae30 \\uc704\\ud574\\uc11c, \\ubbf8\\ub9ac ksd\\ub97c \\ub300\\ucd9c\\ubc1b\\ub294 \\uc5ed\\ud560\\ub85c \\uc4f0\\uc778\\ub2e4.\\n    /// \\ub530\\ub77c\\uc11c, \\uc624\\uc9c1 minusBank\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function suck(\\n        address u,\\n        address v,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice stability fee\\ub97c ksdReceiver\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev StabilityFeeCollector\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function collectStabilityFee(\\n        bytes32 collateralType,\\n        address ksdReceiver,\\n        int256 rateDiff\\n    ) external;\\n}\\n\",\"keccak256\":\"0xd665010e6fac1b9f0423339abad116c599c5ef2960fac177b2108fa68fd15b71\",\"license\":\"MIT\"},\"contracts/interface/IRewardPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface IRewardPool {\\n    function balanceOf(address usr) external view returns (uint256 balance);\\n\\n    function totalSupply() external view returns (uint256 amount);\\n}\\n\",\"keccak256\":\"0xeee82cf1d159c402ad5a1994821948516e692dcb5c20ae6235e5686ffea8b47d\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/Pausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./AccessControl.sol\\\";\\n\\nabstract contract Pausable is AccessControl {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    bool private _paused;\\n\\n    function __Pausable_init() internal initializer {\\n        __AccessControl_init();\\n        _setRoleAdmin(bytes32(\\\"pauser\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"pauser\\\"), msg.sender);\\n    }\\n\\n    function paused() public view virtual returns (bool) {\\n        return _paused;\\n    }\\n\\n    modifier whenNotPaused() virtual {\\n        require(!paused(), \\\"Pausable: paused\\\");\\n        _;\\n    }\\n\\n    modifier whenPaused() {\\n        require(paused(), \\\"Pausable: not paused\\\");\\n        _;\\n    }\\n\\n    function pause() public whenNotPaused onlyRole(\\\"pauser\\\") {\\n        _paused = true;\\n        emit Paused(msg.sender);\\n    }\\n\\n    function unpause() public whenPaused onlyRole(\\\"pauser\\\") {\\n        _paused = false;\\n        emit Unpaused(msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x09830075c06c05d623c2db6ce3f84b495181ab439043cdaab714060b9fc23f5a\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"},\"contracts/reward/pool/IssuedKSDPool.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../../interface/IKokoaRewardManager.sol\\\";\\nimport \\\"../../interface/ILedger.sol\\\";\\nimport \\\"../../interface/IIssuedKSDPool.sol\\\";\\nimport \\\"../../library/AccessControl.sol\\\";\\nimport \\\"../../library/Pausable.sol\\\";\\n\\ncontract IssuedKSDPool is IIssuedKSDPool, AccessControl, Pausable {\\n    // --- Data ---\\n    ILedger public ledger;\\n    IKokoaRewardManager public rewardManger;\\n\\n    // --- function ---\\n    function __IssuedKSDPool_init(address ledger_, address kokoaRewardManager_) public initializer {\\n        __Pausable_init();\\n        ledger = ILedger(ledger_);\\n        rewardManger = IKokoaRewardManager(kokoaRewardManager_);\\n    }\\n\\n    function COLLATERAL_TYPE() public pure virtual returns (bytes32) {\\n        return bytes32(\\\"klay\\\");\\n    }\\n\\n    function totalSupply() external view override returns (uint256) {\\n        (, uint256 totalLoan, , , , ) = ledger.collateralInfo(COLLATERAL_TYPE());\\n        return totalLoan;\\n    }\\n\\n    function balanceOf(address usr) external view override returns (uint256) {\\n        (, uint256 loan) = ledger.accountInfo(COLLATERAL_TYPE(), usr);\\n        return loan;\\n    }\\n\\n    function onDeposit(uint256 amount, address to) external override {\\n        require(msg.sender == address(ledger), \\\"IssuedKSDPool::onDeposit: not authorized\\\");\\n        rewardManger.onDeposit(amount, to);\\n    }\\n\\n    function onWithdraw(uint256 amount, address to) external override {\\n        require(msg.sender == address(ledger), \\\"IssuedKSDPool::onWithdraw: not authorized\\\");\\n        rewardManger.onWithdraw(amount, to);\\n    }\\n\\n    function onChanged(int256 amount, address to) external override {\\n        require(msg.sender == address(ledger), \\\"IssuedKSDPool::onChanged: not authorized\\\");\\n        rewardManger.onChanged(amount, to);\\n    }\\n}\\n\",\"keccak256\":\"0x95f9783155023b09ee274625466d15d14d6cf19af2931a24d7ccf00ad4f40770\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610f0c806100206000396000f3fe608060405234801561001057600080fd5b506004361061012c5760003560e01c806370a08231116100ad578063bea679ac11610071578063bea679ac1461025b578063d0d9f8ff1461026e578063d547741f14610281578063f2fde38b14610294578063f3759d5c146102a75761012c565b806370a08231146102125780638456cb591461022557806391d148541461022d5780639c0ca52914610240578063a217fddf146102535761012c565b806336568abe116100f457806336568abe1461019d5780633f4ba83a146101b057806356397c35146101b85780635c975abb146101e85780636bf34832146101ff5761012c565b80631497416c1461013157806318160ddd14610146578063248a9ca3146101615780632c214c9d146101745780632f2ff15d1461018a575b600080fd5b61014461013f366004610db0565b6102ba565b005b61014e610345565b6040519081526020015b60405180910390f35b61014e61016f366004610de2565b6103f1565b6c4b534c504b555344544b44414960981b61014e565b610144610198366004610dfa565b61040a565b6101446101ab366004610dfa565b610427565b6101446104a5565b6002546101d09061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610158565b60025460ff165b6040519015158152602001610158565b61014461020d366004610db0565b610543565b61014e610220366004610d8f565b610601565b6101446106b8565b6101ef61023b366004610dfa565b61074f565b61014461024e366004610dfa565b61077a565b61014e600081565b610144610269366004610dfa565b610855565b6003546101d0906001600160a01b031681565b61014461028f366004610dfa565b6108fe565b6101446102a2366004610d8f565b61091b565b6101446102b5366004610dfa565b610954565b600054610100900460ff16806102cf5750303b155b806102dd575060005460ff16155b6103025760405162461bcd60e51b81526004016102f990610e88565b60405180910390fd5b600054610100900460ff16158015610324576000805461ffff19166101011790555b61032e8383610543565b8015610340576000805461ff00191690555b505050565b600254600090819061010090046001600160a01b0316637d5422a76103776c4b534c504b555344544b44414960981b90565b6040518263ffffffff1660e01b815260040161039591815260200190565b60c06040518083038186803b1580156103ad57600080fd5b505afa1580156103c1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e59190610e3f565b50929550505050505090565b600081815260016020819052604090912001545b919050565b610413826103f1565b61041d81336109fe565b6103408383610a62565b6001600160a01b03811633146104975760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084016102f9565b6104a18282610acd565b5050565b60025460ff166104ee5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b60448201526064016102f9565b653830bab9b2b960d11b61050281336109fe565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600054610100900460ff16806105585750303b155b80610566575060005460ff16155b6105825760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff161580156105a4576000805461ffff19166101011790555b6105ac610b34565b60028054610100600160a81b0319166101006001600160a01b038681169190910291909117909155600380546001600160a01b0319169184169190911790558015610340576000805461ff0019169055505050565b600254600090819061010090046001600160a01b031663b75baf796106336c4b534c504b555344544b44414960981b90565b6040516001600160e01b031960e084901b16815260048101919091526001600160a01b0386166024820152604401604080518083038186803b15801561067857600080fd5b505afa15801561068c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106b09190610e1c565b949350505050565b60025460ff16156106fe5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b60448201526064016102f9565b653830bab9b2b960d11b61071281336109fe565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610538565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b60025461010090046001600160a01b031633146107ea5760405162461bcd60e51b815260206004820152602860248201527f4973737565644b5344506f6f6c3a3a6f6e4368616e6765643a206e6f742061756044820152671d1a1bdc9a5e995960c21b60648201526084016102f9565b600354604051639c0ca52960e01b8152600481018490526001600160a01b03838116602483015290911690639c0ca529906044015b600060405180830381600087803b15801561083957600080fd5b505af115801561084d573d6000803e3d6000fd5b505050505050565b60025461010090046001600160a01b031633146108c55760405162461bcd60e51b815260206004820152602860248201527f4973737565644b5344506f6f6c3a3a6f6e4465706f7369743a206e6f742061756044820152671d1a1bdc9a5e995960c21b60648201526084016102f9565b600354604051632fa99e6b60e21b8152600481018490526001600160a01b0383811660248301529091169063bea679ac9060440161081f565b610907826103f1565b61091181336109fe565b6103408383610acd565b61092d6437bbb732b960d91b336109fe565b61093f6437bbb732b960d91b82610a62565b6109516437bbb732b960d91b33610acd565b50565b60025461010090046001600160a01b031633146109c55760405162461bcd60e51b815260206004820152602960248201527f4973737565644b5344506f6f6c3a3a6f6e57697468647261773a206e6f7420616044820152681d5d1a1bdc9a5e995960ba1b60648201526084016102f9565b600354604051633cdd675760e21b8152600481018490526001600160a01b0383811660248301529091169063f3759d5c9060440161081f565b610a08828261074f565b6104a15760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b60648201526084016102f9565b610a6c828261074f565b6104a15760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610ad7828261074f565b156104a15760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b495750303b155b80610b57575060005460ff16155b610b735760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610b95576000805461ffff19166101011790555b610b9d610bdf565b610bb8653830bab9b2b960d11b6437bbb732b960d91b610c48565b610bcb653830bab9b2b960d11b33610c9d565b8015610951576000805461ff001916905550565b600054610100900460ff1680610bf45750303b155b80610c02575060005460ff16155b610c1e5760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610c40576000805461ffff19166101011790555b610bcb610ca7565b6000610c53836103f1565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b6104a18282610a62565b600054610100900460ff1680610cbc5750303b155b80610cca575060005460ff16155b610ce65760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610d08576000805461ffff19166101011790555b610d1a6437bbb732b960d91b33610c9d565b610d346430b236b4b760d91b6437bbb732b960d91b610c48565b610d516737b832b930ba37b960c11b6437bbb732b960d91b610c48565b610d636430b236b4b760d91b33610c9d565b610bcb6737b832b930ba37b960c11b33610c9d565b80356001600160a01b038116811461040557600080fd5b600060208284031215610da0578081fd5b610da982610d78565b9392505050565b60008060408385031215610dc2578081fd5b610dcb83610d78565b9150610dd960208401610d78565b90509250929050565b600060208284031215610df3578081fd5b5035919050565b60008060408385031215610e0c578182fd5b82359150610dd960208401610d78565b60008060408385031215610e2e578182fd5b505080516020909101519092909150565b60008060008060008060c08789031215610e57578182fd5b865195506020870151945060408701519350606087015192506080870151915060a087015190509295509295509295565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b60608201526080019056fea2646970667358221220bed9834c76f55b353ced0ebe53078266079be15a131b06c54ccd5373ca70bfc364736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061012c5760003560e01c806370a08231116100ad578063bea679ac11610071578063bea679ac1461025b578063d0d9f8ff1461026e578063d547741f14610281578063f2fde38b14610294578063f3759d5c146102a75761012c565b806370a08231146102125780638456cb591461022557806391d148541461022d5780639c0ca52914610240578063a217fddf146102535761012c565b806336568abe116100f457806336568abe1461019d5780633f4ba83a146101b057806356397c35146101b85780635c975abb146101e85780636bf34832146101ff5761012c565b80631497416c1461013157806318160ddd14610146578063248a9ca3146101615780632c214c9d146101745780632f2ff15d1461018a575b600080fd5b61014461013f366004610db0565b6102ba565b005b61014e610345565b6040519081526020015b60405180910390f35b61014e61016f366004610de2565b6103f1565b6c4b534c504b555344544b44414960981b61014e565b610144610198366004610dfa565b61040a565b6101446101ab366004610dfa565b610427565b6101446104a5565b6002546101d09061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610158565b60025460ff165b6040519015158152602001610158565b61014461020d366004610db0565b610543565b61014e610220366004610d8f565b610601565b6101446106b8565b6101ef61023b366004610dfa565b61074f565b61014461024e366004610dfa565b61077a565b61014e600081565b610144610269366004610dfa565b610855565b6003546101d0906001600160a01b031681565b61014461028f366004610dfa565b6108fe565b6101446102a2366004610d8f565b61091b565b6101446102b5366004610dfa565b610954565b600054610100900460ff16806102cf5750303b155b806102dd575060005460ff16155b6103025760405162461bcd60e51b81526004016102f990610e88565b60405180910390fd5b600054610100900460ff16158015610324576000805461ffff19166101011790555b61032e8383610543565b8015610340576000805461ff00191690555b505050565b600254600090819061010090046001600160a01b0316637d5422a76103776c4b534c504b555344544b44414960981b90565b6040518263ffffffff1660e01b815260040161039591815260200190565b60c06040518083038186803b1580156103ad57600080fd5b505afa1580156103c1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e59190610e3f565b50929550505050505090565b600081815260016020819052604090912001545b919050565b610413826103f1565b61041d81336109fe565b6103408383610a62565b6001600160a01b03811633146104975760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084016102f9565b6104a18282610acd565b5050565b60025460ff166104ee5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b60448201526064016102f9565b653830bab9b2b960d11b61050281336109fe565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b600054610100900460ff16806105585750303b155b80610566575060005460ff16155b6105825760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff161580156105a4576000805461ffff19166101011790555b6105ac610b34565b60028054610100600160a81b0319166101006001600160a01b038681169190910291909117909155600380546001600160a01b0319169184169190911790558015610340576000805461ff0019169055505050565b600254600090819061010090046001600160a01b031663b75baf796106336c4b534c504b555344544b44414960981b90565b6040516001600160e01b031960e084901b16815260048101919091526001600160a01b0386166024820152604401604080518083038186803b15801561067857600080fd5b505afa15801561068c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106b09190610e1c565b949350505050565b60025460ff16156106fe5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b60448201526064016102f9565b653830bab9b2b960d11b61071281336109fe565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610538565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b60025461010090046001600160a01b031633146107ea5760405162461bcd60e51b815260206004820152602860248201527f4973737565644b5344506f6f6c3a3a6f6e4368616e6765643a206e6f742061756044820152671d1a1bdc9a5e995960c21b60648201526084016102f9565b600354604051639c0ca52960e01b8152600481018490526001600160a01b03838116602483015290911690639c0ca529906044015b600060405180830381600087803b15801561083957600080fd5b505af115801561084d573d6000803e3d6000fd5b505050505050565b60025461010090046001600160a01b031633146108c55760405162461bcd60e51b815260206004820152602860248201527f4973737565644b5344506f6f6c3a3a6f6e4465706f7369743a206e6f742061756044820152671d1a1bdc9a5e995960c21b60648201526084016102f9565b600354604051632fa99e6b60e21b8152600481018490526001600160a01b0383811660248301529091169063bea679ac9060440161081f565b610907826103f1565b61091181336109fe565b6103408383610acd565b61092d6437bbb732b960d91b336109fe565b61093f6437bbb732b960d91b82610a62565b6109516437bbb732b960d91b33610acd565b50565b60025461010090046001600160a01b031633146109c55760405162461bcd60e51b815260206004820152602960248201527f4973737565644b5344506f6f6c3a3a6f6e57697468647261773a206e6f7420616044820152681d5d1a1bdc9a5e995960ba1b60648201526084016102f9565b600354604051633cdd675760e21b8152600481018490526001600160a01b0383811660248301529091169063f3759d5c9060440161081f565b610a08828261074f565b6104a15760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b60648201526084016102f9565b610a6c828261074f565b6104a15760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b610ad7828261074f565b156104a15760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff1680610b495750303b155b80610b57575060005460ff16155b610b735760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610b95576000805461ffff19166101011790555b610b9d610bdf565b610bb8653830bab9b2b960d11b6437bbb732b960d91b610c48565b610bcb653830bab9b2b960d11b33610c9d565b8015610951576000805461ff001916905550565b600054610100900460ff1680610bf45750303b155b80610c02575060005460ff16155b610c1e5760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610c40576000805461ffff19166101011790555b610bcb610ca7565b6000610c53836103f1565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b6104a18282610a62565b600054610100900460ff1680610cbc5750303b155b80610cca575060005460ff16155b610ce65760405162461bcd60e51b81526004016102f990610e88565b600054610100900460ff16158015610d08576000805461ffff19166101011790555b610d1a6437bbb732b960d91b33610c9d565b610d346430b236b4b760d91b6437bbb732b960d91b610c48565b610d516737b832b930ba37b960c11b6437bbb732b960d91b610c48565b610d636430b236b4b760d91b33610c9d565b610bcb6737b832b930ba37b960c11b33610c9d565b80356001600160a01b038116811461040557600080fd5b600060208284031215610da0578081fd5b610da982610d78565b9392505050565b60008060408385031215610dc2578081fd5b610dcb83610d78565b9150610dd960208401610d78565b90509250929050565b600060208284031215610df3578081fd5b5035919050565b60008060408385031215610e0c578182fd5b82359150610dd960208401610d78565b60008060408385031215610e2e578182fd5b505080516020909101519092909150565b60008060008060008060c08789031215610e57578182fd5b865195506020870151945060408701519350606087015192506080870151915060a087015190509295509295509295565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b60608201526080019056fea2646970667358221220bed9834c76f55b353ced0ebe53078266079be15a131b06c54ccd5373ca70bfc364736f6c63430008030033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "balanceOf(address)": {
+        "params": {
+          "usr": "address of user"
+        }
+      },
+      "onChanged(int256,address)": {
+        "details": "무조건 ledger 컨트렉트만 부를 수 있어야 한다. (eng)Only ledger contract should be able to call this function",
+        "params": {
+          "amount": "amount changed",
+          "to": "The address of the user"
+        }
+      },
+      "onDeposit(uint256,address)": {
+        "details": "무조건 ledger 컨트렉트만 부를 수 있어야 한다. (eng)Only ledger contract should be able to call this function",
+        "params": {
+          "amount": "amount increased",
+          "to": "The address of the user"
+        }
+      },
+      "onWithdraw(uint256,address)": {
+        "details": "무조건 ledger 컨트렉트만 부를 수 있어야 한다. (eng)Only ledger contract should be able to call this function",
+        "params": {
+          "amount": "amount decreased",
+          "to": "The address of the user"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "balanceOf(address)": {
+        "notice": "유저가 담보로 발행한 ksd 양Amount of KSD that a user minted against his collateral asset."
+      },
+      "onChanged(int256,address)": {
+        "notice": "onDeposit과 onWithdraw의 wrapperA wrapper function for onDeposit and onWithdraw functions"
+      },
+      "onDeposit(uint256,address)": {
+        "notice": "유저가 발행한 ksd양이 늘었을 때 불러줘야 하는 functionThis should be called when the amount of KSD user minted from CDP gets increased"
+      },
+      "onWithdraw(uint256,address)": {
+        "notice": "유저가 발행한 ksd양이 줄었을 때 불러줘야 하는 functionThis should be called when the amount of KSD user minted from CDP gets decreased"
+      },
+      "totalSupply()": {
+        "notice": "담보로 발행된 총 ksd 총 양 (eng)Total amount of KSD minted from CDP"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 24885,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 24888,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 21831,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)21826_storage)"
+      },
+      {
+        "astId": 22221,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "_paused",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      },
+      {
+        "astId": 33975,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "ledger",
+        "offset": 1,
+        "slot": "2",
+        "type": "t_contract(ILedger)8858"
+      },
+      {
+        "astId": 33978,
+        "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+        "label": "rewardManger",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_contract(IKokoaRewardManager)8454"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IKokoaRewardManager)8454": {
+        "encoding": "inplace",
+        "label": "contract IKokoaRewardManager",
+        "numberOfBytes": "20"
+      },
+      "t_contract(ILedger)8858": {
+        "encoding": "inplace",
+        "label": "contract ILedger",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)21826_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)21826_storage"
+      },
+      "t_struct(RoleData)21826_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 21823,
+            "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 21825,
+            "contract": "contracts/collateral/KSLPKUSDTKDAI/BKSLPKUSDTKDAIIssuedKsdPool.sol:BKSLPKUSDTKDAIIssuedKSDPool",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      }
+    }
+  }
+}

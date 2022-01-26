@@ -1,0 +1,903 @@
+{
+  "address": "0x0D2ea5fC997fAF7963aA4980f4631cB8743A8F79",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        }
+      ],
+      "name": "Config",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "Config",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "collateral",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        }
+      ],
+      "name": "Config",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "collateral",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "auctionHouse",
+          "type": "address"
+        }
+      ],
+      "name": "Config",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "collateral",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rad",
+          "type": "uint256"
+        }
+      ],
+      "name": "EndLiquidation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "collateral",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lockedCollateral",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "loan",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "due",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "auctionHouse",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "Liquidate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ledger_",
+          "type": "address"
+        }
+      ],
+      "name": "__Liquidator_init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "auctionInfos",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "auctionHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "penalty",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "onGoingAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "collateralType",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "collateralType",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "auctionHouse",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "data",
+          "type": "address"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "what",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        }
+      ],
+      "name": "config",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "collateralType",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rad",
+          "type": "uint256"
+        }
+      ],
+      "name": "endLiquidation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ledger",
+      "outputs": [
+        {
+          "internalType": "contract ILedger",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "collateralType",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "vaultAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "keeper",
+          "type": "address"
+        }
+      ],
+      "name": "liquidate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minusBank",
+      "outputs": [
+        {
+          "internalType": "contract IMinusBank",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "collateralType",
+          "type": "bytes32"
+        }
+      ],
+      "name": "penalty",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalMaxAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalOnGoingAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xf47ef880bdcc23710cae831feb2317c9360c5bca5aa802aa934dfe73a9e767a9",
+  "receipt": {
+    "to": null,
+    "from": "0x276199434a04b2607D5E95670e5cB6a7E7f10f3d",
+    "contractAddress": "0x0D2ea5fC997fAF7963aA4980f4631cB8743A8F79",
+    "transactionIndex": 9,
+    "gasUsed": "1688035",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x153183709dc7419ea24411497ddc0cb88b39e471e473a6e3c13c18c01fffbf28",
+    "transactionHash": "0xf47ef880bdcc23710cae831feb2317c9360c5bca5aa802aa934dfe73a9e767a9",
+    "logs": [],
+    "blockNumber": 79128562,
+    "cumulativeGasUsed": null,
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "daac9cba34dfabe5953ff704314717f0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"Config\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"Config\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"collateral\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"Config\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"collateral\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"auctionHouse\",\"type\":\"address\"}],\"name\":\"Config\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"collateral\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rad\",\"type\":\"uint256\"}],\"name\":\"EndLiquidation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"collateral\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lockedCollateral\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"loan\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"due\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"auctionHouse\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"Liquidate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ledger_\",\"type\":\"address\"}],\"name\":\"__Liquidator_init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"auctionInfos\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"auctionHouse\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"penalty\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"onGoingAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"collateralType\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"collateralType\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"auctionHouse\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"data\",\"type\":\"address\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"what\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"config\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"collateralType\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"rad\",\"type\":\"uint256\"}],\"name\":\"endLiquidation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ledger\",\"outputs\":[{\"internalType\":\"contract ILedger\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"collateralType\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"vaultAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"keeper\",\"type\":\"address\"}],\"name\":\"liquidate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minusBank\",\"outputs\":[{\"internalType\":\"contract IMinusBank\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"collateralType\",\"type\":\"bytes32\"}],\"name\":\"penalty\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalMaxAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalOnGoingAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"endLiquidation(bytes32,uint256)\":{\"params\":{\"collateralType\":\"collateralType\",\"rad\":\"liquidated ksd amount\"}},\"liquidate(bytes32,address,address)\":{\"params\":{\"collateralType\":\"type of collateral in vault to liquidate\",\"keeper\":\"address that will receive incentives\",\"vaultAddr\":\"address of vault to liquidate\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"endLiquidation(bytes32,uint256)\":{\"notice\":\"when liquidation process is ended (including auction), endLiquidation is called to clear some data related the liquidation.\"},\"liquidate(bytes32,address,address)\":{\"notice\":\"liquidate a Vault and start a Dutch auction to sell its collateral for KSD. The entire Vault will be liquidated except when the target amount of KSD to be raised in the resulting auction (debt of Vault + liquidation penalty) causes either totalOnGoingAmount to exceed totalMaxAmount or collateral.onGoingAmount to exceed collateral.maxAmount by an economically significant amount. In that case, a partial liquidation is performed to respect the global and per-collateral limits on outstanding KSD target. The one exception is if the resulting auction would likely have too little collateral to be interesting to Keepers (debt taken from Vault < collateral.dust), in which case the function reverts. Please refer to the code and comments within if more detail is desired.\"}},\"notice\":\"Most of the codes here are a subset of MakerDAO's contract\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/liquidation/Liquidator.sol\":\"Liquidator\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interface/IAuctionHouse.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"./IPausable.sol\\\";\\n\\n/// @notice manages auctions. It is used in liquidator.\\ninterface IAuctionHouse {\\n    struct Sale {\\n        uint256 index; // Index in active array\\n        uint256 raiseAmount; // KSD to raise       [rad]\\n        uint256 sellAmount; // collateral to sell [wad]\\n        address vaultOwner; // Liquidated vault\\n        uint96 startTime; // Auction start time\\n        uint256 startPrice; // Starting price     [ray]\\n    }\\n\\n    // --- Events ---\\n    event Config(bytes32 indexed what, uint256 data);\\n    event Config(bytes32 indexed what, address data);\\n\\n    event Start(\\n        uint256 indexed id,\\n        uint256 startPrice,\\n        uint256 raiseAmount,\\n        uint256 sellAmount,\\n        address indexed vaultOwner,\\n        address indexed keeper,\\n        uint256 coin\\n    );\\n    event Take(uint256 indexed id, uint256 max, uint256 price, uint256 owe, uint256 raiseAmount, uint256 sellAmount, address indexed vaultOwner);\\n    event Redo(\\n        uint256 indexed id,\\n        uint256 startPrice,\\n        uint256 raiseAmount,\\n        uint256 sellAmount,\\n        address indexed vaultOwner,\\n        address indexed keeper,\\n        uint256 coin\\n    );\\n\\n    event Cancel(uint256 id);\\n\\n    function collateralType() external view returns (bytes32);\\n\\n    function buf() external view returns (uint256);\\n\\n    function timeLimit() external view returns (uint256);\\n\\n    function dropLimit() external view returns (uint256);\\n\\n    function ratioIncentive() external view returns (uint64);\\n\\n    function constIncentive() external view returns (uint192);\\n\\n    function bound() external view returns (uint256);\\n\\n    function cnt() external view returns (uint256);\\n\\n    function active(uint256 id) external view returns (uint256);\\n\\n    function sales(uint256 id)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            address,\\n            uint96,\\n            uint256\\n        );\\n\\n    /// @notice starts an auction\\n    /// trusts the caller to transfer collateral to the contract\\n    /// The `startPrice` is obtained as follows:\\n    ///\\n    ///     startPrice = feedPrice * buf / par\\n    ///\\n    /// Where `feedPrice` is the collateral's unitary value in USD, `buf` is a\\n    /// multiplicative factor to increase the starting price, and `par` is a\\n    /// reference per KSD.\\n    /// @param raiseAmount ksd amount to raise through auction. [rad]\\n    /// @param sellAmount collateral amount to sell through auction. [rad]\\n    /// @param vaultOwner address will receive any leftover collateral\\n    /// @param keeper address that will receive incentives\\n    function start(\\n        uint256 raiseAmount,\\n        uint256 sellAmount,\\n        address vaultOwner,\\n        address keeper\\n    ) external returns (uint256 id);\\n\\n    /// @notice cancel an auction during EmergencyStop or via governance action.\\n    /// @param id sale id\\n    function cancel(uint256 id) external;\\n\\n    function take(\\n        uint256 id,\\n        uint256 amt,\\n        uint256 max,\\n        address to,\\n        bytes calldata data\\n    ) external;\\n\\n    function getStatus(uint256 id)\\n        external\\n        view\\n        returns (\\n            bool needsRedo,\\n            uint256 price,\\n            uint256 sellAmount, // collateral amount\\n            uint256 raiseAmount // raise amount\\n        );\\n}\\n\",\"keccak256\":\"0xdca291346584c232b850e0aa33eae9b6d32bfa4f92705a3c97cba3bb15eda7ce\",\"license\":\"MIT\"},\"contracts/interface/ILedger.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\ninterface ILedger {\\n    // --- Events ---\\n    event CollateralChanged(bytes32 collateralType, address usr, int256 amount);\\n    event KSDChanged(address usr, int256 amount);\\n    event LoanChanged(bytes32 collateralType, address debtor, address collateralVault, address ksdVault, int256 collateralAmount, int256 loanAmount);\\n    event AccountChanged(bytes32 collateralType, address vault, uint256 lockedCollateral, uint256 loan);\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\uc900\\ub2e4.\\n    /// @notice authorize usr to manipulate msg.sender's vault\\n    function allow(address usr) external;\\n\\n    /// @notice msg.sender\\uac00 usr\\uc5d0\\uac8c \\uc790\\uc2e0\\uc758 vault\\ub97c \\uc870\\uc791\\ud560 \\uc218 \\uc788\\ub294 \\uad8c\\ud55c\\uc744 \\ubec7\\ub294.\\n    /// @notice Deauthorize usr from manipulating msg.sender's vault\\n    function disallow(address usr) external;\\n\\n    // --- Data view ---\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785.\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. totalLockedCollateral (\\uc804\\uccb4 locked\\ub41c \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. totalLoan (\\ubc1c\\ud589\\ub41c(\\ube4c\\ub9b0) KSD\\uc591)\\n    /// 3. rate (\\uc2dc\\uac04\\uc5d0 \\ub530\\ub77c \\uc810\\ucc28 \\uc99d\\uac00\\ud558\\uace0, accountInfo.loan \\uc5d0 \\uacf1\\ud574\\uc838\\uc11c \\uc0ac\\uc6a9\\uc790\\uac00 \\ube4c\\ub9b0 ksd\\uc758 \\uc591\\uc744 \\ub298\\ub9ac\\ub294 \\uc6a9\\ub3c4\\ub85c \\uc0ac\\uc6a9\\ub428. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (\\ub2f4\\ubcf4 \\ud0c0\\uc785\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd1d KSD)\\n    /// 6. dust (\\ud558\\ub098\\uc758 vault\\uc5d0\\uc11c \\ube4c\\ub9b4 \\uc218 \\uc788\\ub294 \\ucd5c\\uc800\\uc758 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Collateral Iinfo\\n    /// @param collateralType Type of collateral - initially, there's only one (Klay)\\n    /// @dev the value that it returns are\\n    /// 1. totalLockedCollateral\\n    /// 2. totalLoan\\n    /// 3. rate (It gradually increases over time and is multiplied by accountInfo.loan to increase the amount of ksd borrowed by the user.. stability fee)\\n    /// 4. spot (== price * LTV)\\n    /// 5. line (Maximum KSD that can be minted from given collateral type)\\n    /// 6. dust (Minimum KSD that should be borrowed from a CDP)\\n    function collateralInfo(bytes32 collateralType)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256\\n        );\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\uad00\\ub828 \\uc815\\ubcf4\\ub4e4 \\uc870\\ud68c\\n    /// @param collateralTypes \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785 list\\n    /// @dev collateralInfo \\uc758 \\uac12\\ub4e4\\uc744 array \\ub85c return\\n    function collateralInfos(bytes32[] calldata collateralTypes)\\n        external\\n        view\\n        returns (\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory,\\n            uint256[] memory\\n        );\\n\\n    /// @notice usr\\uc758 vault \\uc815\\ubcf4\\n    /// @param collateralType \\ub2f4\\ubcf4 \\uc885\\ub958\\n    /// @param usr \\uc720\\uc800\\uc758 address\\n    /// @dev \\ub9ac\\ud134 \\uac12\\uc740 \\uc21c\\uc11c\\ub300\\ub85c\\n    /// 1. lockedCollateral (vault\\uc5d0 \\uc7a0\\uae34 \\ub2f4\\ubcf4\\ubb3c \\uc591)\\n    /// 2. loan (vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd \\uc591)\\n    /// (eng)\\n    /// @notice Information of a user's vault\\n    /// @param collateralType type of collateral\\n    /// @param usr Address of the user\\n    /// @dev returns\\n    /// 1. lockedCollateral (amount of collateral locked in the user's vault)\\n    /// 2. loan (normalized amount of KSD minted from that vault)\\n    function accountInfo(bytes32 collateralType, address usr) external view returns (uint256, uint256);\\n\\n    /// @notice This function returns the index of a user of given collateral type\\n    ///         The index\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @dev \\ub2f4\\ubcf4\\ubb3c \\ud0c0\\uc785\\ub9c8\\ub2e4 cdp \\uc5f0 \\uc720\\uc800\\ub97c tracking \\ud558\\uae30 \\uc704\\ud55c \\uac83\\uc73c\\ub85c, \\uac01 \\uc720\\uc800\\uac00 \\uba87 \\ubc88\\uc9f8\\ub85c cdp\\ub97c \\uc5f4\\uc5c8\\ub294\\uc9c0\\ub97c \\uae30\\ub85d.\\n    /// @dev This function is designed to track the list of users who have opened a CDP (for each collateral type)\\n    ///       Since CDPs are never deleted once created, this index should not be update at any circumstances\\n    function accountIndex(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice access address of an account by index\\n    /// @param collateralType type of collateral\\n    /// @param index index of user\\n    /// @dev index \\ubc88\\uc9f8\\ub85c \\ub4e4\\uc5b4\\uc628 \\uc720\\uc800\\uc758 \\uc8fc\\uc18c\\ub97c \\ub9ac\\ud134\\n    /// @dev returns the address of {index}-th CDP opener\\n    function accountByIndex(bytes32 collateralType, uint256 index) external view returns (address);\\n\\n    /// @notice Total number of user who have opened a CDP (given collateral type) - always increasing\\n    /// @param collateralType type of collateral\\n    /// @dev \\uc9c0\\uae08\\uae4c\\uc9c0 cdp\\ub97c \\uc5f0 \\uc720\\uc800\\uc758 \\uc218\\n    function accountLength(bytes32 collateralType) external view returns (uint256);\\n\\n    /// @notice locked \\ub418\\uc9c0 \\uc54a\\uc740 \\ub2f4\\ubcf4\\ubb3c\\uc758 \\uc591. \\ub2e8, \\uc2e4\\uc81c \\ub2f4\\ubcf4\\ubb3c\\uc740 gateway \\ucee8\\ud2b8\\ub809\\ud2b8\\uac00 \\uad00\\ub9ac\\ud558\\uace0 \\uc788\\uc74c.\\n    /// @param collateralType type of collateral\\n    /// @param usr address of user\\n    /// @notice The amount of collateral that are not locked.\\n    function token(bytes32 collateralType, address usr) external view returns (uint256);\\n\\n    /// @notice \\ube4c\\ub9ac\\uac70\\ub098, ksdGateway\\ub97c \\ud1b5\\ud574\\uc11c \\ub4e4\\uc5b4\\uc628 ksd\\uc758 \\uc591.\\n    /// @param usr address of user\\n    /// @notice The amount of KSD lent to, or depositted by (through KSDGateway) the {usr}\\n    function ksd(address usr) external view returns (uint256);\\n\\n    /// @notice total KSD Issued [rad]\\n    function totalIssued() external view returns (uint256);\\n\\n    /// @notice Total Unbacked KSD [rad]\\n    function vice() external view returns (uint256);\\n\\n    /// @notice Total Debt Ceiling [rad]\\n    function line() external view returns (uint256);\\n\\n    /// @notice unbacked KSD [rad]\\n    function sin(address usr) external view returns (uint256);\\n\\n    /// @notice initialize collateral\\n    /// @param collateralType type of collateral to initialize.\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc5d0 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance\\n    function init(bytes32 collateralType) external;\\n\\n    /// @notice config something\\n    /// \\uc624\\uc9c1 \\uac70\\ubc84\\ub10c\\uc2a4\\uc640 \\uc624\\ub77c\\ud074 \\uc758\\ud574\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4\\n    /// Should only be called by the governance and oracle\\n    function config(\\n        bytes32 collateralType,\\n        bytes32 what,\\n        uint256 data\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0a8\\ub2e4.\\n    ///          \\uc7a5\\ubd80\\uc758 \\uae30\\ub85d\\ub41c token\\uc758 \\uc591\\uc744 \\ubcc0\\ud654\\uc2dc\\uae30\\ud0a4 \\ub54c\\ubb38\\uc5d0 \\ubb34\\uc870\\uac74 \\ud5c8\\uac00\\ub41c contract\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    /// (eng)\\n    /// @notice Increase the amount of 'unlocked collateral'\\n    ///          (which means that the token is deposited into CDP but not yet considered as 'locked' as collateral)\\n    ///         This function changes the amount of 'unlocked collateral' of the CDP, so it should only be called by authorized contracts.\\n    function addCollateral(\\n        bytes32 collateralType,\\n        address usr,\\n        int256 amount\\n    ) external;\\n\\n    /// @notice token(lock \\ub418\\uc9c0 \\uc54a\\uc740 collateral)\\uc744 \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function.\\n    function sendCollateral(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        uint256 amoount\\n    ) external;\\n\\n    /// @notice ksd\\ub97c \\ub2e4\\ub978 account\\uc5d0 \\ubcf4\\ub0b4\\ub294 function. (\\uc2e4\\uc81c ksd token\\uc744 \\ubcf4\\ub0b4\\ub294 \\uac83\\uc774 \\uc544\\ub2c8\\ub77c, \\uc7a5\\ubd80 \\uc0c1\\uc758 \\uae30\\ub85d\\ub9cc \\ubc14\\ub01c)\\n    function sendKsd(\\n        address src,\\n        address dst,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice token, ksd \\uc591\\uc744 \\ud1b5\\ud574\\uc11c vault\\uc758 \\uac12\\uc744 \\ubcc0\\ud654\\uc2dc\\ud0b4.\\n    /// @param collateralType type of collateral\\n    /// @param debtor owner of vault\\n    /// @param collateralVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 token\\uc758 owner) \\ub2f4\\ubcf4\\ubb3c\\uc744 \\uac00\\uc838\\uc624\\uac70\\ub098 vault\\uc5d0\\uc11c unlock \\uc2dc\\ud0a8 \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub123\\uc744 \\uc8fc\\uc18c\\n    /// @param ksdVault (\\ub124\\uc774\\ubc0d\\uc774 \\ud587\\uac08\\ub9ac\\uae30\\ub294 \\ud55c\\ub370, \\uc704 ksd\\uc758 owner) ksd\\ub97c vault\\uc5d0 \\ub123\\uc5b4\\uc8fc\\uac70\\ub098, vault\\uc5d0\\uc11c \\ube4c\\ub9b0 ksd\\ub97c \\ub123\\uc5b4\\uc904 \\uacf3\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev vault\\uc5d0 ksd\\ub97c \\uac1a\\uac70\\ub098/\\ube4c\\ub9ac\\uac70\\ub098, \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ub354 lock \\uc2dc\\ud0a4\\uac70\\ub098/\\ube7c\\uac70\\ub098\\n    /// \\ub2e8, vault\\ub294 \\ud56d\\uc0c1 safe \\ud574\\uc57c\\ud558\\uace0, dust \\uc774\\uc0c1\\uc758 ksd\\ub97c \\uc720\\uc9c0\\ud574\\uc57c \\ud55c\\ub2e4.\\n    /// \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4. \\uc608\\ub97c\\ub4e4\\uc5b4, \\ud5c8\\ub77d\\ubc1b\\uc9c0 \\uc54a\\uc740 \\uc0ac\\ub78c\\uc774 locked\\ub418\\uc9c0 \\uc54a\\uc740 \\ub0a8\\uc758 collateral\\ub97c \\uc790\\uc2e0\\uc758 vault\\ub85c lock \\uc2dc\\ud0a4\\uc9c0 \\ubabb\\ud574\\uc57c \\ud55c\\ub2e4.\\n    function actionLoan(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice vault\\uc5d0 \\uc7a0\\uae34 collateral\\uc591\\uc774\\ub098 ksd \\ubd80\\ucc44\\ub97c \\uc774\\ub3d9\\uc2dc\\ud0a8\\ub2e4.\\n    /// @param collateralType type of collateral\\n    /// @param src address of vault (accountInfo)\\n    /// @param dst address of vault (accountInfo)\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev \\uc0c1\\uc2dd\\uc801\\uc778 \\uc120\\uc5d0\\uc11c \\uad8c\\ud55c \\uad00\\ub9ac\\uac00 \\ud544\\uc694\\ud558\\ub2e4.\\n    function fork(\\n        bytes32 collateralType,\\n        address src,\\n        address dst,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice \\ub2f4\\ubcf4\\ubb3c \\ubab0\\uc218 (confiscation)\\n    /// @param collateralType type of collateral\\n    /// @param debtor \\uccad\\uc0b0\\ub420 vault \\uc8fc\\uc18c\\n    /// @param collateralVault vault\\uc5d0\\uc11c locked\\ub41c \\ub2f4\\ubcf4\\ubb3c\\uc744 \\ubab0\\uc218\\ud574\\uac08 \\uc8fc\\uccb4. (\\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 \\ud56d\\uc0c1 auctionHouse. auction\\uc5d0\\uc11c \\ud314\\uc544\\uc57c \\ud558\\uae30 \\ub54c\\ubb38)\\n    /// @param ksdVault vault\\uc5d0\\uc11c \\ube4c\\ub824\\uac04 ksd\\ub294 \\ub2f4\\ubcf4\\ubb3c\\uc774 auction\\uc5d0 \\ub4e4\\uc5b4\\uac04 \\uc21c\\uac04 backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\uc774\\uae30 \\ub54c\\ubb38\\uc5d0, \\uc774\\uac83\\uc744 \\ub9e1\\uc544\\uc904 \\uc8fc\\uccb4\\uac00 \\ud544\\uc694. \\uc774 \\uc11c\\ube44\\uc2a4\\uc5d0\\uc11c\\ub294 minusBank\\uac00 \\ub9e1\\uc544\\uc900\\ub2e4.\\n    /// @param collateralAmount amount of collateral to change\\n    /// @param loanAmount amount of KSD to change\\n    /// @dev liquidator\\uc758 liquidate\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub9bc\\n    function grab(\\n        bytes32 collateralType,\\n        address debtor,\\n        address collateralVault,\\n        address ksdVault,\\n        int256 collateralAmount,\\n        int256 loanAmount\\n    ) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\uc0c1\\uc1c4\\ud558\\ub294 function. msg.sender\\uc758 ksd\\ub97c \\uc18c\\ubaa8\\ud55c\\ub2e4.\\n    function heal(uint256 amount) external;\\n\\n    /// @notice backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd\\ub97c \\ub9cc\\ub4e4\\uc5b4\\uc11c msg.sender\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev minusBank\\uc5d0\\uc11c keeper\\ub4e4\\uc5d0\\uac8c incentive\\ub97c \\uc8fc\\uae30 \\uc704\\ud574\\uc11c, \\ubbf8\\ub9ac ksd\\ub97c \\ub300\\ucd9c\\ubc1b\\ub294 \\uc5ed\\ud560\\ub85c \\uc4f0\\uc778\\ub2e4.\\n    /// \\ub530\\ub77c\\uc11c, \\uc624\\uc9c1 minusBank\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function suck(\\n        address u,\\n        address v,\\n        uint256 amount\\n    ) external;\\n\\n    /// @notice stability fee\\ub97c ksdReceiver\\uc5d0\\uac8c \\uc900\\ub2e4.\\n    /// @dev StabilityFeeCollector\\uc5d0\\uc11c\\ub9cc \\ubd88\\ub824\\uc57c \\ud55c\\ub2e4.\\n    function collectStabilityFee(\\n        bytes32 collateralType,\\n        address ksdReceiver,\\n        int256 rateDiff\\n    ) external;\\n}\\n\",\"keccak256\":\"0xd665010e6fac1b9f0423339abad116c599c5ef2960fac177b2108fa68fd15b71\",\"license\":\"MIT\"},\"contracts/interface/ILiquidator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\n/// @notice liquidate collateralized debt position which is not safe\\ninterface ILiquidator {\\n    // --- Data ---\\n    struct AuctionInfo {\\n        address auctionHouse; // Auction House\\n        uint256 penalty; // Liquidation Penalty [wad]\\n        uint256 maxAmount; // Max KSD needed to cover debt+fees of active auctions per collateral type [rad]\\n        uint256 onGoingAmount; // Amt KSD needed to cover debt+fees of active auctions per collateral type [rad]\\n    }\\n\\n    // --- Events ---\\n    event Config(bytes32 indexed what, uint256 data);\\n    event Config(bytes32 indexed what, address data);\\n    event Config(bytes32 indexed collateral, bytes32 indexed what, uint256 data);\\n    event Config(bytes32 indexed collateral, bytes32 indexed what, address auctionHouse);\\n\\n    event Liquidate(\\n        bytes32 indexed collateral,\\n        address indexed account,\\n        uint256 lockedCollateral,\\n        uint256 loan,\\n        uint256 due,\\n        address auctionHouse,\\n        uint256 indexed id\\n    );\\n    event EndLiquidation(bytes32 indexed collateral, uint256 rad);\\n\\n    function auctionInfos(bytes32 collateralType)\\n        external\\n        view\\n        returns (\\n            address,\\n            uint256,\\n            uint256,\\n            uint256\\n        );\\n\\n    function penalty(bytes32 collateralType) external view returns (uint256);\\n\\n    /// @notice liquidate a Vault and start a Dutch auction to sell its collateral for KSD.\\n    ///\\n    /// The entire Vault will be liquidated except when the target amount of KSD to be raised in\\n    /// the resulting auction (debt of Vault + liquidation penalty) causes either totalOnGoingAmount to exceed\\n    /// totalMaxAmount or collateral.onGoingAmount to exceed collateral.maxAmount by an economically significant amount. In that\\n    /// case, a partial liquidation is performed to respect the global and per-collateral limits on\\n    /// outstanding KSD target. The one exception is if the resulting auction would likely\\n    /// have too little collateral to be interesting to Keepers (debt taken from Vault < collateral.dust),\\n    /// in which case the function reverts. Please refer to the code and comments within if\\n    /// more detail is desired.\\n    /// @param collateralType type of collateral in vault to liquidate\\n    /// @param vaultAddr address of vault to liquidate\\n    /// @param keeper address that will receive incentives\\n    function liquidate(\\n        bytes32 collateralType,\\n        address vaultAddr,\\n        address keeper\\n    ) external returns (uint256 id);\\n\\n    /// @notice when liquidation process is ended (including auction), endLiquidation is called to clear some data related the liquidation.\\n    /// @param collateralType collateralType\\n    /// @param rad liquidated ksd amount\\n    function endLiquidation(bytes32 collateralType, uint256 rad) external;\\n}\\n\",\"keccak256\":\"0xb0bd08c1fa1365c7bdd90649a67b0d14fda9895cbceadabfc0234bf927669fd6\",\"license\":\"MIT\"},\"contracts/interface/IMinusBank.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\n/// @notice temporary borrow ksd for auction\\n/// auction \\uc5d0 \\ub123\\uc744 \\ub54c (Liquidator.liquidate), auction \\uacb0\\uacfc\\ub97c \\ubbf8\\ub9ac \\uc54c \\uc218 \\uc5c6\\uc74c\\uc73c\\ub85c, \\ud574\\ub2f9 vault\\uc5d0\\uc11c \\ubc1c\\ud589\\ub41c ksd\\ub294 backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd (ledger.sin)\\uc774\\ub2e4. \\uc774\\ub97c \\ub9e1\\uc544\\uc904 account\\uac00 \\ud544\\uc694.\\n/// auction \\uc774 \\uc9c4\\ud589\\ub428\\uc5d0 \\ub530\\ub77c keeper (start/redo) \\uc5d0\\uac8c \\uc904 incentive \\uac00 \\ud544\\uc694.\\n/// \\uc704 2\\uac1c\\ub97c MinusBank\\uc758 backing\\ub418\\uc9c0 \\uc54a\\uc740 ksd (ledger.sin) \\ub85c \\ucc98\\ub9ac.\\n/// auction \\uc774 \\ub05d\\ub0ac\\uc744 \\ub54c, \\uccad\\uc0b0 \\uacb0\\uacfc\\ub85c \\uc5bb\\uc740 ksd\\ub85c \\uc704\\uc5d0\\uc11c MinusBank \\uac00 \\uc5bb\\uc740 sin\\ub4e4\\uc744 \\ucc98\\ub9ac.\\n/// \\uc989, MinusBank \\uc5d0\\uac8c \\uc8fc\\uc5b4\\uc9c0\\ub294 \\uac83\\uc740 \\ucc98\\uc74c auction \\uc5d0 \\ub123\\uc744 \\ub54c \\ud328\\ub110\\ud2f0\\ub97c \\ud3ec\\ud568\\ud55c ksd \\uac00 \\uc8fc\\uc5b4\\uc9c4\\ub2e4.\\n/// AuctionHouse.take \\uc5d0\\uc11c \\uccad\\uc0b0\\uc774 \\ub05d\\ub0ac\\uc744 \\ub54c \\uc790\\ub3d9\\uc73c\\ub85c MinusBank.payBackMinus \\ub97c \\ubd88\\ub7ec\\uc8fc\\ub294 \\uac83\\uc73c\\ub85c MinusBank \\uc758 sin \\uc744 \\uc790\\ub3d9\\uc73c\\ub85c \\ucc98\\ub9ac\\ud55c\\ub2e4.\\ninterface IMinusBank {\\n    /// @notice pay back the sin of MinusBank\\n    /// @param rad the amount of pay back\\n    function payBackMinus(uint256 rad) external;\\n}\\n\",\"keccak256\":\"0x5b18afa4d60a9356e59ff397c516191ef3a8e377ed1994f366b7d6affd3e6405\",\"license\":\"MIT\"},\"contracts/interface/IPausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\n/// @title Pausable contract\\ninterface IPausable {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    function paused() external view returns (bool);\\n\\n    function pause() external;\\n\\n    function unpause() external;\\n}\\n\",\"keccak256\":\"0x5c4f557b09f3f3cf5a8ed0868fb545c91f5206144818a09d538243e48b9237e4\",\"license\":\"MIT\"},\"contracts/library/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\nimport \\\"./openzeppelin/proxy/Initializable.sol\\\";\\n\\ncontract AccessControl is Initializable {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    mapping(bytes32 => RoleData) private _roles;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role, msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOwner() {\\n        _checkRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyAdmin() {\\n        _checkRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _;\\n    }\\n\\n    modifier onlyOperator() {\\n        _checkRole(bytes32(\\\"operator\\\"), msg.sender);\\n        _;\\n    }\\n\\n    function __AccessControl_init() internal initializer {\\n        __AccessControl_init_unchained();\\n    }\\n\\n    function __AccessControl_init_unchained() private initializer {\\n        _setupRole(bytes32(\\\"owner\\\"), msg.sender);\\n        _setRoleAdmin(bytes32(\\\"admin\\\"), bytes32(\\\"owner\\\"));\\n        _setRoleAdmin(bytes32(\\\"operator\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"admin\\\"), msg.sender);\\n        _setupRole(bytes32(\\\"operator\\\"), msg.sender);\\n    }\\n\\n    function hasRole(bytes32 role, address account) public view returns (bool) {\\n        return _roles[role].members[account];\\n    }\\n\\n    function _checkRole(bytes32 role, address account) internal view {\\n        if (!hasRole(role, account)) {\\n            revert(\\\"AccessControl:_checkRole:invalid role\\\");\\n        }\\n    }\\n\\n    function getRoleAdmin(bytes32 role) public view returns (bytes32) {\\n        return _roles[role].adminRole;\\n    }\\n\\n    function grantRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _grantRole(role, account);\\n    }\\n\\n    function revokeRole(bytes32 role, address account) public onlyRole(getRoleAdmin(role)) {\\n        _revokeRole(role, account);\\n    }\\n\\n    function renounceRole(bytes32 role, address account) public {\\n        require(account == msg.sender, \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    function _setupRole(bytes32 role, address account) internal {\\n        _grantRole(role, account);\\n    }\\n\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal {\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\n        _roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    function _grantRole(bytes32 role, address account) private {\\n        if (!hasRole(role, account)) {\\n            _roles[role].members[account] = true;\\n            emit RoleGranted(role, account, msg.sender);\\n        }\\n    }\\n\\n    function _revokeRole(bytes32 role, address account) private {\\n        if (hasRole(role, account)) {\\n            _roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, msg.sender);\\n        }\\n    }\\n\\n    // --- ownable --\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        _grantRole(bytes32(\\\"owner\\\"), newOwner);\\n        _revokeRole(bytes32(\\\"owner\\\"), msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x16d2c3697b545ce0f8f6508d64eef0522b972736cbe77fc7c2e7e50a348f94b8\",\"license\":\"MIT\"},\"contracts/library/Pausable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./AccessControl.sol\\\";\\n\\nabstract contract Pausable is AccessControl {\\n    event Paused(address account);\\n    event Unpaused(address account);\\n\\n    bool private _paused;\\n\\n    function __Pausable_init() internal initializer {\\n        __AccessControl_init();\\n        _setRoleAdmin(bytes32(\\\"pauser\\\"), bytes32(\\\"owner\\\"));\\n        _setupRole(bytes32(\\\"pauser\\\"), msg.sender);\\n    }\\n\\n    function paused() public view virtual returns (bool) {\\n        return _paused;\\n    }\\n\\n    modifier whenNotPaused() virtual {\\n        require(!paused(), \\\"Pausable: paused\\\");\\n        _;\\n    }\\n\\n    modifier whenPaused() {\\n        require(paused(), \\\"Pausable: not paused\\\");\\n        _;\\n    }\\n\\n    function pause() public whenNotPaused onlyRole(\\\"pauser\\\") {\\n        _paused = true;\\n        emit Paused(msg.sender);\\n    }\\n\\n    function unpause() public whenPaused onlyRole(\\\"pauser\\\") {\\n        _paused = false;\\n        emit Unpaused(msg.sender);\\n    }\\n}\\n\",\"keccak256\":\"0x09830075c06c05d623c2db6ce3f84b495181ab439043cdaab714060b9fc23f5a\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/contracts/utils/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    function add(uint256 x, int256 y) internal pure returns (uint256 z) {\\n        unchecked {\\n            z = x + uint256(y);\\n            require(y >= 0 || z <= x, \\\"Math: addition overflow\\\");\\n            require(y <= 0 || z >= x, \\\"Math: addition overflow\\\");\\n        }\\n    }\\n\\n    function sub(uint256 x, int256 y) internal pure returns (uint256 z) {\\n        unchecked {\\n            z = x - uint256(y);\\n            require(y <= 0 || z <= x, \\\"Math: subtraction overflow\\\");\\n            require(y >= 0 || z >= x, \\\"Math: subtraction overflow\\\");\\n        }\\n    }\\n\\n    function mul(uint256 x, int256 y) internal pure returns (int256 z) {\\n        unchecked {\\n            z = int256(x) * y;\\n            require(int256(x) >= 0, \\\"Math: multiplication overflow\\\");\\n            require(y == 0 || z / y == int256(x), \\\"Math: multiplication overflow\\\");\\n        }\\n    }\\n\\n    function mul(int256 x, uint256 y) internal pure returns (int256 z) {\\n        z = x * int256(y);\\n        require(int256(y) >= 0, \\\"Math: multiplication overflow\\\");\\n        require(x == 0 || z / x == int256(y), \\\"Math: multiplication overflow\\\");\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a >= b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a / b + (a % b == 0 ? 0 : 1);\\n    }\\n\\n    // from uniswap\\n    // babylonian method (https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)\\n    function sqrt(uint256 y) internal pure returns (uint256 z) {\\n        z = y;\\n        uint256 x = y / 2 + 1;\\n        while (x < z) {\\n            z = x;\\n            x = (y / x + x) / 2;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xd94cce7a88a43ad7e95b468dbd59a18e62f95be8b23a1619e0b96bfc1246eae1\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/contracts/utils/SafeCast.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Wrappers over Solidity's uintXX/intXX casting operators with added overflow\\n * checks.\\n *\\n * Downcasting from uint256/int256 in Solidity does not revert on overflow. This can\\n * easily result in undesired exploitation or bugs, since developers usually\\n * assume that overflows raise errors. `SafeCast` restores this intuition by\\n * reverting the transaction when such an operation overflows.\\n *\\n * Using this library instead of the unchecked operations eliminates an entire\\n * class of bugs, so it's recommended to use it always.\\n *\\n * Can be combined with {SafeMath} and {SignedSafeMath} to extend it to smaller types, by performing\\n * all math on `uint256` and `int256` and then downcasting.\\n */\\nlibrary SafeCast {\\n    /**\\n     * @dev Returns the downcasted uint224 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint224).\\n     *\\n     * Counterpart to Solidity's `uint224` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 224 bits\\n     */\\n    function toUint224(uint256 value) internal pure returns (uint224) {\\n        require(value <= type(uint224).max, \\\"SafeCast: value doesn't fit in 224 bits\\\");\\n        return uint224(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint128 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint128).\\n     *\\n     * Counterpart to Solidity's `uint128` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 128 bits\\n     */\\n    function toUint128(uint256 value) internal pure returns (uint128) {\\n        require(value <= type(uint128).max, \\\"SafeCast: value doesn't fit in 128 bits\\\");\\n        return uint128(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint96 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint96).\\n     *\\n     * Counterpart to Solidity's `uint96` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 96 bits\\n     */\\n    function toUint96(uint256 value) internal pure returns (uint96) {\\n        require(value <= type(uint96).max, \\\"SafeCast: value doesn't fit in 96 bits\\\");\\n        return uint96(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint64 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint64).\\n     *\\n     * Counterpart to Solidity's `uint64` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 64 bits\\n     */\\n    function toUint64(uint256 value) internal pure returns (uint64) {\\n        require(value <= type(uint64).max, \\\"SafeCast: value doesn't fit in 64 bits\\\");\\n        return uint64(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint32 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint32).\\n     *\\n     * Counterpart to Solidity's `uint32` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 32 bits\\n     */\\n    function toUint32(uint256 value) internal pure returns (uint32) {\\n        require(value <= type(uint32).max, \\\"SafeCast: value doesn't fit in 32 bits\\\");\\n        return uint32(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint16 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint16).\\n     *\\n     * Counterpart to Solidity's `uint16` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 16 bits\\n     */\\n    function toUint16(uint256 value) internal pure returns (uint16) {\\n        require(value <= type(uint16).max, \\\"SafeCast: value doesn't fit in 16 bits\\\");\\n        return uint16(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted uint8 from uint256, reverting on\\n     * overflow (when the input is greater than largest uint8).\\n     *\\n     * Counterpart to Solidity's `uint8` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 8 bits.\\n     */\\n    function toUint8(uint256 value) internal pure returns (uint8) {\\n        require(value <= type(uint8).max, \\\"SafeCast: value doesn't fit in 8 bits\\\");\\n        return uint8(value);\\n    }\\n\\n    /**\\n     * @dev Converts a signed int256 into an unsigned uint256.\\n     *\\n     * Requirements:\\n     *\\n     * - input must be greater than or equal to 0.\\n     */\\n    function toUint256(int256 value) internal pure returns (uint256) {\\n        require(value >= 0, \\\"SafeCast: value must be positive\\\");\\n        return uint256(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int128 from int256, reverting on\\n     * overflow (when the input is less than smallest int128 or\\n     * greater than largest int128).\\n     *\\n     * Counterpart to Solidity's `int128` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 128 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt128(int256 value) internal pure returns (int128) {\\n        require(value >= type(int128).min && value <= type(int128).max, \\\"SafeCast: value doesn't fit in 128 bits\\\");\\n        return int128(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int64 from int256, reverting on\\n     * overflow (when the input is less than smallest int64 or\\n     * greater than largest int64).\\n     *\\n     * Counterpart to Solidity's `int64` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 64 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt64(int256 value) internal pure returns (int64) {\\n        require(value >= type(int64).min && value <= type(int64).max, \\\"SafeCast: value doesn't fit in 64 bits\\\");\\n        return int64(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int32 from int256, reverting on\\n     * overflow (when the input is less than smallest int32 or\\n     * greater than largest int32).\\n     *\\n     * Counterpart to Solidity's `int32` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 32 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt32(int256 value) internal pure returns (int32) {\\n        require(value >= type(int32).min && value <= type(int32).max, \\\"SafeCast: value doesn't fit in 32 bits\\\");\\n        return int32(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int16 from int256, reverting on\\n     * overflow (when the input is less than smallest int16 or\\n     * greater than largest int16).\\n     *\\n     * Counterpart to Solidity's `int16` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 16 bits\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt16(int256 value) internal pure returns (int16) {\\n        require(value >= type(int16).min && value <= type(int16).max, \\\"SafeCast: value doesn't fit in 16 bits\\\");\\n        return int16(value);\\n    }\\n\\n    /**\\n     * @dev Returns the downcasted int8 from int256, reverting on\\n     * overflow (when the input is less than smallest int8 or\\n     * greater than largest int8).\\n     *\\n     * Counterpart to Solidity's `int8` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - input must fit into 8 bits.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function toInt8(int256 value) internal pure returns (int8) {\\n        require(value >= type(int8).min && value <= type(int8).max, \\\"SafeCast: value doesn't fit in 8 bits\\\");\\n        return int8(value);\\n    }\\n\\n    /**\\n     * @dev Converts an unsigned uint256 into a signed int256.\\n     *\\n     * Requirements:\\n     *\\n     * - input must be less than or equal to maxInt256.\\n     */\\n    function toInt256(uint256 value) internal pure returns (int256) {\\n        // Note: Unsafe cast below is okay because `type(int256).max` is guaranteed to be positive\\n        require(value <= uint256(type(int256).max), \\\"SafeCast: value doesn't fit in an int256\\\");\\n        return int256(value);\\n    }\\n}\\n\",\"keccak256\":\"0x08d867b4c0bb782b9135691fa732b6846e0f133006489c3aa505abd1f6de56cb\",\"license\":\"MIT\"},\"contracts/library/openzeppelin/proxy/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n// solhint-disable-next-line compiler-version\\npragma solidity ^0.8.3;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || _isConstructor() || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /// @dev Returns true if and only if the function is running in the constructor\\n    function _isConstructor() private view returns (bool) {\\n        // extcodesize checks the size of the code stored in an address, and\\n        // address returns the current address. Since the code is still not\\n        // deployed when running a constructor, any checks on its code size will\\n        // yield zero, making it an effective way to detect if a contract is\\n        // under construction or not.\\n        address self = address(this);\\n        uint256 cs;\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            cs := extcodesize(self)\\n        }\\n        return cs == 0;\\n    }\\n}\\n\",\"keccak256\":\"0x95a413b1c4dc23bacf1a16b826a929f2ff756835e3ff3018aeff63afd497886f\",\"license\":\"MIT\"},\"contracts/liquidation/Liquidator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.3;\\n\\nimport \\\"../interface/IAuctionHouse.sol\\\";\\nimport \\\"../interface/ILedger.sol\\\";\\nimport \\\"../interface/IMinusBank.sol\\\";\\nimport \\\"../interface/ILiquidator.sol\\\";\\nimport \\\"../library/openzeppelin/contracts/utils/Math.sol\\\";\\nimport \\\"../library/openzeppelin/contracts/utils/SafeCast.sol\\\";\\nimport \\\"../library/Pausable.sol\\\";\\nimport \\\"../library/AccessControl.sol\\\";\\n\\n/// @notice Most of the codes here are a subset of MakerDAO's contract\\ncontract Liquidator is ILiquidator, AccessControl, Pausable {\\n    ILedger public ledger; // ledger Engine\\n\\n    mapping(bytes32 => AuctionInfo) public override auctionInfos;\\n\\n    IMinusBank public minusBank; // Debt Engine\\n    uint256 public totalMaxAmount; // Max KSD needed to cover debt+fees of active auctions [rad]\\n    uint256 public totalOnGoingAmount; // Amt KSD needed to cover debt+fees of active auctions [rad]\\n\\n    // --- Init ---\\n    function __Liquidator_init(address ledger_) public initializer {\\n        __Pausable_init();\\n        ledger = ILedger(ledger_);\\n    }\\n\\n    // --- Math ---\\n    uint256 constant WAD = 10**18;\\n\\n    // --- Administration ---\\n    function config(bytes32 what, address data) external onlyAdmin {\\n        if (what == \\\"minusBank\\\") minusBank = IMinusBank(data);\\n        else revert(\\\"Liquidator::config:unrecognized-param\\\");\\n        emit Config(what, data);\\n    }\\n\\n    function config(bytes32 what, uint256 data) external onlyAdmin {\\n        if (what == \\\"totalMaxAmount\\\") totalMaxAmount = data;\\n        else revert(\\\"Liquidator::config:unrecognized-param\\\");\\n        emit Config(what, data);\\n    }\\n\\n    function config(\\n        bytes32 collateralType,\\n        bytes32 what,\\n        uint256 data\\n    ) external onlyAdmin {\\n        if (what == \\\"penalty\\\") {\\n            require(data >= WAD, \\\"Liquidator::config:file-penalty-lt-WAD\\\");\\n            auctionInfos[collateralType].penalty = data;\\n        } else if (what == \\\"maxAmount\\\") auctionInfos[collateralType].maxAmount = data;\\n        else revert(\\\"Liquidator::config:unrecognized-param\\\");\\n        emit Config(collateralType, what, data);\\n    }\\n\\n    function config(\\n        bytes32 collateralType,\\n        bytes32 what,\\n        address auctionHouse\\n    ) external onlyAdmin {\\n        if (what == \\\"auctionHouse\\\") {\\n            require(collateralType == IAuctionHouse(auctionHouse).collateralType(), \\\"Liquidator::config:file-ilk-neq-auctionHouse.collateralType\\\");\\n            auctionInfos[collateralType].auctionHouse = auctionHouse;\\n        } else revert(\\\"Liquidator::config:unrecognized-param\\\");\\n        emit Config(collateralType, what, auctionHouse);\\n    }\\n\\n    function penalty(bytes32 collateralType) external view override returns (uint256) {\\n        return auctionInfos[collateralType].penalty;\\n    }\\n\\n    /// @notice liquidate a Vault and start a Dutch auction to sell its collateral for KSD.\\n    /// The entire Vault will be liquidated except when the target amount of KSD to be raised in\\n    /// the resulting auction (debt of Vault + liquidation penalty) causes either totalOnGoingAmount to exceed\\n    /// totalMaxAmount or collateral.onGoingAmount to exceed collateral.maxAmount by an economically significant amount. In that\\n    /// case, a partial liquidation is performed to respect the global and per-collateral limits on\\n    /// outstanding KSD target. The one exception is if the resulting auction would likely\\n    /// have too little collateral to be interesting to Keepers (debt taken from Vault < collateral.dust),\\n    /// in which case the function reverts. Please refer to the code and comments within if\\n    /// more detail is desired.\\n    /// @param collateralType type of collateral in vault to liquidate\\n    /// @param vaultAddr address of vault to liquidate\\n    /// @param keeper address that will receive incentives\\n    function liquidate(\\n        bytes32 collateralType,\\n        address vaultAddr,\\n        address keeper\\n    ) external override whenNotPaused returns (uint256 id) {\\n        (uint256 lockedCollateral, uint256 loan) = ledger.accountInfo(collateralType, vaultAddr);\\n        AuctionInfo memory auctionInfo = auctionInfos[collateralType];\\n        uint256 liquidateLoan;\\n        uint256 rate;\\n        uint256 dust;\\n        {\\n            uint256 spot;\\n            (, , rate, spot, , dust) = ledger.collateralInfo(collateralType);\\n            require(spot > 0 && lockedCollateral * spot < loan * rate, \\\"Liquidator::liquidate:not-unsafe\\\");\\n\\n            // Get the minimum value between:\\n            // 1) Remaining space in the general totalMaxAmount\\n            // 2) Remaining space in the collateral hole\\n            require(\\n                totalMaxAmount > totalOnGoingAmount && auctionInfo.maxAmount > auctionInfo.onGoingAmount,\\n                \\\"Liquidator::liquidate:liquidation-limit-hit\\\"\\n            );\\n            uint256 room = Math.min(totalMaxAmount - totalOnGoingAmount, auctionInfo.maxAmount - auctionInfo.onGoingAmount);\\n\\n            // uint256.max()/(RAD*WAD) = 115,792,089,237,316\\n            liquidateLoan = Math.min(loan, (room * WAD) / rate / auctionInfo.penalty);\\n\\n            // Partial liquidation edge case logic\\n            if (loan > liquidateLoan) {\\n                if ((loan - liquidateLoan) * rate < dust) {\\n                    // If the leftover Vault would be dusty, just liquidate it entirely.\\n                    // This will result in at least one of onGoingAmount_i > hole_i or totalOnGoingAmount > totalMaxAmount becoming true.\\n                    // The amount of excess will be bounded above by ceiling(dust_i * penalty_i / WAD).\\n                    // This deviation is assumed to be small compared to both hole_i and totalMaxAmount, so that\\n                    // the extra amount of target KSD over the limits intended is not of economic concern.\\n                    liquidateLoan = loan;\\n                } else {\\n                    // In a partial liquidation, the resulting auction should also be non-dusty.\\n                    require(liquidateLoan * rate >= dust, \\\"Liquidator::liquidate:dusty-auction-from-partial-liquidation\\\");\\n                }\\n            }\\n        }\\n\\n        uint256 liquidateCollateral = (lockedCollateral * liquidateLoan) / loan;\\n\\n        require(liquidateCollateral > 0, \\\"Liquidator::liquidate:null-auction\\\");\\n        ledger.grab(\\n            collateralType,\\n            vaultAddr,\\n            auctionInfo.auctionHouse,\\n            address(minusBank),\\n            -SafeCast.toInt256(liquidateCollateral),\\n            -SafeCast.toInt256(liquidateLoan)\\n        );\\n\\n        // -- Kokoa --\\n        uint256 fixedLiquidateLoan = liquidateLoan * rate;\\n        // minusBank.fess(due);\\n\\n        {\\n            // Keeps the stack from staking too much\\n            // This calcuation will overflow if dart*rate exceeds ~10^14\\n            uint256 finalLiquidateLoan = (fixedLiquidateLoan * auctionInfo.penalty) / WAD;\\n            totalOnGoingAmount = totalOnGoingAmount + finalLiquidateLoan;\\n            auctionInfos[collateralType].onGoingAmount = auctionInfo.onGoingAmount + finalLiquidateLoan;\\n\\n            id = IAuctionHouse(auctionInfo.auctionHouse).start({\\n                raiseAmount: finalLiquidateLoan,\\n                sellAmount: liquidateCollateral,\\n                vaultOwner: vaultAddr,\\n                keeper: keeper\\n            });\\n        }\\n\\n        emit Liquidate(collateralType, vaultAddr, liquidateCollateral, liquidateLoan, fixedLiquidateLoan, auctionInfo.auctionHouse, id);\\n    }\\n\\n    /// @notice when liquidation process is ended (including auction), endLiquidation is called to clear some data related the liquidation.\\n    /// @param collateralType collateralType\\n    /// @param rad liquidated ksd amount\\n    function endLiquidation(bytes32 collateralType, uint256 rad) external override onlyAdmin {\\n        totalOnGoingAmount = totalOnGoingAmount - rad;\\n        auctionInfos[collateralType].onGoingAmount = auctionInfos[collateralType].onGoingAmount - rad;\\n        emit EndLiquidation(collateralType, rad);\\n    }\\n}\\n\",\"keccak256\":\"0x14296ec0607498cde8d0a185faf5dd9903e00f7797fdbe9def1f4414f3f1bce5\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506117e8806100206000396000f3fe608060405234801561001057600080fd5b506004361061014d5760003560e01c80637d8513f2116100c3578063d366f3b91161007c578063d366f3b914610312578063d547741f14610325578063e0bed04114610338578063f2fde38b1461034b578063fc3b0d961461035e578063ff0de72f146103675761014d565b80637d8513f2146102b65780638456cb59146102c957806391d14854146102d1578063a217fddf146102e4578063a9345fa8146102ec578063c647e0dd146102ff5761014d565b806336568abe1161011557806336568abe146101d65780633723727c146101e95780633f4ba83a14610254578063560b4f271461025c57806356397c351461026f5780635c975abb1461029f5761014d565b8063022558ca14610152578063179bf30814610167578063248a9ca31461018d57806326fc7590146101a05780632f2ff15d146101c3575b600080fd5b610165610160366004611639565b610370565b005b61017a6101753660046115a8565b610400565b6040519081526020015b60405180910390f35b61017a61019b36600461154d565b610a58565b61017a6101ae36600461154d565b60009081526003602052604090206001015490565b6101656101d136600461157d565b610a71565b6101656101e436600461157d565b610a93565b61022a6101f736600461154d565b600360208190526000918252604090912080546001820154600283015492909301546001600160a01b0390911692919084565b604080516001600160a01b0390951685526020850193909352918301526060820152608001610184565b610165610b11565b61016561026a36600461160e565b610baf565b6002546102879061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610184565b60025460ff165b6040519015158152602001610184565b6101656102c4366004611533565b610d16565b610165610db4565b6102a66102df36600461157d565b610e4b565b61017a600081565b6101656102fa3660046115e3565b610e76565b600454610287906001600160a01b031681565b61016561032036600461157d565b610fe8565b61016561033336600461157d565b611064565b610165610346366004611639565b611081565b610165610359366004611533565b6110e3565b61017a60055481565b61017a60065481565b6103826430b236b4b760d91b3361111c565b80600654610390919061176b565b600655600082815260036020819052604090912001546103b190829061176b565b600083815260036020818152604092839020909101929092555182815283917fb4ce8d62e7962fdc883ff7b2bdc2bc363c28c01a57a1dc87c631600b5d5a71c591015b60405180910390a25050565b600061040e60025460ff1690565b156104535760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b60448201526064015b60405180910390fd5b60025460405163b75baf7960e01b8152600481018690526001600160a01b03858116602483015260009283926101009091049091169063b75baf7990604401604080518083038186803b1580156104a957600080fd5b505afa1580156104bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104e1919061165a565b6000888152600360208181526040808420815160808101835281546001600160a01b0390811682526001830154948201949094526002808301548285015291909401546060850152549051637d5422a760e01b8152600481018d90529597509395509093919283928392839261010090041690637d5422a79060240160c06040518083038186803b15801561057557600080fd5b505afa158015610589573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105ad919061167d565b929750919550935050508115801591506105d857506105cc838761174c565b6105d6828961174c565b105b6106245760405162461bcd60e51b815260206004820181905260248201527f4c697175696461746f723a3a6c69717569646174653a6e6f742d756e73616665604482015260640161044a565b60065460055411801561063e575084606001518560400151115b61069e5760405162461bcd60e51b815260206004820152602b60248201527f4c697175696461746f723a3a6c69717569646174653a6c69717569646174696f60448201526a1b8b5b1a5b5a5d0b5a1a5d60aa1b606482015260840161044a565b60006106cc6006546005546106b3919061176b565b876060015188604001516106c7919061176b565b611180565b905061070087876020015186670de0b6b3a7640000856106ec919061174c565b6106f6919061172c565b6106c7919061172c565b9450848711156107ad578284610716878a61176b565b610720919061174c565b101561072e578694506107ad565b82610739858761174c565b10156107ad5760405162461bcd60e51b815260206004820152603c60248201527f4c697175696461746f723a3a6c69717569646174653a64757374792d6175637460448201527f696f6e2d66726f6d2d7061727469616c2d6c69717569646174696f6e00000000606482015260840161044a565b5060009050856107bd858961174c565b6107c7919061172c565b9050600081116108245760405162461bcd60e51b815260206004820152602260248201527f4c697175696461746f723a3a6c69717569646174653a6e756c6c2d617563746960448201526137b760f11b606482015260840161044a565b60025485516004546001600160a01b03610100909304831692637bab3f40928f928f921661085187611198565b61085a90611782565b6108638b611198565b61086c90611782565b6040516001600160e01b031960e089901b16815260048101969096526001600160a01b039485166024870152928416604486015292166064840152608483019190915260a482015260c401600060405180830381600087803b1580156108d157600080fd5b505af11580156108e5573d6000803e3d6000fd5b50505050600083856108f7919061174c565b90506000670de0b6b3a7640000876020015183610914919061174c565b61091e919061172c565b90508060065461092e9190611714565b6006556060870151610941908290611714565b60008e8152600360208190526040918290200191909155875190516330c8c1a760e11b815260048101839052602481018590526001600160a01b038e811660448301528d8116606483015290911690636191834e90608401602060405180830381600087803b1580156109b357600080fd5b505af11580156109c7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109eb9190611565565b875160408051868152602081018a90529081018590526001600160a01b039182166060820152919b508b92508d16908e907f72d3864f233703680912d39433c137e816d579e8785e5245274ca9f95bea89679060800160405180910390a450505050505050509392505050565b600081815260016020819052604090912001545b919050565b610a7a82610a58565b610a84813361111c565b610a8e8383611206565b505050565b6001600160a01b0381163314610b035760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b606482015260840161044a565b610b0d8282611271565b5050565b60025460ff16610b5a5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015260640161044a565b653830bab9b2b960d11b610b6e813361111c565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b610bc16430b236b4b760d91b3361111c565b816670656e616c747960c81b1415610c5357670de0b6b3a7640000811015610c3a5760405162461bcd60e51b815260206004820152602660248201527f4c697175696461746f723a3a636f6e6669673a66696c652d70656e616c74792d6044820152651b1d0b55d05160d21b606482015260840161044a565b6000838152600360205260409020600101819055610cd6565b81681b585e105b5bdd5b9d60ba1b1415610c80576000838152600360205260409020600201819055610cd6565b60405162461bcd60e51b815260206004820152602560248201527f4c697175696461746f723a3a636f6e6669673a756e7265636f676e697a65642d604482015264706172616d60d81b606482015260840161044a565b81837f4691be92868fa80845b397f0e016905e1b4322422075895b96f9b4a8f1d918cf83604051610d0991815260200190565b60405180910390a3505050565b600054610100900460ff1680610d2b5750303b155b80610d39575060005460ff16155b610d555760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff16158015610d77576000805461ffff19166101011790555b610d7f6112d8565b60028054610100600160a81b0319166101006001600160a01b038516021790558015610b0d576000805461ff00191690555050565b60025460ff1615610dfa5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015260640161044a565b653830bab9b2b960d11b610e0e813361111c565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610ba4565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b610e886430b236b4b760d91b3361111c565b816b61756374696f6e486f75736560a01b1415610c8057806001600160a01b031663e824600f6040518163ffffffff1660e01b815260040160206040518083038186803b158015610ed857600080fd5b505afa158015610eec573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f109190611565565b8314610f845760405162461bcd60e51b815260206004820152603b60248201527f4c697175696461746f723a3a636f6e6669673a66696c652d696c6b2d6e65712d60448201527f61756374696f6e486f7573652e636f6c6c61746572616c547970650000000000606482015260840161044a565b600083815260036020526040902080546001600160a01b0319166001600160a01b0383161790556040516001600160a01b0382168152829084907fcca354fda7f00794fc7fce17d15e3ec08371c1651291bcb7de2c5b9ab87745db90602001610d09565b610ffa6430b236b4b760d91b3361111c565b81686d696e757342616e6b60b81b1415610c8057600480546001600160a01b0319166001600160a01b0383161790556040516001600160a01b038216815282907f3d6745046596f08781af62914be5041ebe52ea11dfec12e472b043be63a9d74a906020016103f4565b61106d82610a58565b611077813361111c565b610a8e8383611271565b6110936430b236b4b760d91b3361111c565b816d1d1bdd185b13585e105b5bdd5b9d60921b1415610c80576005819055817f15f23b9b90ae47d0682e013c5e063c9071659d3d2a5d7f6dcd77aa4b665dd25e826040516103f491815260200190565b6110f56437bbb732b960d91b3361111c565b6111076437bbb732b960d91b82611206565b6111196437bbb732b960d91b33611271565b50565b6111268282610e4b565b610b0d5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b606482015260840161044a565b600081831061118f5781611191565b825b9392505050565b60006001600160ff1b038211156112025760405162461bcd60e51b815260206004820152602860248201527f53616665436173743a2076616c756520646f65736e27742066697420696e2061604482015267371034b73a191a9b60c11b606482015260840161044a565b5090565b6112108282610e4b565b610b0d5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61127b8282610e4b565b15610b0d5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff16806112ed5750303b155b806112fb575060005460ff16155b6113175760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff16158015611339576000805461ffff19166101011790555b611341611383565b61135c653830bab9b2b960d11b6437bbb732b960d91b6113ec565b61136f653830bab9b2b960d11b33611441565b8015611119576000805461ff001916905550565b600054610100900460ff16806113985750303b155b806113a6575060005460ff16155b6113c25760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff161580156113e4576000805461ffff19166101011790555b61136f61144b565b60006113f783610a58565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b610b0d8282611206565b600054610100900460ff16806114605750303b155b8061146e575060005460ff16155b61148a5760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff161580156114ac576000805461ffff19166101011790555b6114be6437bbb732b960d91b33611441565b6114d86430b236b4b760d91b6437bbb732b960d91b6113ec565b6114f56737b832b930ba37b960c11b6437bbb732b960d91b6113ec565b6115076430b236b4b760d91b33611441565b61136f6737b832b930ba37b960c11b33611441565b80356001600160a01b0381168114610a6c57600080fd5b600060208284031215611544578081fd5b6111918261151c565b60006020828403121561155e578081fd5b5035919050565b600060208284031215611576578081fd5b5051919050565b6000806040838503121561158f578081fd5b8235915061159f6020840161151c565b90509250929050565b6000806000606084860312156115bc578081fd5b833592506115cc6020850161151c565b91506115da6040850161151c565b90509250925092565b6000806000606084860312156115f7578283fd5b83359250602084013591506115da6040850161151c565b600080600060608486031215611622578283fd5b505081359360208301359350604090920135919050565b6000806040838503121561164b578182fd5b50508035926020909101359150565b6000806040838503121561166c578182fd5b505080516020909101519092909150565b60008060008060008060c08789031215611695578182fd5b865195506020870151945060408701519350606087015192506080870151915060a087015190509295509295509295565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b600082198211156117275761172761179c565b500190565b60008261174757634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156117665761176661179c565b500290565b60008282101561177d5761177d61179c565b500390565b6000600160ff1b8214156117985761179861179c565b0390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ee6bd55c5b76ef7ce2336090cc48765f46d84e3b064acf998c2e9868262fd5c164736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061014d5760003560e01c80637d8513f2116100c3578063d366f3b91161007c578063d366f3b914610312578063d547741f14610325578063e0bed04114610338578063f2fde38b1461034b578063fc3b0d961461035e578063ff0de72f146103675761014d565b80637d8513f2146102b65780638456cb59146102c957806391d14854146102d1578063a217fddf146102e4578063a9345fa8146102ec578063c647e0dd146102ff5761014d565b806336568abe1161011557806336568abe146101d65780633723727c146101e95780633f4ba83a14610254578063560b4f271461025c57806356397c351461026f5780635c975abb1461029f5761014d565b8063022558ca14610152578063179bf30814610167578063248a9ca31461018d57806326fc7590146101a05780632f2ff15d146101c3575b600080fd5b610165610160366004611639565b610370565b005b61017a6101753660046115a8565b610400565b6040519081526020015b60405180910390f35b61017a61019b36600461154d565b610a58565b61017a6101ae36600461154d565b60009081526003602052604090206001015490565b6101656101d136600461157d565b610a71565b6101656101e436600461157d565b610a93565b61022a6101f736600461154d565b600360208190526000918252604090912080546001820154600283015492909301546001600160a01b0390911692919084565b604080516001600160a01b0390951685526020850193909352918301526060820152608001610184565b610165610b11565b61016561026a36600461160e565b610baf565b6002546102879061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610184565b60025460ff165b6040519015158152602001610184565b6101656102c4366004611533565b610d16565b610165610db4565b6102a66102df36600461157d565b610e4b565b61017a600081565b6101656102fa3660046115e3565b610e76565b600454610287906001600160a01b031681565b61016561032036600461157d565b610fe8565b61016561033336600461157d565b611064565b610165610346366004611639565b611081565b610165610359366004611533565b6110e3565b61017a60055481565b61017a60065481565b6103826430b236b4b760d91b3361111c565b80600654610390919061176b565b600655600082815260036020819052604090912001546103b190829061176b565b600083815260036020818152604092839020909101929092555182815283917fb4ce8d62e7962fdc883ff7b2bdc2bc363c28c01a57a1dc87c631600b5d5a71c591015b60405180910390a25050565b600061040e60025460ff1690565b156104535760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b60448201526064015b60405180910390fd5b60025460405163b75baf7960e01b8152600481018690526001600160a01b03858116602483015260009283926101009091049091169063b75baf7990604401604080518083038186803b1580156104a957600080fd5b505afa1580156104bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104e1919061165a565b6000888152600360208181526040808420815160808101835281546001600160a01b0390811682526001830154948201949094526002808301548285015291909401546060850152549051637d5422a760e01b8152600481018d90529597509395509093919283928392839261010090041690637d5422a79060240160c06040518083038186803b15801561057557600080fd5b505afa158015610589573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105ad919061167d565b929750919550935050508115801591506105d857506105cc838761174c565b6105d6828961174c565b105b6106245760405162461bcd60e51b815260206004820181905260248201527f4c697175696461746f723a3a6c69717569646174653a6e6f742d756e73616665604482015260640161044a565b60065460055411801561063e575084606001518560400151115b61069e5760405162461bcd60e51b815260206004820152602b60248201527f4c697175696461746f723a3a6c69717569646174653a6c69717569646174696f60448201526a1b8b5b1a5b5a5d0b5a1a5d60aa1b606482015260840161044a565b60006106cc6006546005546106b3919061176b565b876060015188604001516106c7919061176b565b611180565b905061070087876020015186670de0b6b3a7640000856106ec919061174c565b6106f6919061172c565b6106c7919061172c565b9450848711156107ad578284610716878a61176b565b610720919061174c565b101561072e578694506107ad565b82610739858761174c565b10156107ad5760405162461bcd60e51b815260206004820152603c60248201527f4c697175696461746f723a3a6c69717569646174653a64757374792d6175637460448201527f696f6e2d66726f6d2d7061727469616c2d6c69717569646174696f6e00000000606482015260840161044a565b5060009050856107bd858961174c565b6107c7919061172c565b9050600081116108245760405162461bcd60e51b815260206004820152602260248201527f4c697175696461746f723a3a6c69717569646174653a6e756c6c2d617563746960448201526137b760f11b606482015260840161044a565b60025485516004546001600160a01b03610100909304831692637bab3f40928f928f921661085187611198565b61085a90611782565b6108638b611198565b61086c90611782565b6040516001600160e01b031960e089901b16815260048101969096526001600160a01b039485166024870152928416604486015292166064840152608483019190915260a482015260c401600060405180830381600087803b1580156108d157600080fd5b505af11580156108e5573d6000803e3d6000fd5b50505050600083856108f7919061174c565b90506000670de0b6b3a7640000876020015183610914919061174c565b61091e919061172c565b90508060065461092e9190611714565b6006556060870151610941908290611714565b60008e8152600360208190526040918290200191909155875190516330c8c1a760e11b815260048101839052602481018590526001600160a01b038e811660448301528d8116606483015290911690636191834e90608401602060405180830381600087803b1580156109b357600080fd5b505af11580156109c7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109eb9190611565565b875160408051868152602081018a90529081018590526001600160a01b039182166060820152919b508b92508d16908e907f72d3864f233703680912d39433c137e816d579e8785e5245274ca9f95bea89679060800160405180910390a450505050505050509392505050565b600081815260016020819052604090912001545b919050565b610a7a82610a58565b610a84813361111c565b610a8e8383611206565b505050565b6001600160a01b0381163314610b035760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b606482015260840161044a565b610b0d8282611271565b5050565b60025460ff16610b5a5760405162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015260640161044a565b653830bab9b2b960d11b610b6e813361111c565b6002805460ff191690556040513381527f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa906020015b60405180910390a150565b610bc16430b236b4b760d91b3361111c565b816670656e616c747960c81b1415610c5357670de0b6b3a7640000811015610c3a5760405162461bcd60e51b815260206004820152602660248201527f4c697175696461746f723a3a636f6e6669673a66696c652d70656e616c74792d6044820152651b1d0b55d05160d21b606482015260840161044a565b6000838152600360205260409020600101819055610cd6565b81681b585e105b5bdd5b9d60ba1b1415610c80576000838152600360205260409020600201819055610cd6565b60405162461bcd60e51b815260206004820152602560248201527f4c697175696461746f723a3a636f6e6669673a756e7265636f676e697a65642d604482015264706172616d60d81b606482015260840161044a565b81837f4691be92868fa80845b397f0e016905e1b4322422075895b96f9b4a8f1d918cf83604051610d0991815260200190565b60405180910390a3505050565b600054610100900460ff1680610d2b5750303b155b80610d39575060005460ff16155b610d555760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff16158015610d77576000805461ffff19166101011790555b610d7f6112d8565b60028054610100600160a81b0319166101006001600160a01b038516021790558015610b0d576000805461ff00191690555050565b60025460ff1615610dfa5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015260640161044a565b653830bab9b2b960d11b610e0e813361111c565b6002805460ff191660011790556040513381527f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a25890602001610ba4565b60009182526001602090815260408084206001600160a01b0393909316845291905290205460ff1690565b610e886430b236b4b760d91b3361111c565b816b61756374696f6e486f75736560a01b1415610c8057806001600160a01b031663e824600f6040518163ffffffff1660e01b815260040160206040518083038186803b158015610ed857600080fd5b505afa158015610eec573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f109190611565565b8314610f845760405162461bcd60e51b815260206004820152603b60248201527f4c697175696461746f723a3a636f6e6669673a66696c652d696c6b2d6e65712d60448201527f61756374696f6e486f7573652e636f6c6c61746572616c547970650000000000606482015260840161044a565b600083815260036020526040902080546001600160a01b0319166001600160a01b0383161790556040516001600160a01b0382168152829084907fcca354fda7f00794fc7fce17d15e3ec08371c1651291bcb7de2c5b9ab87745db90602001610d09565b610ffa6430b236b4b760d91b3361111c565b81686d696e757342616e6b60b81b1415610c8057600480546001600160a01b0319166001600160a01b0383161790556040516001600160a01b038216815282907f3d6745046596f08781af62914be5041ebe52ea11dfec12e472b043be63a9d74a906020016103f4565b61106d82610a58565b611077813361111c565b610a8e8383611271565b6110936430b236b4b760d91b3361111c565b816d1d1bdd185b13585e105b5bdd5b9d60921b1415610c80576005819055817f15f23b9b90ae47d0682e013c5e063c9071659d3d2a5d7f6dcd77aa4b665dd25e826040516103f491815260200190565b6110f56437bbb732b960d91b3361111c565b6111076437bbb732b960d91b82611206565b6111196437bbb732b960d91b33611271565b50565b6111268282610e4b565b610b0d5760405162461bcd60e51b815260206004820152602560248201527f416363657373436f6e74726f6c3a5f636865636b526f6c653a696e76616c696460448201526420726f6c6560d81b606482015260840161044a565b600081831061118f5781611191565b825b9392505050565b60006001600160ff1b038211156112025760405162461bcd60e51b815260206004820152602860248201527f53616665436173743a2076616c756520646f65736e27742066697420696e2061604482015267371034b73a191a9b60c11b606482015260840161044a565b5090565b6112108282610e4b565b610b0d5760008281526001602081815260408084206001600160a01b0386168086529252808420805460ff19169093179092559051339285917f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d9190a45050565b61127b8282610e4b565b15610b0d5760008281526001602090815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b600054610100900460ff16806112ed5750303b155b806112fb575060005460ff16155b6113175760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff16158015611339576000805461ffff19166101011790555b611341611383565b61135c653830bab9b2b960d11b6437bbb732b960d91b6113ec565b61136f653830bab9b2b960d11b33611441565b8015611119576000805461ff001916905550565b600054610100900460ff16806113985750303b155b806113a6575060005460ff16155b6113c25760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff161580156113e4576000805461ffff19166101011790555b61136f61144b565b60006113f783610a58565b6000848152600160208190526040808320909101859055519192508391839186917fbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff9190a4505050565b610b0d8282611206565b600054610100900460ff16806114605750303b155b8061146e575060005460ff16155b61148a5760405162461bcd60e51b815260040161044a906116c6565b600054610100900460ff161580156114ac576000805461ffff19166101011790555b6114be6437bbb732b960d91b33611441565b6114d86430b236b4b760d91b6437bbb732b960d91b6113ec565b6114f56737b832b930ba37b960c11b6437bbb732b960d91b6113ec565b6115076430b236b4b760d91b33611441565b61136f6737b832b930ba37b960c11b33611441565b80356001600160a01b0381168114610a6c57600080fd5b600060208284031215611544578081fd5b6111918261151c565b60006020828403121561155e578081fd5b5035919050565b600060208284031215611576578081fd5b5051919050565b6000806040838503121561158f578081fd5b8235915061159f6020840161151c565b90509250929050565b6000806000606084860312156115bc578081fd5b833592506115cc6020850161151c565b91506115da6040850161151c565b90509250925092565b6000806000606084860312156115f7578283fd5b83359250602084013591506115da6040850161151c565b600080600060608486031215611622578283fd5b505081359360208301359350604090920135919050565b6000806040838503121561164b578182fd5b50508035926020909101359150565b6000806040838503121561166c578182fd5b505080516020909101519092909150565b60008060008060008060c08789031215611695578182fd5b865195506020870151945060408701519350606087015192506080870151915060a087015190509295509295509295565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b600082198211156117275761172761179c565b500190565b60008261174757634e487b7160e01b81526012600452602481fd5b500490565b60008160001904831182151516156117665761176661179c565b500290565b60008282101561177d5761177d61179c565b500390565b6000600160ff1b8214156117985761179861179c565b0390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ee6bd55c5b76ef7ce2336090cc48765f46d84e3b064acf998c2e9868262fd5c164736f6c63430008030033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "endLiquidation(bytes32,uint256)": {
+        "params": {
+          "collateralType": "collateralType",
+          "rad": "liquidated ksd amount"
+        }
+      },
+      "liquidate(bytes32,address,address)": {
+        "params": {
+          "collateralType": "type of collateral in vault to liquidate",
+          "keeper": "address that will receive incentives",
+          "vaultAddr": "address of vault to liquidate"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "endLiquidation(bytes32,uint256)": {
+        "notice": "when liquidation process is ended (including auction), endLiquidation is called to clear some data related the liquidation."
+      },
+      "liquidate(bytes32,address,address)": {
+        "notice": "liquidate a Vault and start a Dutch auction to sell its collateral for KSD. The entire Vault will be liquidated except when the target amount of KSD to be raised in the resulting auction (debt of Vault + liquidation penalty) causes either totalOnGoingAmount to exceed totalMaxAmount or collateral.onGoingAmount to exceed collateral.maxAmount by an economically significant amount. In that case, a partial liquidation is performed to respect the global and per-collateral limits on outstanding KSD target. The one exception is if the resulting auction would likely have too little collateral to be interesting to Keepers (debt taken from Vault < collateral.dust), in which case the function reverts. Please refer to the code and comments within if more detail is desired."
+      }
+    },
+    "notice": "Most of the codes here are a subset of MakerDAO's contract",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 23220,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23223,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 20166,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)"
+      },
+      {
+        "astId": 20556,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "_paused",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23305,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "ledger",
+        "offset": 1,
+        "slot": "2",
+        "type": "t_contract(ILedger)8804"
+      },
+      {
+        "astId": 23311,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "auctionInfos",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_bytes32,t_struct(AuctionInfo)8816_storage)"
+      },
+      {
+        "astId": 23314,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "minusBank",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_contract(IMinusBank)8917"
+      },
+      {
+        "astId": 23316,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "totalMaxAmount",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 23318,
+        "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+        "label": "totalOnGoingAmount",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(ILedger)8804": {
+        "encoding": "inplace",
+        "label": "contract ILedger",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IMinusBank)8917": {
+        "encoding": "inplace",
+        "label": "contract IMinusBank",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_bytes32,t_struct(AuctionInfo)8816_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct ILiquidator.AuctionInfo)",
+        "numberOfBytes": "32",
+        "value": "t_struct(AuctionInfo)8816_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)20161_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)20161_storage"
+      },
+      "t_struct(AuctionInfo)8816_storage": {
+        "encoding": "inplace",
+        "label": "struct ILiquidator.AuctionInfo",
+        "members": [
+          {
+            "astId": 8809,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "auctionHouse",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 8811,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "penalty",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 8813,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "maxAmount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 8815,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "onGoingAmount",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_struct(RoleData)20161_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 20158,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 20160,
+            "contract": "contracts/liquidation/Liquidator.sol:Liquidator",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
